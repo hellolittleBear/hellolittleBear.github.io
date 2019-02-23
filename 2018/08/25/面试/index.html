@@ -1,307 +1,176 @@
 <!DOCTYPE html>
+<html lang="en">
 
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<!-- Head tag -->
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="theme-color" content="#222">
 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!--Description-->
+    
+        <meta name="description" content="生活不止眼前的苟且，还有未来的苟且。苟，才是王道！！！">
+    
 
+    <!--Author-->
+    
+        <meta name="author" content="梦在燃烧">
+    
 
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="CSS知识日常总结">
+    
 
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="生活不止眼前的苟且，还有未来的苟且。苟，才是王道！！！">
+    
 
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="梦在燃烧">
 
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
 
+    <!--Page Cover-->
+    
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="twitter:card" content="summary">
+    
 
+    <!-- Title -->
+    
+    <title>CSS知识日常总结 - 梦在燃烧</title>
 
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
 
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
 
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT">
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="切记：不要一问一答，善于沟通。不要被动的回答问题，可以将知识延伸，聊到自己擅长的领地自己的职业规划：认真想想，已3-5年为界想想最后问面试官的问题                 css面试     一、css盒模型    css中的盒子模型包括IE盒子模型和标准的W3C盒子模型。border-sizing: border-box, inherit, content-box标准盒子模型： 左右bo">
-<meta property="og:type" content="article">
-<meta property="og:title" content="面试题总结">
-<meta property="og:url" content="http://yoursite.com/2019/02/19/面试/index.html">
-<meta property="og:site_name" content="心永恒，梦已不再">
-<meta property="og:description" content="切记：不要一问一答，善于沟通。不要被动的回答问题，可以将知识延伸，聊到自己擅长的领地自己的职业规划：认真想想，已3-5年为界想想最后问面试官的问题                 css面试     一、css盒模型    css中的盒子模型包括IE盒子模型和标准的W3C盒子模型。border-sizing: border-box, inherit, content-box标准盒子模型： 左右bo">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-19T00:21:16.013Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="面试题总结">
-<meta name="twitter:description" content="切记：不要一问一答，善于沟通。不要被动的回答问题，可以将知识延伸，聊到自己擅长的领地自己的职业规划：认真想想，已3-5年为界想想最后问面试官的问题                 css面试     一、css盒模型    css中的盒子模型包括IE盒子模型和标准的W3C盒子模型。border-sizing: border-box, inherit, content-box标准盒子模型： 左右bo">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2019/02/19/面试/">
-
-
-
-
-
-  <title>面试题总结 | 心永恒，梦已不再</title>
-  
-
-
-
-
-
-
+    <!-- Google Analytics -->
+    
 
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  
-  
-    
-  
+<body>
 
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">心永恒，梦已不再</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    About
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    Contact
+                </a>
+            </li>
+            
+        </ul>
     </div>
-      
-        <p class="site-subtitle">诸葛亮出山前也没带过兵啊，你们凭啥要我有工作经验！</p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
 </div>
 
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
 </nav>
 
+<div class="container">
 
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
 
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/19/面试/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mr.tom">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="心永恒，梦已不再">
-    </span>
-
-    
-      <header class="post-header">
-
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
-        
-          <h1 class="post-title" itemprop="name headline">面试题总结</h1>
-        
+    </div>
+</header>
 
-        <div class="post-meta">
-          <span class="post-time">
+        <section class="main">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-19T08:21:16+08:00">
-                08:21:16
-              </time>
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2018/08/25/面试/">
+                CSS知识日常总结
+            </a>
+        </h1>
+        <div class="post-info">
             
-
+                <span class="date">12:26:18</span>
             
-
             
-          </span>
-
-          
-
-          
             
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+    </div>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+    <div class="content">
 
-      
-      
+        <!-- Gallery -->
+        
 
-      
+        <!-- Post Content -->
         <p>切记：不要一问一答，善于沟通。不要被动的回答问题，可以将知识延伸，聊到自己擅长的领地<br>自己的职业规划：认真想想，已3-5年为界<br>想想最后问面试官的问题                </p>
-<pre><code>css面试    
-</code></pre><p>一、css盒模型<br>    css中的盒子模型包括IE盒子模型和标准的W3C盒子模型。<br>border-sizing: border-box, inherit, content-box<br>标准盒子模型： 左右border+左右padding+contentwidth<br>IE盒子模型border-box: width = content+padding+border 元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制<br>inherit: 从父类继承box-sizing的值</p>
+<h3 id="css基本知识总结"><a href="#css基本知识总结" class="headerlink" title="css基本知识总结"></a>css基本知识总结</h3><p>一、盒模型</p>
+<p>css中的盒子模型包括IE盒子模型和标准的W3C盒子模型。<br>border-sizing: border-box, inherit, content-box</p>
+<p>标准盒子模型： 左右border+左右padding+contentwidth<br>IE盒子模型border-box: width = content+padding+border 元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制<br>inherit: 从父类继承box-sizing的值</p>
 <p>二、前端一像素问题（画一条0.5px的线）</p>
 <ul>
 <li>transform: scaleY（0.5） 使用伪元素设置1px的边框，然后对边框进行缩放(s<br>caleY)<br>　实现思路：<br>   1、设定目标元素的参考位置<br>   2、给目标元素添加一个伪元素before或者after，并设置绝对定位<br>   3、给伪元素添加1px的边框<br>   4、用box-sizing: border-box 属性把边框都包进宽和高里面<br>   5、宽和高设置为 200%<br>   6、整个盒子模型缩小为0.5<br>   7、调整盒子模型的位置，以左上角为基准 transform-origin: 0 0;</li>
@@ -504,39 +373,34 @@ isProperty()方法测试一个对象是否存在另一个对象的原型链上�
 <p>六、页面的重构；在不改变外部行为的前提下，简化结构、添加可读性</p>
 <pre><code>服务器端
 </code></pre><p>一、状态码：</p>
-<pre><code>2XX（成功处理了请求状态）
-    200 服务器已经成功处理请求，并提供了请求的网页
-    201 用户新建或修改数据成功
-    202 一个请求已经进入后台
-    204 用户删除成功
-3XX（每次请求使用的重定向不要超过5次）
-    304 网页上次请求没有更新，节省带宽和开销
-4XX（表示请求可能出错，妨碍了服务器的处理）
-    400 服务器不理解请求的语法
-    401 用户没有权限（用户名，密码输入错误）
-    403 用户得到授权（401相反），但是访问被禁止
-    404 服务器找不到请求的网页，
-5XX（表示服务器在处理请求的时候发生内部错误）
-    500 服务器遇到错误，无法完成请求
-    503 服务器目前无法使用（超载或停机维护）
-</code></pre><p>二、304的缓存原理（添加Etag标签.last-modified） 304 网页上次请求没有更新，节省带宽和开销<br>    1.服务器首先产生Etag,服务器可在稍后使用它来判断页面是否被修改。本质上，客户端通过该记号传回服务器要求服务器验证（客户端）缓存）<br>    2.304是    HTTP的状态码，服务器用来标识这个文件没有被修改，不返回内容，浏览器接受到这个状态码会去去找浏览器缓存的文件<br>    3.流程：客户端请求一个页面A。服务器返回页面A，并在A上加一个Tage客服端渲染该页面，并把Tage也存储在缓存中。客户端再次请求页面A<br>        并将上次请求的资源和ETage一起传递给服务器。服务器检查Tage.并且判断出该页面自上次客户端请求之后未被修改。直接返回304</p>
-<pre><code>last-modified: 客服端请求资源，同时有一个last-modified的属性标记此文件在服务器最后修改的时间
-        客服端第二次请求此url时，根据http协议。浏览器会向服务器发送一个If-Modified-Since报头，
-        询问该事件之后文件是否被修改，没修改返回304
-
- 有了Last-Modified，为什么还要用ETag？
-  1、因为如果在一秒钟之内对一个文件进行两次更改，Last-Modified就会不正确（Last—Modified不能识别秒单位的修改）
-  2、某些服务器不能精确的得到文件的最后修改时间
-  3、一些文件也行会周期新的更改，但是他的内容并不改变（仅仅改变修改的事件），这个时候我们并不希望客户端认为文件被修改，而重新Get
-
-ETag，为什么还要用Last-Modified？
-  1、两者互补，ETag的判断的缺陷，比如一些图片等静态文件的修改
-  2、如果每次扫描内容都生成ETag比较，显然要比直接比较修改时间慢的多。
-
-
-ETag是被请求变量的实体值（文件的索引节，大小和最后修改的时间的Hash值）
-  1、ETag的值服务器端对文件的索引节，大小和最后的修改的事件进行Hash后得到的。
-</code></pre><p>三、get/post的区别<br>    1.get数据是存放在url之后，以？分割url和传输数据，参数之间以&amp;相连； post方法是把提交的数据放在http包的Body中<br>    2.get提交的数据大小有限制，（因为浏览器对url的长度有限制），post的方法提交的数据没有限制<br>    3.get需要request.queryString来获取变量的值，而post方式通过request.from来获取变量的值<br>    4.get的方法提交数据，会带来安全问题，比如登录一个页面，通过get的方式提交数据，用户名和密码就会出现在url上</p>
+<ul>
+<li>2XX（成功处理了请求状态）<ul>
+<li>200 服务器已经成功处理请求，并提供了请求的网页</li>
+<li>201 用户新建或修改数据成功</li>
+<li>202 一个请求已经进入后台</li>
+<li>204 用户删除成功</li>
+</ul>
+</li>
+<li>3XX（每次请求使用的重定向不要超过5次）<ul>
+<li>304 网页上次请求没有更新，节省带宽和开销</li>
+</ul>
+</li>
+<li>4XX（表示请求可能出错，妨碍了服务器的处理）<ul>
+<li>400 服务器不理解请求的语法</li>
+<li>401 用户没有权限（用户名，密码输入错误）</li>
+<li>403 用户得到授权（401相反），但是访问被禁止</li>
+<li>404 服务器找不到请求的网页，</li>
+</ul>
+</li>
+<li>5XX（表示服务器在处理请求的时候发生内部错误）<ul>
+<li>500 服务器遇到错误，无法完成请求</li>
+<li>503 服务器目前无法使用（超载或停机维护）</li>
+</ul>
+</li>
+</ul>
+<p>二、304的缓存原理（添加Etag标签.last-modified） 304 网页上次请求没有更新，节省带宽和开销<br>    1.服务器首先产生Etag,服务器可在稍后使用它来判断页面是否被修改。本质上，客户端通过该记号传回服务器要求服务器验证（客户端）缓存）<br>    2.304是    HTTP的状态码，服务器用来标识这个文件没有被修改，不返回内容，浏览器接受到这个状态码会去去找浏览器缓存的文件<br>    3.流程：客户端请求一个页面A。服务器返回页面A，并在A上加一个Tage客服端渲染该页面，并把Tage也存储在缓存中。客户端再次请求页面A<br>        并将上次请求的资源和ETage一起传递给服务器。服务器检查Tage.并且判断出该页面自上次客户端请求之后未被修改。直接返回304</p>
+<p>last-modified: 客服端请求资源，同时有一个last-modified的属性标记此文件在服务器最后修改的时间<br>        客服端第二次请求此url时，根据http协议。浏览器会向服务器发送一个If-Modified-Since报头，<br>        询问该事件之后文件是否被修改，没修改返回304<br>    有了Last-Modified，为什么还要用ETag？<br>        1、因为如果在一秒钟之内对一个文件进行两次更改，Last-Modified就会不正确（Last—Modified不能识别秒单位的修改）<br>        2、某些服务器不能精确的得到文件的最后修改时间<br>        3、一些文件也行会周期新的更改，但是他的内容并不改变（仅仅改变修改的事件），这个时候我们并不希望客户端认为文件被修改，而重新Get<br>    ETag，为什么还要用Last-Modified？<br>        1、两者互补，ETag的判断的缺陷，比如一些图片等静态文件的修改<br>        2、如果每次扫描内容都生成ETag比较，显然要比直接比较修改时间慢的多。<br>    ETag是被请求变量的实体值（文件的索引节，大小和最后修改的时间的Hash值）<br>        1、ETag的值服务器端对文件的索引节，大小和最后的修改的事件进行Hash后得到的。</p>
+<p>三、get/post的区别<br>    1.get数据是存放在url之后，以？分割url和传输数据，参数之间以&amp;相连； post方法是把提交的数据放在http包的Body中<br>    2.get提交的数据大小有限制，（因为浏览器对url的长度有限制），post的方法提交的数据没有限制<br>    3.get需要request.queryString来获取变量的值，而post方式通过request.from来获取变量的值<br>    4.get的方法提交数据，会带来安全问题，比如登录一个页面，通过get的方式提交数据，用户名和密码就会出现在url上</p>
 <p>四、http协议的理解<br>    1.超文本的传输协议，是用于从万维网服务器超文本传输到本地资源的传输协议<br>    2.基于TCP/IP通信协议来传递数据（HTML，图片资源）<br>    3.基于运用层的面向对象的协议，由于其简洁、快速的方法、适用于分布式超媒体信息系统<br>    4.http请求信息request：<br>        请求行（request line）、请求头部（header）,空行和请求数据四部分构成</p>
 <pre><code>    请求行，用来说明请求类型,要访问的资源以及所使用的HTTP版本.
     请求头部，用来说明服务器要使用的附加信息
@@ -658,330 +522,188 @@ try{
 <p>event.listen (function(time) {<br>  console.log(‘正式上班时间为：’ +time)<br>})<br>event.trigger (‘2018/7’)</p>
 <p>八、手动写一个node服务器<br>const http = require(‘http’);<br>const fs = require(‘fs’);<br>const server = http.createServer((req,res) =&gt; {<br>    if (reu.url == ‘/‘) {<br>    const indexFile = fs.createReadStream(‘./index.html’)<br>    req.writeHead(200,{‘context-Type’:’text/html;charset = utf8})<br>    indexFile.pipe(res)<br>}<br>server.listen(8080)</p>
 
-      
     </div>
-    
-    
-    
 
     
 
     
 
+    <!-- Comments -->
     
 
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/02/19/跨域/" rel="next" title="跨域">
-                <i class="fa fa-chevron-left"></i> 跨域
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">Mr.tom</p>
-              <p class="site-description motion-element" itemprop="description">一个生活感悟和学习之路的旅程</p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">12</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-
-            
-
-          </nav>
-
-          
-
-          
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
+</div>
+        </section>
 
     </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Mr.tom</span>
-
-  
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    This theme was developed by <a href="https://github.com/klugjo">Jonathan Klughertz</a>. The source code is available on Github. Create Websites. Make Magic.
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2019/02/19/css/">CSS学习之路---路漫漫，情深深</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/02/10/README/">README</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/01/15/working/">实习工作安排(闲聊版)</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2018/12/25/codingStop/">how stop coding?</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/klugjo/hexo-theme-alpha-dust">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/?lang=en">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-instagram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://dribbble.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-dribbble"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://plus.google.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-google-plus"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.behance.net/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-behance"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://500px.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-500px"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:test@example.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
 
 
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
 
 </body>
+
 </html>
