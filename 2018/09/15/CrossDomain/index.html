@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="一个喜欢吃鸡的王者">
+        <meta property="og:title" content="跨域">
     
 
     <!--Open Graph Description-->
@@ -44,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>一个喜欢吃鸡的王者 - 梦在燃烧</title>
+    <title>跨域 - 梦在燃烧</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -135,26 +135,26 @@
     <div class="col-sm-12">
 
         <!--Title and Logo-->
-        
-            <header>
+        <header>
     <div class="logo">
         <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
     </div>
 </header>
-            <section class="main">
-                
+
+        <section class="main">
+            
 <div class="post">
 
     <div class="post-header">
         <h1 class="title">
-            <a href="/title/title1.html">
-                一个喜欢吃鸡的王者
+            <a href="/2018/09/15/CrossDomain/">
+                跨域
             </a>
         </h1>
         <div class="post-info">
             
-                <span class="date">08:21:16</span>
+                <span class="date">14:25:00</span>
             
             
             
@@ -167,10 +167,19 @@
         
 
         <!-- Post Content -->
-        <ul>
-<li>生活不易，该笑的时候那就笑大声吧</li>
+        <h4 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h4><ul>
+<li>浏览器的安全机制： 同源策略：不同域禁止连接（域名、协议、端口号） </li>
 </ul>
-<h2 id="生活不止眼前的苟且，还有未来的苟且"><a href="#生活不止眼前的苟且，还有未来的苟且" class="headerlink" title="生活不止眼前的苟且，还有未来的苟且"></a>生活不止眼前的苟且，还有未来的苟且</h2><h3 id="苟，是一种态度"><a href="#苟，是一种态度" class="headerlink" title="苟，是一种态度"></a>苟，是一种态度</h3><p>也许你并不同意我的看法，但是，苟，确实是我们每一天的写照…</p>
+<p>解决方法：</p>
+<ul>
+<li>jsonp<ul>
+<li>json with padding 跨域数据交互协议</li>
+<li>协议要求：服务器端传递callback参数，前端需要与callback参数一致，才能获取传递的数据</li>
+</ul>
+</li>
+<li>基于script标签实现跨域</li>
+<li></li>
+</ul>
 
     </div>
 
@@ -182,8 +191,8 @@
     
 
 </div>
-            </section>
-        
+        </section>
+
     </div>
 </div>
 

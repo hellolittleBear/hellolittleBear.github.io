@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="CSS学习之路---路漫漫，情深深">
+        <meta property="og:title" content="面试过程总结">
     
 
     <!--Open Graph Description-->
@@ -44,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>CSS学习之路---路漫漫，情深深 - 梦在燃烧</title>
+    <title>面试过程总结 - 梦在燃烧</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -148,13 +148,13 @@
 
     <div class="post-header">
         <h1 class="title">
-            <a href="/2019/02/19/css/">
-                CSS学习之路---路漫漫，情深深
+            <a href="/2018/08/24/audition/">
+                面试过程总结
             </a>
         </h1>
         <div class="post-info">
             
-                <span class="date">08:21:15</span>
+                <span class="date">00:00:00</span>
             
             
             
@@ -167,43 +167,12 @@
         
 
         <!-- Post Content -->
-        <h4 id="css盒模型问题"><a href="#css盒模型问题" class="headerlink" title="css盒模型问题"></a>css盒模型问题</h4><ul>
-<li>IE盒模型：width = 固定、border、padding和contentwidth里，如果过多则会向外挤…</li>
-<li>W3C盒模型： width = content ,整体的宽度是自定义宽度 + border +padding</li>
-<li>可通过box-size:(border-box、content-box)来修改盒模型</li>
-</ul>
-<h4 id="前端一像素问题"><a href="#前端一像素问题" class="headerlink" title="前端一像素问题"></a>前端一像素问题</h4><ul>
-<li>关键点： transform: scale() / scaleX / scaleY  和 transform-origin</li>
-<li>一： 如果一个盒子的边框缩放的话(一般设置图片边框)，先把宽高设置为原来的俩倍，边框一像素，然后缩放</li>
-<li>如果是定义一条分割线的话，直接width:200% height:0 border-top: 1px solid black; </li>
-</ul>
-<h4 id="transition、animation、transform区别"><a href="#transition、animation、transform区别" class="headerlink" title="transition、animation、transform区别"></a>transition、animation、transform区别</h4><ul>
-<li>transform 描述了元素静态样式,比如缩放、位移、旋转、最终实现的是一个固定不动的效果，而transtition和animation实现动画效果,所以transfrom经常配合后两种使用，在页面中实现五毛特效….</li>
-<li>transition和anmination的不同点主要有四方面:   <ul>
-<li>触发条件不同，transition由事件触发，比如点击、hover、js控制等等,而animation类似gif动态图，立即触发…</li>
-<li>是否可以循环， animation可以设置循环播放次数(n)或者无线循环(infinite)</li>
-<li>精确性，animation可以设置每一帧样式、时间，精确度贼高，而transition只能设置头尾from  to</li>
-<li>与js的交互的紧密程度,animation与js交互不是很紧密，一般通过增减删除class来实现交互。而transition和js的交互就非常棒的，js这是变化（在from 和to中设置）,而transtion赋值动画效果，天作之合..</li>
-</ul>
-</li>
-</ul>
-<h4 id="不定宽高的div居中"><a href="#不定宽高的div居中" class="headerlink" title="不定宽高的div居中"></a>不定宽高的div居中</h4><ul>
-<li>flex布局：  display：flex; justify-content: center; align-item: center;</li>
-<li>使用transform:translate控制位置：  父元素相对定位，子元素绝对定位、top:50%; left:50%, transfrom:translate(-50%, -50%);</li>
-<li>display:table-cell布局   父元素display：table-cell、text-align:center;vertical-align:middle;  子元素：display:inine-block布局</li>
-<li>最新的布局display：box布局；主要是用来解决div的横向布局问题，以前是通过inline-block、float来设置，现在可以使用box布局方式。父级:display:box; 子级：box-pack: center( 水平居中对齐);.box-align:center (垂直居中对齐)  遗憾的是，所有浏览器都不支持这个属性，必须添加前缀才可以….</li>
-<li>浮动也可以实现居中，核心，包裹一层容器，容器设置margin: 0 auto; </li>
-</ul>
-<h4 id="父子高度已知-居中"><a href="#父子高度已知-居中" class="headerlink" title="父子高度已知 居中"></a>父子高度已知 居中</h4><ul>
-<li>父级相对定位，子级绝对定位，left = (fatherWidth - sonWidth)/2; top: (fatherHeight-sonHeight)/2</li>
-<li>利用行高line-height： 父级高度…  子级 margin: 0 auto;</li>
-<li><h4 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h4></li>
-<li><a href="https://juejin.im/post/5a954add6fb9a06348538c0d" target="_blank" rel="noopener">https://juejin.im/post/5a954add6fb9a06348538c0d</a></li>
-</ul>
-<h4 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h4><h4 id="px、em、rem、pt、vw、vh、"><a href="#px、em、rem、pt、vw、vh、" class="headerlink" title="px、em、rem、pt、vw、vh、"></a>px、em、rem、pt、vw、vh、</h4><h4 id="css优先级"><a href="#css优先级" class="headerlink" title="css优先级"></a>css优先级</h4><ul>
-<li>!important &gt; 行内样式 &gt; ID选择器 &gt; class选择器 &gt; 标签选择器 &gt; *全局选择器 &gt; 继承 &gt; 浏览器默认样式</li>
-<li>css解析原则：选择器是从右往左开始，优点：查询快，方便，层层查询父元素选择器就行  如果从左开始查询右边，每次都要递归所有组件选择器，时间复杂度、空间复杂度更大，</li>
-</ul>
+        <blockquote>
+<p>这篇文章是我这半个月的面试总结，其中有一些不好说的话，我这里就是随口说说而已，各位看官不要介意，还有就是，我只是一个菜鸟，您看完之后一笑过之就行…</p>
+</blockquote>
+<h3 id="初次面试是一个痛并快乐的事"><a href="#初次面试是一个痛并快乐的事" class="headerlink" title="初次面试是一个痛并快乐的事"></a>初次面试是一个痛并快乐的事</h3><p>初次面试，怎么生活呢，第一步非常难，就像和初恋第一次牵手一样，激动着，又胆怯着，想牵手又怕对方拒绝，每次伸手到一半又缩回去，来来回回好几次，渴望和害怕在脑海里SOLO….<br>我的第一次面试还是那么记忆犹新（由于不知道自己的水平，我刚开始投简历的都是小型创业公司，一般也就20个人以下的小团体），它是北京的一家小型创业公司，约定好的是下午三点电话面试，那天上午，整整一上午疯狂看书背重点，六点起床，早饭都没吃，一直看书看文档，把文档里了解的东西全部梳理一遍，然后把平常写的笔记和重点全部过滤一下，复杂的东西就不要深究了，特别是那些没有接触的算法，理解就行….<br>就这样，高考似的疯狂压榨和鸭梨，整个人搞得头晕脑胀，昏昏欲睡，到了中午十二点，没有一点点食欲，相当想睡，可一想到下午就要面试，还敢睡觉？？还睡得着？？那一天简直好像回到了高三的时候，生不如死….<br>然后最煎熬的时候到了，中午到了12点，想点一份外卖，又不知道吃啥，随便点了一份黄焖鸡，爆辣，想来点辣椒刺激脑袋清醒一下,然后继续看书，后来越来越看不下去了，又一直狠下心看下去，边吃饭边看书，不知道我是怎么度过的这俩个小时，反正我是忘记了，太痛苦，不太记起来了…..<br>终于，TMD面试终于来了，我突然想不面试了，就想好好的睡一觉，然后什么都不管，真想拒绝这个面试，真实好累…<br>还是理智战胜了心灵，面试问的题目我都忘记了，鬼知道那时候怎么聊的，反正我只知道，面试后我就觉得GG了，然后直接睡觉到晚上十点半，什么都不管了，醒来直接叫两份外卖，看着直播小姐姐，吃着麻辣烫，什么面试的都GG去吧….，第二天十一点，还是老老实实的投简历…</p>
+<h3 id="第二次面试"><a href="#第二次面试" class="headerlink" title="第二次面试"></a>第二次面试</h3><p>这次面试不是跟第一次一样的电话面试，而是先给一个题目做，然后提交给对方看源码和效果，最后问思想。由于对方公司比较有名，为了双方的某些利益和声誉着想，我就说A公司和B公司吧…<br>A公司的面试过程比较直接，二话不说先抛出一个贼几儿无语的题目给我做，不限时间，越快越好….（后来我才知道，越快越好其是没什么意思，并不真的越快越好….）当时也是年轻气盛，A公司确实挺有名的，也为了更好的展现自己的实力，我没有使用简单粗暴的jquery和vue，我直接使用纯手js撸出这个项目，每天要花掉十小时搞这个事情，整整一个礼拜，功夫不负有心人啊，写完了，一提交，“额，你这个不行啊，太复杂了。。。”  excuse me ????  效果一毛一样你居然说太复杂？？ 怪我喽？？ 你自己要我写的需求，我能咋办？？ 代码我都优化了三遍了，你还要我咋样，那时候感觉受到了上万吨的暴击伤害，彻底受伤了，黄焖鸡都不想吃了，B站小姐姐看的都没意思了，王者荣耀上王者都没感觉了，贼烦…..    过了好久，面试官说，“额，你这个功能是实现了，但是我要的是联动效果，而不是备份效果….” 额，我甚至不想理他了，最后，口嫌体正直，还是写了……一周……<br>现在，终于可以给个面试机会了吧，就在我满心欢喜的时候，准备六神装妲己秒人的时候，草丛中跳出了六个大汉….   面试官居然让我社招，把我踢到C公司社招，然后简历上造假项目经验。。。我就呵呵了，大三学生哪来的勇气社招，哪来的经验,哪来的这么多的项目经验??? 后来我彻底不了他了，大公司不要我早说嘛，干嘛浪费我俩个礼拜时间，你不知道大三投简历面试很缺时间么?? —– 这一次我身体彻底吃不消了，高强度的用脑和对方的无情刺激，我最后一丝防线崩溃了，彻底睡晕过去了，我记得好像从中午俩点半睡到下一天的下午六点左右，将近28个小时，还好锻炼了身体，有俩块腹肌的男人，还能醒来，这次，彻底给了我教育了，也一觉大悟了….面试是不公平的，但是我可以拒绝的，中国公司那么多，我非要去你公司么？？ 你公司不就是那啥啥很强么，那又咋样，哥还不待见了，我一个大三小伙子，没有优异的学校背景，没有太过帅气的脸，也不是一个学霸，但是我就是不面试你这家，咋的？？        </p>
+<h4 id="第三次到以后的面试"><a href="#第三次到以后的面试" class="headerlink" title="第三次到以后的面试"></a>第三次到以后的面试</h4><p>经过前俩次的面试，我制定了一些基本 </p>
 
     </div>
 
@@ -241,19 +210,19 @@
         <ul>
             
             <li>
-                <a class="footer-post" href="/2019/02/19/css/">CSS学习之路---路漫漫，情深深</a>
+                <a class="footer-post" href="/2019/07/20/README/">README</a>
             </li>
             
             <li>
-                <a class="footer-post" href="/2019/02/10/README/">README</a>
+                <a class="footer-post" href="/2019/03/01/2019-03/">2019EVENTS</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/02/20/2019target/">2019目标</a>
             </li>
             
             <li>
                 <a class="footer-post" href="/2019/01/15/working/">实习工作安排(闲聊版)</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2018/12/25/codingStop/">how stop coding?</a>
             </li>
             
         </ul>
@@ -262,6 +231,29 @@
 
 
             
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/Diary/">Diary</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/事件/">事件</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/算法/">算法</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/目标/">目标</a>
+        </li>
+        
+    </ul>
+</div>
+
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
