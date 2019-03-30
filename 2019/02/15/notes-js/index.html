@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="梦在燃烧">
+        <meta property="og:title" content="JS笔记总结">
     
 
     <!--Open Graph Description-->
@@ -33,7 +33,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website">
+        <meta property="og:type" content="article">
     
 
     <!--Page Cover-->
@@ -44,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>Archives: 2019/3 - 梦在燃烧</title>
+    <title>JS笔记总结 - 梦在燃烧</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -131,9 +131,7 @@
 <div class="container">
 
     <!-- Main Content -->
-    
-
-<div class="row">
+    <div class="row">
     <div class="col-sm-12">
 
         <!--Title and Logo-->
@@ -141,169 +139,74 @@
     <div class="logo">
         <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
-            <h1 id="main-title" class="title">2019/3</h1>
-        
     </div>
 </header>
 
-        <section class="main archive-container">
+        <section class="main">
             
-                <div class="archive-post">
-    <a href="/2019/02/20/2019target/">
-        <span class="archive-date">
-            02-20-2019
-        </span>
-        2019目标
-    </a>
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/02/15/notes-js/">
+                JS笔记总结
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">18:56:20</span>
+            
+            
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h5 id="this指向问题"><a href="#this指向问题" class="headerlink" title="this指向问题"></a><font color="#67C23A">this指向问题</font></h5><ul>
+<li><p>当函数作为对象的方法被调用时，this就会指向该对象。比如 call、apply的this指向。</p>
+</li>
+<li><p>当函数作为全局普通函数时， this指向window。</p>
+</li>
+<li><p>构造器被调用时， this指向这个返回的对象。</p>
+</li>
+<li><p>如果是箭头函数的话，this看所在函数定义在那个对象下，如果是嵌套，this指向最近的对象。</p>
+</li>
+</ul>
+<p><strong><em>如何改变this指向</em></strong></p>
+<ul>
+<li>es6 箭头函数，强行绑定该函数</li>
+<li>保存this。 let that = this;</li>
+<li>借助apply、call、bind</li>
+<li>new实例化对象</li>
+</ul>
+<hr>
+<h5 id="闭包、原型链"><a href="#闭包、原型链" class="headerlink" title="闭包、原型链"></a><font color="#67C23A">闭包、原型链</font></h5><ul>
+<li>产生： 当函数作为返回值时、函数作为参数传入时。</li>
+<li>优点： 可以构造私有方法、访问函数内部变量。</li>
+<li>缺点： 增加内存消耗，使用不当很容易内存泄漏。如非必要，不要用闭包。</li>
+</ul>
+<hr>
+<h5 id="内存溢出、内存泄漏"><a href="#内存溢出、内存泄漏" class="headerlink" title="内存溢出、内存泄漏"></a><font color="#67C23A">内存溢出、内存泄漏</font></h5>
+    </div>
+
+    
+
+    
+
+    <!-- Comments -->
+    
+
 </div>
-            
-                <div class="archive-post">
-    <a href="/2019/03/01/README/">
-        <span class="archive-date">
-            03-01-2019
-        </span>
-        README
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/2018/09/15/CrossDomain/">
-        <span class="archive-date">
-            09-15-2018
-        </span>
-        跨域
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/2018/08/24/audition/">
-        <span class="archive-date">
-            08-24-2018
-        </span>
-        面试过程总结
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/2018/12/25/codingStop/">
-        <span class="archive-date">
-            12-25-2018
-        </span>
-        how stop coding?
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/2018/05/12/dt/">
-        <span class="archive-date">
-            05-12-2018
-        </span>
-        节流和防抖
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/2019/03/01/events/">
-        <span class="archive-date">
-            03-01-2019
-        </span>
-        2019EVENTS
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/2018/11/10/firstWork/">
-        <span class="archive-date">
-            11-10-2018
-        </span>
-        实习总结
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/2019/02/15/notes-js/">
-        <span class="archive-date">
-            02-15-2019
-        </span>
-        JS笔记总结
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/2019/03/30/scoundrel/">
-        <span class="archive-date">
-            03-30-2019
-        </span>
-        别害怕，我不是什么好人
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/2019/03/30/sigh/">
-        <span class="archive-date">
-            03-30-2019
-        </span>
-        规划死亡的路线
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/2018/08/15/university/">
-        <span class="archive-date">
-            08-15-2018
-        </span>
-        大学四年记录篇
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/2018/09/15/arithmetic/">
-        <span class="archive-date">
-            09-15-2018
-        </span>
-        排序算法
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/2019/01/15/working/">
-        <span class="archive-date">
-            01-15-2019
-        </span>
-        实习安排(闲聊版)
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/2018/08/15/jsCodingStyle/">
-        <span class="archive-date">
-            08-15-2018
-        </span>
-        js编码风格
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/2018/07/18/browser/">
-        <span class="archive-date">
-            07-18-2018
-        </span>
-        浏览器渲染
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/2018/08/25/notes/">
-        <span class="archive-date">
-            08-25-2018
-        </span>
-        日常知识总结
-    </a>
-</div>
-            
         </section>
+
     </div>
 </div>
+
 
 </div>
 
