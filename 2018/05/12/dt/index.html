@@ -158,6 +158,10 @@
             
             
             
+                <span class="category">
+                    <a href="/categories/前端/">前端</a>
+                </span>
+            
         </div>
     </div>
 
@@ -171,7 +175,7 @@
 <a id="more"></a>
 <h2 id="节流"><a href="#节流" class="headerlink" title="节流"></a>节流</h2><ul>
 <li>释：单位时间内只能执行一次，必须执行，先执行</li>
-<li>场合：页面无限制高度刷新请求页面ajax请求、用户输入信息进行搜索的时候、<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">coding... 梦在燃烧</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> *  @arguemnts func:执行回调事件function    delay：延迟时间 Number</span><br><span class="line"> *  @return funtion</span><br><span class="line"> */</span><br><span class="line">let throttle = (func, delay) =&gt; &#123;</span><br><span class="line">  let timer = null,</span><br><span class="line">      startTime = Date.now();</span><br><span class="line"></span><br><span class="line">  return function()&#123;</span><br><span class="line">    let curTime = Date.now(),</span><br><span class="line">        remaining = delay - (curTime - startTime);</span><br><span class="line"></span><br><span class="line">    const context = this;</span><br><span class="line">    const args = arguments;</span><br><span class="line"></span><br><span class="line">    clearTimeout(timer);</span><br><span class="line">    </span><br><span class="line">    if(remaining &lt;= 0)&#123;</span><br><span class="line">      func.apply(context,args);</span><br><span class="line">      startTime = Date.now();</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">      timer = setTimeout(func, remaining);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>场合：页面无限制高度刷新请求页面ajax请求、用户输入信息进行搜索的时候、<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">coding... 梦在燃烧</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> *  @arguemnts func:执行回调事件function    delay：延迟时间 Number</span><br><span class="line"> *  @return funtion</span><br><span class="line"> */</span><br><span class="line">let throttle = (func, delay) =&gt; &#123;</span><br><span class="line">  let timer = null,</span><br><span class="line">      startTime = Date.now();</span><br><span class="line"></span><br><span class="line">  return function()&#123;</span><br><span class="line">    let curTime = Date.now(),</span><br><span class="line">        remaining = delay - (curTime - startTime);</span><br><span class="line"></span><br><span class="line">    const context = this;</span><br><span class="line">    const args = arguments;</span><br><span class="line"></span><br><span class="line">    clearTimeout(timer);</span><br><span class="line"></span><br><span class="line">    if(remaining &lt;= 0)&#123;</span><br><span class="line">      func.apply(context,args);</span><br><span class="line">      startTime = Date.now();</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">      timer = setTimeout(func, remaining);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h2><ul>
@@ -216,6 +220,10 @@
         <ul>
             
             <li>
+                <a class="footer-post" href="/2019/03/31/problem/">每日BUG记录</a>
+            </li>
+            
+            <li>
                 <a class="footer-post" href="/2019/03/30/scoundrel/">别害怕，我不是什么好人</a>
             </li>
             
@@ -225,10 +233,6 @@
             
             <li>
                 <a class="footer-post" href="/2019/03/01/README/">README</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2019/03/01/events/">2019EVENTS</a>
             </li>
             
         </ul>
@@ -242,15 +246,19 @@
     <ul>
         
         <li>
-            <a class="footer-post" href="/categories/target/">target</a>
+            <a class="footer-post" href="/categories/目标/">目标</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/categories/events/">events</a>
+            <a class="footer-post" href="/categories/面试/">面试</a>
         </li>
         
         <li>
             <a class="footer-post" href="/categories/算法/">算法</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/核心知识/">核心知识</a>
         </li>
         
     </ul>
