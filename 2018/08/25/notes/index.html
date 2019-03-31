@@ -251,21 +251,6 @@
 <p>三、左边定宽，右边自适应<br>    方案一：左边设置浮动，右边宽度设置100%  .left{float:left}  .right:{width:100%}<br>    方案二：左设置浮动，右用cacl去补宽度计算 .left{float:left} .right:{width:cacl(100vw-200px}<br>    方案三：父容器设置display：flex  right部分是设置flex：1<br>    方案四：右边div套个包裹、并前置、左及包裹 双浮动</p>
 <p>四、水平居中<br>    行内元素居中（父元素text-align:center）<br>    块状元素居中（块状元素没发用text-align）<br>        1.宽度一定：margin:auto<br>        2.宽度不定：块级变行内，然后在父上text-aligin<br>                float</p>
 <p>四、BFC <a href="https://juejin.im/post/5909db2fda2f60005d2093db" target="_blank" rel="noopener">https://juejin.im/post/5909db2fda2f60005d2093db</a><br>    理解：BFC是css布局的一个概念，是一块独立的渲染区域，一个环境，里面的元素不会影响到外部的元素<br>    如何生成BFC：（脱离文档流）<br>             【1】根元素，即HTML元素（最大的一个BFC）<br>             【2】float的值不为none<br>             【3】position的值为absolute或fixed<br>             【4】overflow的值不为visible（默认值。内容不会被修剪，会呈现在元素框之外）<br>             【5】display的值为inline-block、table-cell、table-caption<br>    BFC布局规则：1.内部的Box会在垂直方向，一个接一个地放置。<br>             2.属于同一个BFC的两个相邻的Box的margin会发生重叠<br>             3.BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此, 文字环绕效果，设置float<br>             4.BFC的区域不会与float box重叠。<br>             5.计算BFC的高度，浮动元素也参与计算<br>    BFC作用：1.自适应两栏布局<br>         2.可以阻止元素被浮动元素覆盖<br>         3.可以包含浮动元素—清除内部浮动 原理:：触发父div的BFC属性，使下面的子div都处在父div的同一个BFC区域之内<br>         4.分属于不同的BFC时，可以阻止margin重叠</p>
-<p>二、什么是闭包和原型链<br>    内部函数可以访问定义他们外部函数的参数和变量。（作用域链的向上查找，把外围的作用域中的变量值存储在内存中而不是在函数调用完毕后销毁）设计私有的方法和变量，避免全局变量的污染<br>    函数嵌套函数<br>    本质是将函数内部和外部连接起来。优点是可以读取函数内部的变量，让这些变量的值始终保存在内存中，不会在函数被调用之后自动清除<br>   闭包的缺陷：<br>        1.闭包的缺点就是常驻内存会增大内存使用量，并且使用不当容易造成内存泄漏<br>        2.如果不是因为某些特殊任务而需要闭包，在没有必要的情况下，在其它函数中创建函数是不明智的，因为闭包对脚本性能具有负面影响，包括处理速度和内存消耗。</p>
-<p>   内存溢出和内存泄漏（给的不够用| 用了不归还）<br>    内存溢出：在程序中申请内存时，没有足够的内存空间供其使用，出现out of memory；比如申请了一个integer,但给它存了long才能存下的数，那就是内存溢出<br>    内存泄漏：在程序申请内存后，无法释放已申请的内存空间，一次内存泄漏危害可以忽略，但内存泄漏堆积后果很严重，无论多少内存，迟到会被占光</p>
-<p>   举列子：闭包中的this,对象函数。匿名函数返回函数return function</p>
-<p>   作用域：(由当前环境与上层环境一系列的变量对象组成！！！保证 当先执行环境里，有权访问的变量和函数是有序的，作用域链变量只能被向上访问)<br>    定义：由当前环境与上层环境的一系列变量对象组成(函数嵌套函数，内部一级级往上有序访问变量或对象)<br>    作用是：保证当前执行环境里，有权访问的变量和函数时有序的，作用域链的变量只能被向上访问<br>        变量访问到window对象及被终止，作用域链向下访问是不允许的<br>        1.改变作用域有 with try..中的catch，<br>        2.所有为定义的直接赋值的变量自动声明为全局作用域</p>
-<pre><code>作用域：一套规则，管理引擎如何在当前作用域以及嵌套的子作用域中根据标识符名称
-    查找变量（标识符就是变量或者函数名）（只用全局作用域和局部作用域）（作用域在它创建的时候就存在了）
-
-代码执行分为两个阶段：
-    1.代码编译阶段：有编译器完成，将代码翻译可执行的代码，这个阶段会被确定
-    2.代码执行阶段：有js引擎完成，主要执行可执行的大妈，这个阶段执行上下文被创建（对象被创建）
-
-执行上下文：一个看不见得对象，存在若干个属性和变量，它被调用的时候创建的。函数被调用查看的this指向的object，object就是上下文（只有被调用的时候创建）
-</code></pre><p>   作用域链: <a href="https://blog.csdn.net/yooungt13/article/details/20581635" target="_blank" rel="noopener">https://blog.csdn.net/yooungt13/article/details/20581635</a><br>        · 当代码在一个环境中执行时，会创建变量对象的一个作用域链,<br>        举例子：var name =”Tom”<br>            function sayHi () {<br>                alert(‘Hi,’+name)<br>            }<br>            sayHi()  //Hi, Tom<br>        函数sayHi()的执行环境为全局环境，所以它的变量对象为window。当函数执行到name时，先查找局部环境，找到则换回，否则顺着作用域查找，在全局环境中，<br>        找到name返回，这一查找变量的有序过程的依据就是作用域。</p>
-<pre><code>· 作用域链是保证执行环境有权访问的所有变量和函数的有序访问
-</code></pre><p>   原型链：函数的原型链对象constructor默认指向函数本身，原型对象除了有原型属性外，为了实现继承，还有一个原型链指针<em>proto</em>,<br>       该指针是指向上一层的原型对象，而上一层的原型对象的结构依然类似。因此可以利用<em>proto</em>一直指向Object的原型对象上，而Object<br>       原型对象用Object.prototype.<em>proto</em>  = null表示原型链顶端。如此形成了js的原型链继承。同时所有的js对象都有Object的基本防范</p>
 <p>三、类的创建和继承<br>    （es5）new 一个function，在这个function的prototype里增加属性和方法, 类里面有方法和属性<br>     (es6)中class, extends<br>    继承：<br>         原型链继承： function Cat(){ } Cat.prototype = new Animal(); Cat.prototype.name = ‘cat’; 无法实现多继承<br>        构造继承：   使用父类的构造函数来增强子类实例。function Cat(name){Animal.call(this);this.name = name || ‘Tom’;} 无法继承父类原型链上的属性跟方法  installof去检验<br>        实例继承：  为父类实例添加新特性，作为子类实例的返回<br>        拷贝继承： 拷贝父类元素上的属性跟方法<br>        组合继承：构造继承 + 原型继承的组合体<br>        寄生组合继承：通过寄生方式，在构造继承上加一个Super函数(没有实例和方法) 让他的原型链指向父类的原型链<br>                  砍掉父类的实例属性，这样，在调用两次父类的构造的时候，就不会初始化两次实例方法/属性<br>    如何判断是那种类型</p>
 <p>四、异步回调（如何解决回调地狱）<br>    promise、generator、async/await</p>
 <pre><code>promise： 1.是一个对象，用来传递异步操作的信息。代表着某个未来才会知道结果的时间，并未这个事件提供统一的api，供进异步处理
