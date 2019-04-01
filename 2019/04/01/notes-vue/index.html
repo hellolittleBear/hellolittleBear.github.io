@@ -16,7 +16,7 @@
     <link rel="dns-prefetch" href="http://yoursite.com">
     <!--SEO-->
 
-    <meta name="keywords" content>
+    <meta name="keywords" content="vue">
 
 
     <meta name="description" content="Vue是前端非常产常用的项目开发框架，了解并掌握Vue开发是我目前最亟需做的事情。
@@ -158,6 +158,8 @@ props校验与requ...">
             <i class="fa fa-tags"></i>
             <span class="tags-meta">
                 
+                    <a class="tag-link" href="/tags/vue/">vue</a>
+                
             </span>
         </span>
     
@@ -178,18 +180,18 @@ props校验与requ...">
     <div class="post-body post-content">
         <p>Vue是前端非常产常用的项目开发框架，了解并掌握Vue开发是我目前最亟需做的事情。</p>
 <a id="more"></a>
-<h2 id="Vue-js主要用途"><a href="#Vue-js主要用途" class="headerlink" title="Vue.js主要用途"></a>Vue.js主要用途</h2><p>解决手动操作DOM的性能消耗问题以及数据驱动为主的主要功能。</p>
+<h2 id="Vue-js主要用途"><a href="#Vue-js主要用途" class="headerlink" title="Vue.js主要用途"></a><font color="#42b983">Vue.js主要用途</font></h2><p>解决手动操作DOM的性能消耗问题以及数据驱动为主的主要功能。</p>
 <hr>
-<h2 id="props校验与required同时存在"><a href="#props校验与required同时存在" class="headerlink" title="props校验与required同时存在"></a>props校验与required同时存在</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">let vm1 = new Vue(&#123;</span><br><span class="line">  props: &#123;</span><br><span class="line">    Message: &#123;</span><br><span class="line">      type: String,</span><br><span class="line">      required: true,</span><br><span class="line">      validator: (value) =&gt; &#123;</span><br><span class="line">        return [&apos;ig&apos;, &apos;fpx&apos;, &apos;top&apos;].includes(value);</span><br><span class="line">      &#125;,</span><br><span class="line">      default: &apos;nothing&apos;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 校验只是选择性的。即如果校验出错，打印警告，程序依然正常进行。</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="props校验与required同时存在"><a href="#props校验与required同时存在" class="headerlink" title="props校验与required同时存在"></a><font color="#42b983">props校验与required同时存在</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">let vm1 = new Vue(&#123;</span><br><span class="line">  props: &#123;</span><br><span class="line">    Message: &#123;</span><br><span class="line">      type: String,</span><br><span class="line">      required: true,</span><br><span class="line">      validator: (value) =&gt; &#123;</span><br><span class="line">        return [&apos;ig&apos;, &apos;fpx&apos;, &apos;top&apos;].includes(value);</span><br><span class="line">      &#125;,</span><br><span class="line">      default: &apos;nothing&apos;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 校验只是选择性的。即如果校验出错，打印警告，程序依然正常进行。</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="父组件与子组件交互数据"><a href="#父组件与子组件交互数据" class="headerlink" title="父组件与子组件交互数据"></a>父组件与子组件交互数据</h2><h3 id="子组件为何不可以修改父组件传递的Prop？如果修改了，Vue如何监控属性的修改发出警告。"><a href="#子组件为何不可以修改父组件传递的Prop？如果修改了，Vue如何监控属性的修改发出警告。" class="headerlink" title="子组件为何不可以修改父组件传递的Prop？如果修改了，Vue如何监控属性的修改发出警告。"></a>子组件为何不可以修改父组件传递的Prop？如果修改了，Vue如何监控属性的修改发出警告。</h3><p>前一个问题其实问的有点问题。修改是可以修改的，但是不建议修改，毕竟开发中严格按照<strong>0warning、0error</strong>的开发规范。<br>因为会出现一种情况。在封装某些组件的时候（比如element-ui的tree组件），必须要这么做。所以，如非必要，坚决不做！！<br>实际开发中，表单的子组件通信可以修改表单对象属性的值作为props数据传递给子组件进行修改，不警告。基本类型修改、警告。<br>最后，尤雨溪本人不反对这种方式，可以作为父子组件双向通信的一种简易方案。</p>
-<hr>
-<h2 id="ref"><a href="#ref" class="headerlink" title="$ref"></a>$ref</h2><ul>
-<li>$refs 只会在组件渲染完成之后生效，并且它们不是响应式的。避免在计算属性时访问$ref</li>
-<li>父组件可以通过绑定子组件$ref来使用子组件的属性和方法。</li>
+<h2 id="父子组件间通信问题"><a href="#父子组件间通信问题" class="headerlink" title="父子组件间通信问题"></a><font color="#42b983">父子组件间通信问题</font></h2><p>父子组件通信主要有$emit、props、$ref三种方式。</p>
+<ul>
+<li>$emit用于子组件向父组件传递信息的。父组件绑定props数据传递传递到子组件，自组件通过$emit方法传递信息给父组件。</li>
+<li>$ref主要用于调用子组件的属性和方法的。绑定子组件，则可调用子组件方法和属性，绑定原生DOM，一般用于选择器作用。</li>
+<li>props则用于子组件接收父组件传递的属性的。另外，子组件是可以修改父组件传递的数据的。引用类型属性修改不告警，基本类型数据，则会发出告警，开发中一般不建议修改，毕竟文档追求的是 <strong><em>0warning0error</em></strong>的。但是在某些情况下（封装组件时，比如elementui中tree组件），就必须要修改，别无他法。<br>最后，尤雨溪本人不反对这种方式，可以作为父子组件双向通信的一种简易方案。</li>
 </ul>
-<hr>
-<h2 id="sync"><a href="#sync" class="headerlink" title=".sync"></a>.sync</h2>
+<!-- ## <font color=#42b983>.sync</font> -->
+
     </div>
     
     <div class="post-footer">
@@ -206,15 +208,10 @@ props校验与requ...">
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2019/04/01/README/" class="pre-post btn btn-default" title="README">
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">README</span>
-        </a>
     
-    
-        <a href="/2019/03/20/nodejs/" class="next-post btn btn-default" title="Node.js笔记">
+        <a href="/2019/04/01/README/" class="next-post btn btn-default" title="README">
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">Node.js笔记</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">README</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -257,7 +254,7 @@ props校验与requ...">
     <div class="widget">
         <h3 class="title">Table of Contents</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue-js主要用途"><span class="toc-text">Vue.js主要用途</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#props校验与required同时存在"><span class="toc-text">props校验与required同时存在</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#父组件与子组件交互数据"><span class="toc-text">父组件与子组件交互数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#子组件为何不可以修改父组件传递的Prop？如果修改了，Vue如何监控属性的修改发出警告。"><span class="toc-text">子组件为何不可以修改父组件传递的Prop？如果修改了，Vue如何监控属性的修改发出警告。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ref"><span class="toc-text">$ref</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sync"><span class="toc-text">.sync</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue-js主要用途"><span class="toc-text">Vue.js主要用途</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#props校验与required同时存在"><span class="toc-text">props校验与required同时存在</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#父子组件间通信问题"><span class="toc-text">父子组件间通信问题</span></a></li></ol>
         
     </div>
 </aside>
