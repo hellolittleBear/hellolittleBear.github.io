@@ -19,11 +19,10 @@
     <meta name="keywords" content="vue">
 
 
-    <meta name="description" content="Vue是前端非常产常用的项目开发框架，了解并掌握Vue开发是我目前最亟需做的事情。
+    <meta name="description" content="Vue.js（数据驱动（释放DOM操作）组件化）是前端经常使用到的项目开发框架，了解并掌握Vue开发是我目前最亟需做的事情。
 
-Vue.js主要用途解决手动操作DOM的性能消耗问题以及数据驱动为主的主要功能。
 
-props校验与requ...">
+props校验与required同时存在123456789101...">
 
 
 
@@ -178,9 +177,8 @@ props校验与requ...">
     </div>
     
     <div class="post-body post-content">
-        <p>Vue是前端非常产常用的项目开发框架，了解并掌握Vue开发是我目前最亟需做的事情。</p>
+        <p>Vue.js（数据驱动（释放DOM操作）组件化）是前端经常使用到的项目开发框架，了解并掌握Vue开发是我目前最亟需做的事情。</p>
 <a id="more"></a>
-<h2 id="Vue-js主要用途"><a href="#Vue-js主要用途" class="headerlink" title="Vue.js主要用途"></a><font color="#42b983">Vue.js主要用途</font></h2><p>解决手动操作DOM的性能消耗问题以及数据驱动为主的主要功能。</p>
 <hr>
 <h2 id="props校验与required同时存在"><a href="#props校验与required同时存在" class="headerlink" title="props校验与required同时存在"></a><font color="#42b983">props校验与required同时存在</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">let vm1 = new Vue(&#123;</span><br><span class="line">  props: &#123;</span><br><span class="line">    Message: &#123;</span><br><span class="line">      type: String,</span><br><span class="line">      required: true,</span><br><span class="line">      validator: (value) =&gt; &#123;</span><br><span class="line">        return [&apos;ig&apos;, &apos;fpx&apos;, &apos;top&apos;].includes(value);</span><br><span class="line">      &#125;,</span><br><span class="line">      default: &apos;nothing&apos;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 校验只是选择性的。即如果校验出错，打印警告，程序依然正常进行。</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <hr>
@@ -188,9 +186,17 @@ props校验与requ...">
 <ul>
 <li>$emit用于子组件向父组件传递信息的。父组件绑定props数据传递传递到子组件，自组件通过$emit方法传递信息给父组件。</li>
 <li>$ref主要用于调用子组件的属性和方法的。绑定子组件，则可调用子组件方法和属性，绑定原生DOM，一般用于选择器作用。</li>
-<li>props则用于子组件接收父组件传递的属性的。另外，子组件是可以修改父组件传递的数据的。引用类型属性修改不告警，基本类型数据，则会发出告警，开发中一般不建议修改，毕竟文档追求的是 <strong><em>0warning0error</em></strong>的。但是在某些情况下（封装组件时，比如elementui中tree组件），就必须要修改，别无他法。<br>最后，尤雨溪本人不反对这种方式，可以作为父子组件双向通信的一种简易方案。</li>
+<li>props则用于子组件接收父组件传递的属性的。另外，子组件是可以修改父组件传递的数据的。引用类型属性修改不告警，基本类型数据，则会发出告警，开发中一般不建议修改，毕竟文档追求的是 <strong><em>0warning;0error</em></strong> 的。但是在某些情况下（封装组件时，比如elementui中tree组件），就必须要修改，别无他法。<br>最后，尤雨溪本人不反对这种方式，可以作为父子组件双向通信的一种简易方案。</li>
 </ul>
-<!-- ## <font color=#42b983>.sync</font> -->
+<hr>
+<h2 id="eventBus多次触发问题"><a href="#eventBus多次触发问题" class="headerlink" title="eventBus多次触发问题"></a><font color="#42b983">eventBus多次触发问题</font></h2><p>兄弟组件传递信息时使用eventBus;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">main.js</span><br><span class="line"></span><br><span class="line">window.eventBus = new Vue();</span><br><span class="line"></span><br><span class="line">子组件A</span><br><span class="line">eventBus.$emit(&apos;methodsName&apos;, params);</span><br><span class="line"></span><br><span class="line">兄弟组件B</span><br><span class="line">eventBus.$on(&apos;methodsName&apos;, params);</span><br></pre></td></tr></table></figure></p>
+<p>出现问题原因，组件生命周期不理解：<br>兄弟组件跳转时生命周期函数：A -&gt; B<br>A:beforeCreate() -&gt; A:created() -&gt; A:beforeMounted() -&gt; A:beoforeUpdate() -&gt; A:update() -&gt; B:beoforeCreate() -&gt; B:created() -&gt; B:beforeMounted() -&gt; A:beoferDestory() -&gt; A:destory() -&gt; B:mounted()</p>
+<p>所以</p>
+<ul>
+<li>$emit只能写在beforeDestory()或者destory()内</li>
+<li>$on只能写在beforeMounted()之前</li>
+<li>$on必须手动清除（beforeMounted()之后），否则会多次触发。</li>
+</ul>
 
     </div>
     
@@ -254,7 +260,7 @@ props校验与requ...">
     <div class="widget">
         <h3 class="title">Table of Contents</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue-js主要用途"><span class="toc-text">Vue.js主要用途</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#props校验与required同时存在"><span class="toc-text">props校验与required同时存在</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#父子组件间通信问题"><span class="toc-text">父子组件间通信问题</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#props校验与required同时存在"><span class="toc-text">props校验与required同时存在</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#父子组件间通信问题"><span class="toc-text">父子组件间通信问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#eventBus多次触发问题"><span class="toc-text">eventBus多次触发问题</span></a></li></ol>
         
     </div>
 </aside>
