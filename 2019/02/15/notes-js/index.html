@@ -21,9 +21,10 @@
 
     <meta name="description" content="灵魂不朽，朽木开枝…
 
-this指向问题
-当函数作为对象的方法被调用时，this就会指向该对象。比如 call、apply的this指向。
-当函数作为全局普通函数时， this指向window。...">
+闭包、原型链
+产生： 当函数作为返回值时、函数作为参数传入时。
+优点： 可以构造私有方法、访问函数内部变量。
+缺点： 增加内存消耗，使用不当很容易内存泄漏。如非必要，不要...">
 
 
 
@@ -108,23 +109,31 @@ this指向问题
                     <ul class="menu">
                         
                             <li role="presentation" class="text-center">
-                                <a href="/"><i class="fa "></i>Home</a>
+                                <a href="/"><i class="fa "></i>首页</a>
                             </li>
                         
                             <li role="presentation" class="text-center">
-                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                                <a href="/archives/"><i class="fa "></i>时间线</a>
                             </li>
                         
                             <li role="presentation" class="text-center">
-                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                                <a href="/categories/fore-end/"><i class="fa "></i>前端</a>
                             </li>
                         
                             <li role="presentation" class="text-center">
-                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                                <a href="/categories/back-end/"><i class="fa "></i>后端</a>
                             </li>
                         
                             <li role="presentation" class="text-center">
-                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                                <a href="/categories/tool/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/chat/"><i class="fa "></i>闲聊</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/project/"><i class="fa "></i>项目</a>
                             </li>
                         
                     </ul>
@@ -149,7 +158,7 @@ this指向问题
     
         <span class="categories-meta fa-wrap">
             <i class="fa fa-folder-open-o"></i>
-            <a class="category-link" href="/categories/前端/">前端</a>
+            <a class="category-link" href="/categories/fore-end/">fore-end</a>
         </span>
     
 
@@ -178,20 +187,6 @@ this指向问题
     <div class="post-body post-content">
         <p>灵魂不朽，朽木开枝…</p>
 <a id="more"></a>
-<h2 id="this指向问题"><a href="#this指向问题" class="headerlink" title="this指向问题"></a><font color="#67C23A">this指向问题</font></h2><ul>
-<li>当函数作为对象的方法被调用时，this就会指向该对象。比如 call、apply的this指向。</li>
-<li>当函数作为全局普通函数时， this指向window。</li>
-<li>构造器被调用时， this指向这个返回的对象。</li>
-<li>如果是箭头函数的话，this看所在函数定义在那个对象下，如果是嵌套，this指向最近的对象。</li>
-</ul>
-<p><strong>如何改变this指向</strong></p>
-<ul>
-<li>es6 箭头函数，强行绑定该函数</li>
-<li>保存this。 let that = this;</li>
-<li>借助apply、call、bind</li>
-<li>new实例化对象</li>
-</ul>
-<hr>
 <h2 id="闭包、原型链"><a href="#闭包、原型链" class="headerlink" title="闭包、原型链"></a><font color="#67C23A">闭包、原型链</font></h2><ul>
 <li>产生： 当函数作为返回值时、函数作为参数传入时。</li>
 <li>优点： 可以构造私有方法、访问函数内部变量。</li>
@@ -204,34 +199,8 @@ this指向问题
 <li>闭包会产生多余空间开销，但是不一定会产生泄漏问题。DOM对象和js对象循环引用以前会产生内存泄漏，因为以前IE使用引用计数进行GC，现在采用标记清除GC，不会了。await 递归循环也会产生内存泄漏。</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">function sleep(delay) &#123;</span><br><span class="line">  return new Promise(resolve =&gt; setTimeout(resolve, delay))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let i = 0;</span><br><span class="line">async function start() &#123;</span><br><span class="line">  i++;</span><br><span class="line">  if(i&gt;6) return;</span><br><span class="line">  console.log(&apos;start:i= &apos;+ i);</span><br><span class="line">  await sleep(10);</span><br><span class="line">  await start();</span><br><span class="line">  console.log(&apos;end:i= &apos; + i);</span><br><span class="line">&#125;</span><br><span class="line">start();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">console:</span><br><span class="line">  start:i= 2</span><br><span class="line">  start:i= 3</span><br><span class="line">  start:i= 4</span><br><span class="line">  start:i= 5</span><br><span class="line">  start:i= 6</span><br><span class="line">  end:i= 7</span><br><span class="line">  end:i= 7</span><br><span class="line">  end:i= 7</span><br><span class="line">  end:i= 7</span><br><span class="line">  end:i= 7</span><br><span class="line"></span><br><span class="line">// 解释： await start();递归产生一个pedding状态的Promise，前一个promise都在等在后一个promsie状态变为resolve。直至死循环。四个字：异步递归</span><br></pre></td></tr></table></figure>
-<h2 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a><font color="#67C23A">数组去重</font></h2><ul>
-<li><strong><em>new Set()</em></strong><br>undefined、NaN被认为是相同的（虽然NaN != NaN）。+0、-0被认为是相同的（es5之前不同）。</li>
-<li><p><strong><em>indexOf查找splice删除</em></strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function unique(arr = []) &#123;</span><br><span class="line">  let array = [];</span><br><span class="line">  for(let i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">    array.indexOf(arr[i]) &lt; 0 array.push(arr[i]) : &apos;&apos;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong><em>sort排序lastIndexOf查找splice删除</em></strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function unique(arr = []) &#123;</span><br><span class="line">  let array = arr.sort((prev, cur) =&gt; &#123;</span><br><span class="line">    return prev - cur;</span><br><span class="line">  &#125;);</span><br><span class="line">  array.forEach((item, i) =&gt; &#123;</span><br><span class="line">    let index = array.indexOf(item),</span><br><span class="line">        lastIndex = array.lastIndexOf(item);</span><br><span class="line">    index !== lastIndex ? array.splice(index, lastIndex - index) : &apos;&apos;;</span><br><span class="line">  &#125;)</span><br><span class="line">  return array;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong><em>利用对象属性名不同去重，不能分辨字符串数字，因为所有的项都回转换成字符串</em></strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function unique(arr = []) &#123;</span><br><span class="line">  let obj = &#123;&#125;;</span><br><span class="line">  arr.forEach(item =&gt; &#123;</span><br><span class="line">    if(!obj[item]) &#123;</span><br><span class="line">      obj[item] = 1;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  return Object.keys(obj);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong><em>利用includes判断数组是否包含该值进行添加，去重</em></strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function unique(arr = []) &#123;</span><br><span class="line">  let array = [];</span><br><span class="line">  array.push(arr[0]);</span><br><span class="line">  arr.forEach(item =&gt; &#123;</span><br><span class="line">    if(!array.includes(item)) &#123;</span><br><span class="line">      array.push(item);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  return array;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong><em>利用filter、hasOwnProperty去重</em></strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function unique(arr = []) &#123;</span><br><span class="line">  let obj = &#123;&#125;;</span><br><span class="line">  return arr.filter(item =&gt; &#123;</span><br><span class="line">    let isOwnProterty = obj.hasOwnProperty(item + typeof item);</span><br><span class="line">    if(isOwnProperty) &#123;</span><br><span class="line">      obj[item + typeof item] = true;</span><br><span class="line">      reutrn true;</span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong><em>利用indexOf查找、filter过滤去重</em></strong>自动删除undefined、NaN<br>function unique(arr = []) {<br>return arr.filter((item, index) =&gt; {<br>  return arr.indexOf(item) === index;<br>})<br>}</p>
-</li>
-<li><p><strong><em>利用Maps数据结构的key值不同去重，与对象属性名不同类似</em></strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function unique(arr) &#123;</span><br><span class="line">  let map = new Map();</span><br><span class="line">  arr.forEach((item, index) =&gt; &#123;</span><br><span class="line">    !map.has(item) ? map.set(item, true) : &apos;&apos;;</span><br><span class="line">  &#125;)</span><br><span class="line">  return map.keys();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong><em>利用reduce逐步判断前后俩值</em></strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function unique(arr = []) &#123;</span><br><span class="line">  return arr.reduce((prev, cur) =&gt; prev.includes(cur) ? prev : [...prev, cur], []);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
 <h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a><font color="#67C23A">原型链</font></h2><p>…</p>
-<h2 id="promise、async-await、generator"><a href="#promise、async-await、generator" class="headerlink" title="promise、async/await、generator"></a><font color="#67C23A">promise、async/await、generator</font></h2>
+<h2 id="promise、async-await、generator"><a href="#promise、async-await、generator" class="headerlink" title="promise、async/await、generator"></a><font color="#67C23A">promise、async/await、generator</font></h2><h2 id="http协议"><a href="#http协议" class="headerlink" title="## http协议"></a>## <font color="#67C23A">http协议</font></h2>
     </div>
     
     <div class="post-footer">
@@ -299,7 +268,7 @@ this指向问题
     <div class="widget">
         <h3 class="title">Table of Contents</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#this指向问题"><span class="toc-text">this指向问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#闭包、原型链"><span class="toc-text">闭包、原型链</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内存溢出、内存泄漏"><span class="toc-text">内存溢出、内存泄漏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数组去重"><span class="toc-text">数组去重</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原型链"><span class="toc-text">原型链</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#promise、async-await、generator"><span class="toc-text">promise、async/await、generator</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#闭包、原型链"><span class="toc-text">闭包、原型链</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内存溢出、内存泄漏"><span class="toc-text">内存溢出、内存泄漏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原型链"><span class="toc-text">原型链</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#promise、async-await、generator"><span class="toc-text">promise、async/await、generator</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http协议"><span class="toc-text">## http协议</span></a></li></ol>
         
     </div>
 </aside>
