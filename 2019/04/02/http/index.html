@@ -21,7 +21,7 @@
 
     <meta name="description" content="这篇文章是日常笔记中抽出来的基础核心知识而总结得出的。
 
-HTTP协议">
+HTTP协议HTTP协议是基于TCP/IP协议的应用层协议，它不关心数据传输的细节，主要是用来规定客户端与服务器的数据传输格式，默认端口...">
 
 
 
@@ -186,7 +186,30 @@ HTTP协议">
     <div class="post-body post-content">
         <p>这篇文章是日常笔记中抽出来的基础核心知识而总结得出的。</p>
 <a id="more"></a>
-<h2 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a><font color="#42b983">HTTP协议</font></h2>
+<h2 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a><font color="#42b983">HTTP协议</font></h2><p>HTTP协议是基于TCP/IP协议的应用层协议，它不关心数据传输的细节，主要是用来规定客户端与服务器的数据传输格式，默认端口80。</p>
+<h3 id="HTTP协议-1"><a href="#HTTP协议-1" class="headerlink" title="HTTP协议"></a>HTTP协议</h3><ul>
+<li>无状态、无连接<br>每次HTTP请求都是独立的。标准的http协议指的是不包括cookies, session，application的http协议，他们都不属于标准协议，虽然各种网络应用提供商，实现语言、web容器等，都默认支持它。每一个访问都是无连接，服务器挨个处理访问队列里的访问，处理完一个就关闭连接，然后处理下一个新的无连接的含义是限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接。</li>
+</ul>
+<p>现实是必须要有连接的。<br>cookie和session的使用缓存了客户端与服务器之间的交互信息。</p>
+<ul>
+<li>管道机制<br>即在同一个TCP连接时，客户端可以发送多次HTTP请求。服务器依照顺序进行处理。</li>
+</ul>
+<h3 id="HTTP2"><a href="#HTTP2" class="headerlink" title="HTTP2"></a>HTTP2</h3><p>HTTP2在原HTTP基础上增加了部分功能。</p>
+<ul>
+<li><p>二进制协议<br>由于HTTP2之前版本的头部信息是文本格式，在客户端和服务器端需要解码转换为二进制非常耗时，HTTP2消息被分成很小的帧和消息，然后每一个帧用二进制编码。</p>
+</li>
+<li><p>多路复用（全双工）<br>多路复用解决了老版本的阻塞问题。老版本中，再要一个TCP连接里，客户端与服务器可以同时发送多个请求或回应，但是是按照时间顺序一一处理，HTTP2增加了多路复用机制，异步处多个请求。避免“队头阻塞”。</p>
+</li>
+<li><p>数据流<br>因为2的数据包是不按顺序发阿松的，同一个连接里面连续的数据包，可能属于不同的回应。因此，必须要对数据包做标记，指出它属于哪一个回应。<br>同一类的所有数据包，就是一个数据流stream。<br>之前版本取消数据流的唯一方法是关闭TCP连接，这样会造成其他请求的数据全部丢失。2版本增加了RES_STAREM帧，用来控制数据流是否取消发送和接收。</p>
+</li>
+<li><p>头部信息压缩<br>HTTP 协议不带有状态，每次请求都必须附上所有信息。所以，请求的很多字段都是重复的，比如Cookie和User Agent，一模一样的内容，每次请求都必须附带，这会浪费很多带宽，也影响速度。</p>
+</li>
+</ul>
+<p>HTTP/2 对这一点做了优化，引入了头信息压缩机制（header compression）。一方面，头信息使用gzip或compress压缩后再发送；另一方面，客户端和服务器同时维护一张头信息表，所有字段都会存入这个表，生成一个索引号，以后就不发送同样字段了，只发送索引号，这样就提高速度了。</p>
+<ul>
+<li>服务器推推送<br>即服务器未经允许，主动向客户端发送信息资源。<br>常见场景是客户端请求一个网页，这个网页里面包含很多静态资源。正常情况下，客户端必须收到网页后，解析HTML源码，发现有静态资源，再发出静态资源请求。其实，服务器可以预期到客户端请求网页后，很可能会再请求静态资源，所以就主动把这些静态资源随着网页一起发给客户端了。</li>
+</ul>
+
     </div>
     
     <div class="post-footer">
@@ -203,9 +226,9 @@ HTTP协议">
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2019/04/02/arrayDR/" class="pre-post btn btn-default" title="数组去重问题">
+        <a href="/2019/04/02/arrayDR/" class="pre-post btn btn-default" title="数组去重">
             <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">数组去重问题</span>
+            <span class="hidden-xs">数组去重</span>
         </a>
     
     
@@ -254,7 +277,7 @@ HTTP协议">
     <div class="widget">
         <h3 class="title">Table of Contents</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP协议"><span class="toc-text">HTTP协议</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP协议"><span class="toc-text">HTTP协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP协议-1"><span class="toc-text">HTTP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP2"><span class="toc-text">HTTP2</span></a></li></ol></li></ol>
         
     </div>
 </aside>
