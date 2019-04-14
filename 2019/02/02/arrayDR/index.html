@@ -1,0 +1,334 @@
+<!DOCTYPE HTML>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="梦在燃烧">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+    <meta name="keywords" content>
+
+
+    <meta name="description" content="Set集合12let arr = new Set(array);[...arr]
+ES6提供了新的数据结构Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。
+Set本身是一个构造函数，...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>数组去重 | 梦在燃烧</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="梦在燃烧" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3441426403,3329611310&amp;fm=26&amp;gp=0.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="梦在燃烧">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/subtitle.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">梦在燃烧</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间线</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/fore-end/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/back-end/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/tool/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/chat/"><i class="fa "></i>闲聊</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/project/"><i class="fa "></i>项目</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="数组去重">
+            
+	            数组去重
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/前端/">前端</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/02/02</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="Set集合"><a href="#Set集合" class="headerlink" title="Set集合"></a><font color="#67C23A">Set集合</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let arr = new Set(array);</span><br><span class="line">[...arr]</span><br></pre></td></tr></table></figure>
+<p>ES6提供了新的数据结构Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。</p>
+<p>Set本身是一个构造函数，用来生成Set数据结构。</p>
+<p>Set数据结构的唯一值特性可以用于数组中去重。</p>
+<p>如果数组中存在多个undefined、NaN，会被认为是相同值，只保留一位。 当然 +0与-0也是相同的。</p>
+<hr>
+<h2 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf"></a><font color="#67C23A">indexOf</font></h2><p>利用indexOf查询是否存在，不存在则推入栈中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function unique(arr = []) &#123;</span><br><span class="line">  let array = [];</span><br><span class="line">  for(let i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">    array.indexOf(arr[i]) &lt; 0 array.push(arr[i]) : &apos;&apos;;</span><br><span class="line">  &#125;</span><br><span class="line">  return array;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="sort-splice"><a href="#sort-splice" class="headerlink" title="sort + splice"></a><font color="#67C23A">sort + splice</font></h2><p>思路：sort排序，splice删除相邻重复值。</p>
+<p>这种做法感觉很多余，除非你需要去重后需要排序。而且利用splice的话非常麻烦，本来数组就是栈的形式存放，而splice又是删除的操作。<strong>不建议</strong>。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function unique(arr = []) &#123;</span><br><span class="line">  let array = arr.sort((prev, cur) =&gt; &#123;</span><br><span class="line">    return prev - cur;</span><br><span class="line">  &#125;);</span><br><span class="line">  array.forEach((item, i) =&gt; &#123;</span><br><span class="line">    let index = array.indexOf(item),</span><br><span class="line">        lastIndex = array.lastIndexOf(item);</span><br><span class="line">    index !== lastIndex ? array.splice(index, lastIndex - index) : &apos;&apos;;</span><br><span class="line">  &#125;)</span><br><span class="line">  return array;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="对象属性名不同"><a href="#对象属性名不同" class="headerlink" title="对象属性名不同"></a><font color="#67C23A">对象属性名不同</font></h2><p>可以利用对象属性名不同的特性进行去重。</p>
+<p>但是！数组值会被转换为字符串，而且属性名会被全部转换为字符串，所以不能区分字符串数字。 比如： 会默认为 ‘1’ == 1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function unique(arr = []) &#123;</span><br><span class="line">  let obj = &#123;&#125;;</span><br><span class="line">  arr.forEach(item =&gt; &#123;</span><br><span class="line">    if(!obj[item]) &#123;</span><br><span class="line">      obj[item] = 1;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  return Object.keys(obj);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="includes"><a href="#includes" class="headerlink" title="includes"></a><font color="#67C23A">includes</font></h2><p>利用es8的includes判断数组是否包含该值进行添加，去重。原理与indexOf一样的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function unique(arr = []) &#123;</span><br><span class="line">  let array = [];</span><br><span class="line">  array.push(arr[0]);</span><br><span class="line">  arr.forEach(item =&gt; &#123;</span><br><span class="line">    if(!array.includes(item)) &#123;</span><br><span class="line">      array.push(item);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  return array;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="fliter-hasOwnProperty"><a href="#fliter-hasOwnProperty" class="headerlink" title="fliter + hasOwnProperty"></a><font color="#67C23A">fliter + hasOwnProperty</font></h2><p>利用filter、hasOwnProperty去重。只能简单的判断数字和字符串。其他都不能。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function unique(arr = []) &#123;</span><br><span class="line">  let obj = &#123;&#125;;</span><br><span class="line">  return arr.filter(item =&gt; &#123;</span><br><span class="line">    let isOwnProterty = obj.hasOwnProperty(item + typeof item);</span><br><span class="line">    if(isOwnProperty) &#123;</span><br><span class="line">      obj[item + typeof item] = true;</span><br><span class="line">      reutrn true;</span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="indexOf-filter"><a href="#indexOf-filter" class="headerlink" title="indexOf + filter"></a><font color="#67C23A">indexOf + filter</font></h2><p>换汤不换药，与上面没有什么不同。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function unique(arr = []) &#123;</span><br><span class="line">  return arr.filter((item, index) =&gt; &#123;</span><br><span class="line">    return arr.indexOf(item) === index;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Map数据结构"><a href="#Map数据结构" class="headerlink" title="Map数据结构"></a><font color="#67C23A">Map数据结构</font></h2><p>利用Map数据结构的key值不同去重，与对象属性名不同类似<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function unique(arr) &#123;</span><br><span class="line">  let map = new Map();</span><br><span class="line">  arr.forEach((item, index) =&gt; &#123;</span><br><span class="line">    !map.has(item) ? map.set(item, true) : &apos;&apos;;</span><br><span class="line">  &#125;)</span><br><span class="line">  return map.keys();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="reduce逐步判断"><a href="#reduce逐步判断" class="headerlink" title="reduce逐步判断"></a><font color="#67C23A">reduce逐步判断</font></h2><p>利用reduce逐步判断前后俩值。<strong>推荐</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function unique(arr = []) &#123;</span><br><span class="line">  return arr.reduce((prev, cur) =&gt; prev.includes(cur) ? prev : [...prev, cur], []);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：请注明出处 © <a href="https://github.com/hellolittleBear" target="_blank">helloLittleBear</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/02/15/notes-js/" class="pre-post btn btn-default" title="JS笔记总结">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">JS笔记总结</span>
+        </a>
+    
+    
+        <a href="/2019/01/15/working/" class="next-post btn btn-default" title="实习安排(闲聊版)">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">实习安排(闲聊版)</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-Hans'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Set集合"><span class="toc-text">Set集合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#indexOf"><span class="toc-text">indexOf</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sort-splice"><span class="toc-text">sort + splice</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对象属性名不同"><span class="toc-text">对象属性名不同</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#includes"><span class="toc-text">includes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fliter-hasOwnProperty"><span class="toc-text">fliter + hasOwnProperty</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#indexOf-filter"><span class="toc-text">indexOf + filter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Map数据结构"><span class="toc-text">Map数据结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reduce逐步判断"><span class="toc-text">reduce逐步判断</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

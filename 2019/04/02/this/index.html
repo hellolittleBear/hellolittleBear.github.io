@@ -20,15 +20,13 @@
 
 
     <meta name="description" content="
-如何改变this指向
-es6 箭头函数，强行绑定该函数
+this指向问题在es6之前是不存在class的，开发者需要自定义函数来构造类。
+
+es6 箭头函数，强行绑定该函数作用域
+
 保存this。 let that = this;
-借助apply、call、bind
-new实例化对象
 
-
-this指向问题
-当函数作为...">
+借助apply...">
 
 
 
@@ -190,14 +188,17 @@ this指向问题
     
     <div class="post-body post-content">
         <a id="more"></a>
-<h2 id="如何改变this指向"><a href="#如何改变this指向" class="headerlink" title="如何改变this指向"></a><font color="#67C23A">如何改变this指向</font></h2><ul>
-<li>es6 箭头函数，强行绑定该函数</li>
-<li>保存this。 let that = this;</li>
+<h2 id="this指向问题"><a href="#this指向问题" class="headerlink" title="this指向问题"></a><font color="#67C23A">this指向问题</font></h2><p>在es6之前是不存在class的，开发者需要自定义函数来构造类。</p>
+<ul>
+<li><p>es6 箭头函数，强行绑定该函数作用域</p>
+</li>
+<li><p>保存this。 let that = this;</p>
+</li>
 <li>借助apply、call、bind</li>
 <li>new实例化对象</li>
 </ul>
 <hr>
-<h2 id="this指向问题"><a href="#this指向问题" class="headerlink" title="this指向问题"></a><font color="#67C23A">this指向问题</font></h2><ul>
+<h2 id="this指向问题-1"><a href="#this指向问题-1" class="headerlink" title="this指向问题"></a><font color="#67C23A">this指向问题</font></h2><ul>
 <li>当函数作为对象的方法被调用时，this就会指向该对象。比如 call、apply的this指向。</li>
 <li>当函数作为全局普通函数时， this指向window。</li>
 <li>构造器被调用时， this指向这个返回的对象。</li>
@@ -209,7 +210,7 @@ this指向问题
     <div class="post-footer">
         <div>
             
-                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="https://github.com/hellolittleBear" target="_blank">helloLittleBear</a>
+                转载声明：请注明出处 © <a href="https://github.com/hellolittleBear" target="_blank">helloLittleBear</a>
             
         </div>
         <div>
@@ -226,9 +227,9 @@ this指向问题
         </a>
     
     
-        <a href="/2019/04/01/README/" class="next-post btn btn-default" title="README">
+        <a href="/2019/04/01/task/" class="next-post btn btn-default" title="日常任务">
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">README</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">日常任务</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -271,7 +272,7 @@ this指向问题
     <div class="widget">
         <h3 class="title">Table of Contents</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#如何改变this指向"><span class="toc-text">如何改变this指向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#this指向问题"><span class="toc-text">this指向问题</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#this指向问题"><span class="toc-text">this指向问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#this指向问题-1"><span class="toc-text">this指向问题</span></a></li></ol>
         
     </div>
 </aside>

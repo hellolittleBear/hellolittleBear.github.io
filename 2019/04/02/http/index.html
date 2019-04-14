@@ -19,9 +19,11 @@
     <meta name="keywords" content="core">
 
 
-    <meta name="description" content="这篇文章是日常笔记中抽出来的基础核心知识而总结得出的。
+    <meta name="description" content="HTTP协议是程序猿的核心终点知识，必须要掌握。
 
-HTTP协议HTTP协议是基于TCP/IP协议的应用层协议，它不关心数据传输的细节，主要是用来规定客户端与服务器的数据传输格式，默认端口...">
+
+简介
+HTTP协议是Hyper Text Transfer Protocol（超文本传输协议）的缩写,是用于从万维网（WWW:World W...">
 
 
 
@@ -184,10 +186,25 @@ HTTP协议HTTP协议是基于TCP/IP协议的应用层协议，它不关心数据
     </div>
     
     <div class="post-body post-content">
-        <p>这篇文章是日常笔记中抽出来的基础核心知识而总结得出的。</p>
+        <p>HTTP协议是程序猿的核心终点知识，必须要掌握。</p>
 <a id="more"></a>
-<h2 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a><font color="#42b983">HTTP协议</font></h2><p>HTTP协议是基于TCP/IP协议的应用层协议，它不关心数据传输的细节，主要是用来规定客户端与服务器的数据传输格式，默认端口80。</p>
-<h3 id="HTTP协议-1"><a href="#HTTP协议-1" class="headerlink" title="HTTP协议"></a>HTTP协议</h3><ul>
+<hr>
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a><font color="#42b983">简介</font></h3><ul>
+<li>HTTP协议是Hyper Text Transfer Protocol（超文本传输协议）的缩写,是用于从万维网（WWW:World Wide Web ）服务器传输超文本到本地浏览器的传送协议。</li>
+</ul>
+<ul>
+<li><p>HTTP是一个基于TCP/IP通信协议来传递数据（HTML 文件, 图片文件, 查询结果等）。</p>
+</li>
+<li><p>HTTP是一个属于应用层的面向对象的协议，由于其简捷、快速的方式，适用于分布式超媒体信息系统。</p>
+</li>
+<li><p>HTTP协议工作于客户端-服务端架构为上。浏览器作为HTTP客户端通过URL向HTTP服务端即WEB服务器发送所有请求。Web服务器根据接收到的请求后，向客户端发送响应信息。</p>
+</li>
+</ul>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a><font color="#42b983">特点</font></h3><p>1、简单快速：客户向服务器请求服务时，只需传送请求方法和路径。请求方法常用的有GET、HEAD、POST。每种方法规定了客户与服务器联系的类型不同。由于HTTP协议简单，使得HTTP服务器的程序规模小，因而通信速度很快。</p>
+<p>2、灵活：HTTP允许传输任意类型的数据对象。正在传输的类型由Content-Type加以标记。</p>
+<p>3、无连接：无连接的含义是限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接。采用这种方式可以节省传输时间。</p>
+<p>4、无状态：HTTP协议是无状态协议。无状态是指协议对于事务处理没有记忆能力。缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。另一方面，在服务器不需要先前信息时它的应答就较快。<br>5、支持B/S及C/S模式。</p>
+<ul>
 <li>无状态、无连接<br>每次HTTP请求都是独立的。标准的http协议指的是不包括cookies, session，application的http协议，他们都不属于标准协议，虽然各种网络应用提供商，实现语言、web容器等，都默认支持它。每一个访问都是无连接，服务器挨个处理访问队列里的访问，处理完一个就关闭连接，然后处理下一个新的无连接的含义是限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接。</li>
 </ul>
 <p>现实是必须要有连接的。<br>cookie和session的使用缓存了客户端与服务器之间的交互信息。</p>
@@ -202,12 +219,10 @@ HTTP协议HTTP协议是基于TCP/IP协议的应用层协议，它不关心数据
 </li>
 <li><p>数据流<br>因为2的数据包是不按顺序发阿松的，同一个连接里面连续的数据包，可能属于不同的回应。因此，必须要对数据包做标记，指出它属于哪一个回应。<br>同一类的所有数据包，就是一个数据流stream。<br>之前版本取消数据流的唯一方法是关闭TCP连接，这样会造成其他请求的数据全部丢失。2版本增加了RES_STAREM帧，用来控制数据流是否取消发送和接收。</p>
 </li>
-<li><p>头部信息压缩<br>HTTP 协议不带有状态，每次请求都必须附上所有信息。所以，请求的很多字段都是重复的，比如Cookie和User Agent，一模一样的内容，每次请求都必须附带，这会浪费很多带宽，也影响速度。</p>
+<li><p>头部信息压缩<br>HTTP 协议不带有状态，每次请求都必须附上所有信息。所以，请求的很多字段都是重复的，比如Cookie和User Agent，一模一样的内容，每次请求都必须附带，这会浪费很多带宽，也影响速度。<br>HTTP/2 对这一点做了优化，引入了头信息压缩机制（header compression）。一方面，头信息使用gzip或compress压缩后再发送；另一方面，客户端和服务器同时维护一张头信息表，所有字段都会存入这个表，生成一个索引号，以后就不发送同样字段了，只发送索引号，这样就提高速度了。</p>
 </li>
-</ul>
-<p>HTTP/2 对这一点做了优化，引入了头信息压缩机制（header compression）。一方面，头信息使用gzip或compress压缩后再发送；另一方面，客户端和服务器同时维护一张头信息表，所有字段都会存入这个表，生成一个索引号，以后就不发送同样字段了，只发送索引号，这样就提高速度了。</p>
-<ul>
-<li>服务器推推送<br>即服务器未经允许，主动向客户端发送信息资源。<br>常见场景是客户端请求一个网页，这个网页里面包含很多静态资源。正常情况下，客户端必须收到网页后，解析HTML源码，发现有静态资源，再发出静态资源请求。其实，服务器可以预期到客户端请求网页后，很可能会再请求静态资源，所以就主动把这些静态资源随着网页一起发给客户端了。</li>
+<li><p>服务器推推送<br>即服务器未经允许，主动向客户端发送信息资源。<br>常见场景是客户端请求一个网页，这个网页里面包含很多静态资源。正常情况下，客户端必须收到网页后，解析HTML源码，发现有静态资源，再发出静态资源请求。其实，服务器可以预期到客户端请求网页后，很可能会再请求静态资源，所以就主动把这些静态资源随着网页一起发给客户端了。</p>
+</li>
 </ul>
 
     </div>
@@ -215,7 +230,7 @@ HTTP协议HTTP协议是基于TCP/IP协议的应用层协议，它不关心数据
     <div class="post-footer">
         <div>
             
-                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="https://github.com/hellolittleBear" target="_blank">helloLittleBear</a>
+                转载声明：请注明出处 © <a href="https://github.com/hellolittleBear" target="_blank">helloLittleBear</a>
             
         </div>
         <div>
@@ -225,11 +240,6 @@ HTTP协议HTTP协议是基于TCP/IP协议的应用层协议，它不关心数据
 </article>
 
 <div class="article-nav prev-next-wrap clearfix">
-    
-        <a href="/2019/04/02/arrayDR/" class="pre-post btn btn-default" title="数组去重">
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">数组去重</span>
-        </a>
     
     
         <a href="/2019/04/02/this/" class="next-post btn btn-default" title="this指向问题">
@@ -277,7 +287,7 @@ HTTP协议HTTP协议是基于TCP/IP协议的应用层协议，它不关心数据
     <div class="widget">
         <h3 class="title">Table of Contents</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP协议"><span class="toc-text">HTTP协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP协议-1"><span class="toc-text">HTTP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP2"><span class="toc-text">HTTP2</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特点"><span class="toc-text">特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP2"><span class="toc-text">HTTP2</span></a></li></ol>
         
     </div>
 </aside>
