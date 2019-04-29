@@ -19,9 +19,9 @@
     <meta name="keywords" content>
 
 
-    <meta name="description" content="Set集合12let arr = new Set(array);[...arr]
-ES6提供了新的数据结构Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。
-Set本身是一个构造函数，...">
+    <meta name="description" content="Set集合ES6提供了新的数据结构Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。
+Set本身是一个构造函数，用来生成Set数据结构。
+Set数据结构的唯一值特性可以用于数组中去重。...">
 
 
 
@@ -182,11 +182,10 @@ Set本身是一个构造函数，...">
     </div>
     
     <div class="post-body post-content">
-        <h2 id="Set集合"><a href="#Set集合" class="headerlink" title="Set集合"></a><font color="#67C23A">Set集合</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let arr = new Set(array);</span><br><span class="line">[...arr]</span><br></pre></td></tr></table></figure>
-<p>ES6提供了新的数据结构Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。</p>
+        <h2 id="Set集合"><a href="#Set集合" class="headerlink" title="Set集合"></a><font color="#67C23A">Set集合</font></h2><p>ES6提供了新的数据结构Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。</p>
 <p>Set本身是一个构造函数，用来生成Set数据结构。</p>
 <p>Set数据结构的唯一值特性可以用于数组中去重。</p>
-<p>如果数组中存在多个undefined、NaN，会被认为是相同值，只保留一位。 当然 +0与-0也是相同的。</p>
+<p>如果数组中存在多个undefined、NaN，会被认为是相同值，只保留一位。 当然 +0与-0也是相同的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let arr = new Set(array);</span><br><span class="line">[...arr]</span><br></pre></td></tr></table></figure></p>
 <hr>
 <h2 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf"></a><font color="#67C23A">indexOf</font></h2><p>利用indexOf查询是否存在，不存在则推入栈中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function unique(arr = []) &#123;</span><br><span class="line">  let array = [];</span><br><span class="line">  for(let i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">    array.indexOf(arr[i]) &lt; 0 array.push(arr[i]) : &apos;&apos;;</span><br><span class="line">  &#125;</span><br><span class="line">  return array;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <hr>
