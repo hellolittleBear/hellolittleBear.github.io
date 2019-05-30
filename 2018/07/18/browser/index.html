@@ -16,10 +16,11 @@
     <link rel="dns-prefetch" href="http://yoursite.com">
     <!--SEO-->
 
-    <meta name="keywords" content>
+    <meta name="keywords" content="核心">
 
 
-    <meta name="description" content="文章信息
+    <meta name="description" content="
+文章基本信息
 
 
 列表
@@ -29,7 +30,7 @@
 
 
 最近更新
-2019/4/20，2019/3/15， 2018/7/18
+2019/04/20，2019/03/15， 2018/07/18
 
 
 更新次数
@@ -37,11 +38,11 @@
 
 
 文章类型
-2/3翻译，1/3总结
+翻译
 
 
-
-浏览器渲染过程是非常复杂的...">
+借鉴地址
+R-H-R  talig...">
 
 
 
@@ -184,6 +185,8 @@
             <i class="fa fa-tags"></i>
             <span class="tags-meta">
                 
+                    <a class="tag-link" href="/tags/核心/">核心</a>
+                
             </span>
         </span>
     
@@ -199,10 +202,15 @@
 </div>
             
             
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>315</strong>天之前发表，文中内容可能已经过时。
+            </p>
+        
     </div>
     
     <div class="post-body post-content">
-        <h2 id="文章信息"><a href="#文章信息" class="headerlink" title="文章信息"></a>文章信息</h2><table>
+        <a id="more"></a>
+<h1 id="文章基本信息"><a href="#文章基本信息" class="headerlink" title="文章基本信息"></a>文章基本信息</h1><table>
 <thead>
 <tr>
 <th>列表</th>
@@ -212,7 +220,7 @@
 <tbody>
 <tr>
 <td>最近更新</td>
-<td style="text-align:right">2019/4/20，2019/3/15， 2018/7/18</td>
+<td style="text-align:right">2019/04/20，2019/03/15， 2018/07/18</td>
 </tr>
 <tr>
 <td>更新次数</td>
@@ -220,14 +228,15 @@
 </tr>
 <tr>
 <td>文章类型</td>
-<td style="text-align:right">2/3翻译，1/3总结</td>
+<td style="text-align:right">翻译</td>
+</tr>
+<tr>
+<td>借鉴地址</td>
+<td style="text-align:right"><a href="https://blog.csdn.net/riddle1981/article/details/78681191" target="_blank" rel="noopener">R-H-R</a>  <a href="http://taligarsiel.com/Projects/howbrowserswork1.htm" target="_blank" rel="noopener">taligarsiel</a>  <a href="https://blog.csdn.net/riddle1981/article/details/76380177" target="_blank" rel="noopener">R-H</a>,</td>
 </tr>
 </tbody>
 </table>
-<p>浏览器渲染过程是非常复杂的，此文章简要概述基本过程。本文主要以问答形式说明。</p>
-<a id="more"></a>
-<hr>
-<h2 id="浏览器主要结构是什么？"><a href="#浏览器主要结构是什么？" class="headerlink" title="浏览器主要结构是什么？"></a>浏览器主要结构是什么？</h2><ul>
+<h1 id="浏览器主要结构是什么？"><a href="#浏览器主要结构是什么？" class="headerlink" title="浏览器主要结构是什么？"></a>浏览器主要结构是什么？</h1><ul>
 <li>用户接口，包括地址栏、前进、后退、书签菜单、个人界面、下载等。</li>
 <li>浏览器引擎。用于查询和操作渲染引擎的界面。</li>
 <li>渲染引擎。负责显示请求的内容。如果请求的内容是HTML，则解析显示html和css</li>
@@ -236,8 +245,8 @@
 <li>js解释器。用于解析并执行js代码。</li>
 <li>数据存储。浏览器保存在硬盘数据。是浏览器内置的一个完整的 <strong>小型数据库</strong>。<br><img src="/2018/07/18/browser/layers.png" style="height:300px"></li>
 </ul>
-<h2 id="DOM树的构建是文档加载完成开始的？"><a href="#DOM树的构建是文档加载完成开始的？" class="headerlink" title="DOM树的构建是文档加载完成开始的？"></a>DOM树的构建是文档加载完成开始的？</h2><p>并不是，DOM树的构建是从接收文档就开始了，因为为了达到更好的用户体验，浏览器会尽快的展示页面，浏览器会同时执行构建DOM树和接收html文件。</p>
-<h2 id="渲染引擎的工作流程？"><a href="#渲染引擎的工作流程？" class="headerlink" title="渲染引擎的工作流程？"></a>渲染引擎的工作流程？</h2><p>由于不同浏览器具有不同的渲染过程，这里简要概述webkit内核（chrome、safari）和Gecko内核（firefox）的渲染过程。<br><img src="/2018/07/18/browser/flow.png"><br>如图，渲染引擎开始解析HTML文档并将标记转换为’内容树‘的树中的DOM节点，然后他将解析外部CSS文件和样式元素中的样式数据。样式信息与之前解析的DOM节点一起创建另一个树，渲染树。<br>渲染树包含具有可视属性（即可以直观表现的属性，比如长宽高颜色等），然后按照一定的‘布局’过程，遍历渲染树，从而绘制出页面。<br>重点：这是一个 <strong><em>渐进</em></strong> 的过程，为了获得更好的用户体验，渲染引擎不会等到解析所有的HTML,而是一边解析一边渲染同时进行。但是这也有一个缺点，如果网络中断，之前解析的数据将全部丢弃，不过一般也不会出现这种问题。<br><strong><em>主要流程</em></strong></p>
+<h1 id="DOM树的构建是文档加载完成开始的？"><a href="#DOM树的构建是文档加载完成开始的？" class="headerlink" title="DOM树的构建是文档加载完成开始的？"></a>DOM树的构建是文档加载完成开始的？</h1><p>并不是，DOM树的构建是从接收文档就开始了，因为为了达到更好的用户体验，浏览器会尽快的展示页面，浏览器会同时执行构建DOM树和接收html文件。</p>
+<h1 id="渲染引擎的工作流程？"><a href="#渲染引擎的工作流程？" class="headerlink" title="渲染引擎的工作流程？"></a>渲染引擎的工作流程？</h1><p>由于不同浏览器具有不同的渲染过程，这里简要概述webkit内核（chrome、safari）和Gecko内核（firefox）的渲染过程。<br><img src="/2018/07/18/browser/flow.png"><br>如图，渲染引擎开始解析HTML文档并将标记转换为’内容树‘的树中的DOM节点，然后他将解析外部CSS文件和样式元素中的样式数据。样式信息与之前解析的DOM节点一起创建另一个树，渲染树。<br>渲染树包含具有可视属性（即可以直观表现的属性，比如长宽高颜色等），然后按照一定的‘布局’过程，遍历渲染树，从而绘制出页面。<br>重点：这是一个 <strong><em>渐进</em></strong> 的过程，为了获得更好的用户体验，渲染引擎不会等到解析所有的HTML,而是一边解析一边渲染同时进行。但是这也有一个缺点，如果网络中断，之前解析的数据将全部丢弃，不过一般也不会出现这种问题。<br><strong><em>主要流程</em></strong></p>
 <p>webkit:<br><img src="/2018/07/18/browser/webkitflow.png"><br>mozilla:<br><img src="/2018/07/18/browser/mozillaflow.jpg"></p>
 <ul>
 <li>DOM Tree: 浏览器将HTML解析成树形的数据结构</li>
@@ -247,26 +256,26 @@
 <li>painting: 按照算出来的规则，通过显卡，把内容画到屏幕上。</li>
 </ul>
 <p>图中可以直观的看到，尽管俩者使用的术语略有差异，但基本流程相同。</p>
-<h3 id="解析器：lexer解析器"><a href="#解析器：lexer解析器" class="headerlink" title="解析器：lexer解析器"></a>解析器：lexer解析器</h3><p>解析源文档意味着将其转换为有意义有规则的结构，一般解析的结果就是一个表示文档结构的节点树（通常是解析HTML流），也就是语法树。</p>
+<h2 id="解析器：lexer解析器"><a href="#解析器：lexer解析器" class="headerlink" title="解析器：lexer解析器"></a>解析器：lexer解析器</h2><p>解析源文档意味着将其转换为有意义有规则的结构，一般解析的结果就是一个表示文档结构的节点树（通常是解析HTML流），也就是语法树。</p>
 <p>解析的过程可以分为俩部分：词法分析、语法分析<br><img src="/2018/07/18/browser/lexer.png"></p>
 <ul>
 <li>lexical analysis: 词法分析</li>
 <li>syntax analysis: 语法分析</li>
 </ul>
-<h4 id="词法分析"><a href="#词法分析" class="headerlink" title="词法分析"></a>词法分析</h4><p>使用标记（即语言词汇表，可以理解为英语字典，包含所有单词）构建有效的块的集合，将源文档负责分解为有效令牌。</p>
-<h4 id="语法分析"><a href="#语法分析" class="headerlink" title="语法分析"></a>语法分析</h4><p>将词法分析分解后的有效令牌根据语言语法规则芬妮下文档结构来构造解析树。</p>
+<h3 id="词法分析"><a href="#词法分析" class="headerlink" title="词法分析"></a>词法分析</h3><p>使用标记（即语言词汇表，可以理解为英语字典，包含所有单词）构建有效的块的集合，将源文档负责分解为有效令牌。</p>
+<h3 id="语法分析"><a href="#语法分析" class="headerlink" title="语法分析"></a>语法分析</h3><p>将词法分析分解后的有效令牌根据语言语法规则芬妮下文档结构来构造解析树。</p>
 <p><strong>官方解释</strong>：解析过程是<code>迭代</code>的。解析器通常会向词法分析器询问新令牌并尝试将令牌与其中一个语法规则匹配。如果匹配规则，则将与该令牌对应的节点添加到解析树，并且解析器将请求另一个令牌。<br>如果没有规则匹配，解析器将在内部存储令牌，并继续询问令牌，直到找到匹配所有内部存储的令牌的规则。如果没有找到规则，则解析器将引发异常。这意味着该文档无效并包含语法错误。</p>
 <p>个人总结： 解析器就是把源文档转换为另一种格式，该格式是一种机器代码文档，能够被机器所理解的文档。</p>
 <hr>
-<h3 id="翻译"><a href="#翻译" class="headerlink" title="翻译"></a>翻译</h3><p>上面提到，解析器最终的结果是一种机器代码文档，该文档并不能真正应用于人理解的代码，需要进一步加工，这就是翻译。<br><img src="/2018/07/18/browser/translate.png"></p>
-<h5 id="还需要增加一些基本知识："><a href="#还需要增加一些基本知识：" class="headerlink" title="还需要增加一些基本知识："></a>还需要增加一些基本知识：</h5><ul>
+<h2 id="翻译"><a href="#翻译" class="headerlink" title="翻译"></a>翻译</h2><p>上面提到，解析器最终的结果是一种机器代码文档，该文档并不能真正应用于人理解的代码，需要进一步加工，这就是翻译。<br><img src="/2018/07/18/browser/translate.png"></p>
+<h1 id="回流、重绘"><a href="#回流、重绘" class="headerlink" title="回流、重绘"></a>回流、重绘</h1><ul>
 <li><p>reflow（回流）：当浏览器发现某个部分发生了点变化影响了布局，需要倒回去重新渲染，内行称这个回退的过程叫 reflow。reflow 会从 <html> 这个 root frame 开始递归往下，依次计算所有的结点几何尺寸和位置。reflow 几乎是无法避免的。现在界面上流行的一些效果，比如树状目录的折叠、展开（实质上是元素的显 示与隐藏）等，都将引起浏览器的 reflow。鼠标滑过、点击……只要这些行为引起了页面上某些元素的占位面积、定位方式、边距等属性的变化，都会引起它内部、周围甚至整个页面的重新渲 染。通常我们都无法预估浏览器到底会 reflow 哪一部分的代码，它们都彼此相互影响着。</html></p>
 </li>
 <li><p>repaint（重绘）：改变某个元素的背景色、文字颜色、边框颜色等等不影响它周围或内部布局的属性时，屏幕的一部分要重画，但是元素的几何尺寸没有变。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">display:none 的节点不会被加入Render Tree，而visibility: hidden 则会，所以，如果某个节点最开始是不显示的，设为display:none是更优的。</span><br><span class="line"></span><br><span class="line">display:none 会触发 reflow，而 visibility:hidden 只会触发 repaint，因为没有发现位置变化。</span><br><span class="line"></span><br><span class="line">有些情况下，比如修改了元素的样式，浏览器并不会立刻reflow 或 repaint 一次，而是会把这样的操作积攒一批，然后做一次 reflow，这又叫异步 reflow 或增量异步 reflow。但是在有些情况下，比如resize 窗口，改变了页面默认的字体等。对于这些操作，浏览器会马上进行 reflow。</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h4 id="基本流程解析："><a href="#基本流程解析：" class="headerlink" title="基本流程解析："></a>基本流程解析：</h4><ol>
+<h1 id="基本流程解析"><a href="#基本流程解析" class="headerlink" title="基本流程解析"></a>基本流程解析</h1><ol>
 <li>浏览器会将HTML解析成一个DOM树，DOM 树的构建过程是一个深度遍历过程：当前节点的所有子节点都构建好后才会去构建当前节点的下一个兄弟节点。</li>
 <li>将CSS解析成 CSS Rule Tree 。</li>
 <li><p>根据DOM树和CSSOM来构造 Rendering Tree。注意：Rendering Tree 渲染树并不等同于 DOM 树，因为一些像Header或display:none的东西就没必要放在渲染树中了。</p>
@@ -347,7 +356,7 @@
     <div class="widget">
         <h3 class="title">Table of Contents</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#文章信息"><span class="toc-text">文章信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#浏览器主要结构是什么？"><span class="toc-text">浏览器主要结构是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DOM树的构建是文档加载完成开始的？"><span class="toc-text">DOM树的构建是文档加载完成开始的？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#渲染引擎的工作流程？"><span class="toc-text">渲染引擎的工作流程？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#解析器：lexer解析器"><span class="toc-text">解析器：lexer解析器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#词法分析"><span class="toc-text">词法分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#语法分析"><span class="toc-text">语法分析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#翻译"><span class="toc-text">翻译</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#还需要增加一些基本知识："><span class="toc-text">还需要增加一些基本知识：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#基本流程解析："><span class="toc-text">基本流程解析：</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#文章基本信息"><span class="toc-text">文章基本信息</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#浏览器主要结构是什么？"><span class="toc-text">浏览器主要结构是什么？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DOM树的构建是文档加载完成开始的？"><span class="toc-text">DOM树的构建是文档加载完成开始的？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#渲染引擎的工作流程？"><span class="toc-text">渲染引擎的工作流程？</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#解析器：lexer解析器"><span class="toc-text">解析器：lexer解析器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#词法分析"><span class="toc-text">词法分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#语法分析"><span class="toc-text">语法分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#翻译"><span class="toc-text">翻译</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#回流、重绘"><span class="toc-text">回流、重绘</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基本流程解析"><span class="toc-text">基本流程解析</span></a></li></ol>
         
     </div>
 </aside>
