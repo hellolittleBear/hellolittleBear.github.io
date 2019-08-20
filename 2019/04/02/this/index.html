@@ -19,14 +19,11 @@
     <meta name="keywords" content>
 
 
-    <meta name="description" content="
-this指向问题在es6之前是不存在class的，开发者需要自定义函数来构造类。
+    <meta name="description" content="this 是javascript的一大特色，也是一大深坑。根本原因是因为内存存储的数据结构有关系。
 
-es6 箭头函数，强行绑定该函数作用域
+简介在es6之前是不存在class的，开发者需要自定义函数来构造类。
 
-保存this。 let that = this;
-
-借助apply...">
+es6 箭头函数，强...">
 
 
 
@@ -84,7 +81,7 @@ es6 箭头函数，强行绑定该函数作用域
 <![endif]-->
 
 <body>
-    <header class="main-header" style="background-image:url(https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3441426403,3329611310&amp;fm=26&amp;gp=0.jpg)">
+    <header class="main-header" style="background:#303133">
     <div class="main-header-box">
         <a class="header-avatar" href="/" title="梦在燃烧">
             <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
@@ -92,7 +89,7 @@ es6 箭头函数，强行绑定该函数作用域
         <div class="branding">
         	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
             
-                 <img src="/img/subtitle.png" alt="Snippet 博客主题" class="img-responsive center-block">
+                 <img src="/img/awatar.png" alt="Snippet 博客主题" class="img-responsive center-block">
             
     	</div>
     </div>
@@ -134,10 +131,6 @@ es6 箭头函数，强行绑定该函数作用域
                                 <a href="/categories/chat/"><i class="fa "></i>闲聊</a>
                             </li>
                         
-                            <li role="presentation" class="text-center">
-                                <a href="/categories/project/"><i class="fa "></i>项目</a>
-                            </li>
-                        
                     </ul>
                 </div>
             </div>
@@ -160,7 +153,7 @@ es6 箭头函数，强行绑定该函数作用域
     
         <span class="categories-meta fa-wrap">
             <i class="fa fa-folder-open-o"></i>
-            <a class="category-link" href="/categories/前端/">前端</a>
+            <a class="category-link" href="/categories/javaScript/">javaScript</a>
         </span>
     
 
@@ -187,8 +180,9 @@ es6 箭头函数，强行绑定该函数作用域
     </div>
     
     <div class="post-body post-content">
-        <a id="more"></a>
-<h2 id="this指向问题"><a href="#this指向问题" class="headerlink" title="this指向问题"></a><font color="#67C23A">this指向问题</font></h2><p>在es6之前是不存在class的，开发者需要自定义函数来构造类。</p>
+        <p><code>this</code> 是<code>javascript</code>的一大特色，也是一大深坑。根本原因是因为内存存储的数据结构有关系。</p>
+<a id="more"></a>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a><font color="#67C23A">简介</font></h2><p>在es6之前是不存在class的，开发者需要自定义函数来构造类。</p>
 <ul>
 <li><p>es6 箭头函数，强行绑定该函数作用域</p>
 </li>
@@ -198,7 +192,7 @@ es6 箭头函数，强行绑定该函数作用域
 <li>new实例化对象</li>
 </ul>
 <hr>
-<h2 id="this指向问题-1"><a href="#this指向问题-1" class="headerlink" title="this指向问题"></a><font color="#67C23A">this指向问题</font></h2><ul>
+<h2 id="this指向问题"><a href="#this指向问题" class="headerlink" title="this指向问题"></a><font color="#67C23A">this指向问题</font></h2><ul>
 <li>当函数作为对象的方法被调用时，this就会指向该对象。比如 call、apply的this指向。</li>
 <li>当函数作为全局普通函数时， this指向window。</li>
 <li>构造器被调用时， this指向这个返回的对象。</li>
@@ -221,15 +215,15 @@ es6 箭头函数，强行绑定该函数作用域
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2019/04/02/http/" class="pre-post btn btn-default" title="HTTP与HTTPS">
+        <a href="/2019/04/02/http/" class="pre-post btn btn-default" title="HTTP[/S]">
             <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">HTTP与HTTPS</span>
+            <span class="hidden-xs">HTTP[/S]</span>
         </a>
     
     
-        <a href="/2019/04/01/README/" class="next-post btn btn-default" title="README">
+        <a href="/2019/04/01/notes-vue/" class="next-post btn btn-default" title="Vue.js笔记">
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">README</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">Vue.js笔记</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -272,7 +266,7 @@ es6 箭头函数，强行绑定该函数作用域
     <div class="widget">
         <h3 class="title">Table of Contents</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#this指向问题"><span class="toc-text">this指向问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#this指向问题-1"><span class="toc-text">this指向问题</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#this指向问题"><span class="toc-text">this指向问题</span></a></li></ol>
         
     </div>
 </aside>
