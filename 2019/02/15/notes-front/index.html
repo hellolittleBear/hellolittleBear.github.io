@@ -1,0 +1,360 @@
+<!DOCTYPE HTML>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="隐隐约约">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+    <meta name="keywords" content>
+
+
+    <meta name="description" content="日常记录js基础，只有巩固最基础的东西，上层框架改变其实没有太大影响。
+
+
+
+
+
+列表
+数据
+
+
+
+
+最近更新
+2019/08/20
+
+
+更新次数
+2
+
+
+
+闭包、原型链
+产生： 当函数作为返回...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>前端笔记总结 | 隐隐约约</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="隐隐约约" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background:#303133">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="隐隐约约">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/awatar.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">隐隐约约</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间线</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/fore-end/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/back-end/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/tool/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/chat/"><i class="fa "></i>闲聊</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="前端笔记总结">
+            
+	            前端笔记总结
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/fore-end/">fore-end</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/02/15</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p>日常记录js基础，只有巩固最基础的东西，上层框架改变其实没有太大影响。</p>
+<a id="more"></a>
+<hr>
+<table>
+<thead>
+<tr>
+<th>列表</th>
+<th style="text-align:right">数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>最近更新</td>
+<td style="text-align:right">2019/08/20</td>
+</tr>
+<tr>
+<td>更新次数</td>
+<td style="text-align:right">2</td>
+</tr>
+</tbody>
+</table>
+<h2 id="闭包、原型链"><a href="#闭包、原型链" class="headerlink" title="闭包、原型链"></a><font color="#67C23A">闭包、原型链</font></h2><ul>
+<li>产生： 当函数作为返回值时、函数作为参数传入时。</li>
+<li>优点： 可以构造私有方法、访问函数内部变量。</li>
+<li>缺点： 增加内存消耗，使用不当很容易内存泄漏。如非必要，不要用闭包。</li>
+</ul>
+<hr>
+<h2 id="内存溢出、内存泄漏"><a href="#内存溢出、内存泄漏" class="headerlink" title="内存溢出、内存泄漏"></a><font color="#67C23A">内存溢出、内存泄漏</font></h2><ul>
+<li>内存溢出一般是开发意外写了死循环。比如重载setter函数里出现赋值表达式。</li>
+<li>内存泄漏是js中非常正常的事情。我们要看情况而定，一般开发者尽量减少内存泄漏发生。</li>
+<li>闭包会产生多余空间开销，但是不一定会产生泄漏问题。DOM对象和js对象循环引用以前会产生内存泄漏，因为以前IE使用引用计数进行GC，现在采用标记清除GC，不会了。await 递归循环也会产生内存泄漏。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">function sleep(delay) &#123;</span><br><span class="line">  return new Promise(resolve =&gt; setTimeout(resolve, delay))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let i = 0;</span><br><span class="line">async function start() &#123;</span><br><span class="line">  i++;</span><br><span class="line">  if(i&gt;6) return;</span><br><span class="line">  console.log(&apos;start:i= &apos;+ i);</span><br><span class="line">  await sleep(10);</span><br><span class="line">  await start();</span><br><span class="line">  console.log(&apos;end:i= &apos; + i);</span><br><span class="line">&#125;</span><br><span class="line">start();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">console:</span><br><span class="line">  start:i= 2</span><br><span class="line">  start:i= 3</span><br><span class="line">  start:i= 4</span><br><span class="line">  start:i= 5</span><br><span class="line">  start:i= 6</span><br><span class="line">  end:i= 7</span><br><span class="line">  end:i= 7</span><br><span class="line">  end:i= 7</span><br><span class="line">  end:i= 7</span><br><span class="line">  end:i= 7</span><br><span class="line"></span><br><span class="line">// 解释： await start();递归产生一个pedding状态的Promise，前一个promise都在等在后一个promsie状态变为resolve。直至死循环。四个字：异步递归</span><br></pre></td></tr></table></figure>
+<h2 id="本地存储-cookie、localStorage、sessionStorage"><a href="#本地存储-cookie、localStorage、sessionStorage" class="headerlink" title="本地存储 cookie、localStorage、sessionStorage"></a><font color="#67C23A">本地存储 cookie、localStorage、sessionStorage</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">cookie是网站为了标示用户身份而储存在用户本地终端（Client Side）上的数据（通常经过加密）。</span><br><span class="line">cookie数据始终在同源的http请求中携带（即使不需要），记会在浏览器和服务器间来回传递。</span><br><span class="line">sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。</span><br><span class="line"></span><br><span class="line">存储大小：</span><br><span class="line">    cookie数据大小不能超过4k。</span><br><span class="line">    sessionStorage和localStorage 虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大。</span><br><span class="line"></span><br><span class="line">有期时间：</span><br><span class="line">    localStorage    存储持久数据，浏览器关闭后数据不丢失除非主动删除数据；</span><br><span class="line">    sessionStorage  数据在当前浏览器窗口关闭后自动删除。</span><br><span class="line">    cookie          设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭</span><br></pre></td></tr></table></figure>
+<h2 id="页面可见性（Page-Visibility-API）-可以有哪些用途？"><a href="#页面可见性（Page-Visibility-API）-可以有哪些用途？" class="headerlink" title="页面可见性（Page Visibility API） 可以有哪些用途？"></a><font color="#67C23A">页面可见性（Page Visibility API） 可以有哪些用途？</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">通过 visibilityState 的值检测页面当前是否可见，以及打开网页的时间等;</span><br><span class="line">在页面被切换到其他后台进程的时候，自动暂停音乐或视频的播放；</span><br><span class="line"></span><br><span class="line">document.addEventListener(&quot;visibilitychange&quot;, function() &#123;</span><br><span class="line">  console.log( document.visibilityState );  // &quot;visible&quot;   &quot;hidden&quot;</span><br><span class="line">  // Modify behavior...</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="li与li之间有看不见的空白间隔是什么原因引起的？有什么解决办法？"><a href="#li与li之间有看不见的空白间隔是什么原因引起的？有什么解决办法？" class="headerlink" title="li与li之间有看不见的空白间隔是什么原因引起的？有什么解决办法？"></a><font color="#67C23A">li与li之间有看不见的空白间隔是什么原因引起的？有什么解决办法？</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">行框的排列会受到中间空白（回车\空格）等的影响，因为空格也属于字符。</span><br><span class="line">这些空白也会被应用样式，占据空间，所以会有间隔，把字符大小设为0，就没有空格了。</span><br></pre></td></tr></table></figure>
+<h2 id="为什么要初始化CSS样式？"><a href="#为什么要初始化CSS样式？" class="headerlink" title="为什么要初始化CSS样式？"></a><font color="#67C23A">为什么要初始化CSS样式？</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">- 因为浏览器的兼容问题，不同浏览器对有些标签的默认值是不同的，如果没对CSS初始化往往会出现浏览器之间的页面显示差异。</span><br><span class="line"></span><br><span class="line">- 当然，初始化样式会对SEO有一定的影响，但鱼和熊掌不可兼得，但力求影响最小的情况下初始化。</span><br><span class="line"></span><br><span class="line">最简单的初始化方法： * &#123;padding: 0; margin: 0;&#125; （强烈不建议）</span><br><span class="line"></span><br><span class="line">淘宝的样式初始化代码：</span><br><span class="line">body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td &#123; margin:0; padding:0; &#125;</span><br><span class="line">body, button, input, select, textarea &#123; font:12px/1.5tahoma, arial, \5b8b\4f53; &#125;</span><br><span class="line">h1, h2, h3, h4, h5, h6&#123; font-size:100%; &#125;</span><br><span class="line">address, cite, dfn, em, var &#123; font-style:normal; &#125;</span><br><span class="line">code, kbd, pre, samp &#123; font-family:couriernew, courier, monospace; &#125;</span><br><span class="line">small&#123; font-size:12px; &#125;</span><br><span class="line">ul, ol &#123; list-style:none; &#125;</span><br><span class="line">a &#123; text-decoration:none; &#125;</span><br><span class="line">a:hover &#123; text-decoration:underline; &#125;</span><br><span class="line">sup &#123; vertical-align:text-top; &#125;</span><br><span class="line">sub&#123; vertical-align:text-bottom; &#125;</span><br><span class="line">legend &#123; color:#000; &#125;</span><br><span class="line">fieldset, img &#123; border:0; &#125;</span><br><span class="line">button, input, select, textarea &#123; font-size:100%; &#125;</span><br><span class="line">table &#123; border-collapse:collapse; border-spacing:0; &#125;</span><br></pre></td></tr></table></figure>
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：请注明出处 © <a href="https://github.com/hellolittleBear" target="_blank">helloLittleBear</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/02/20/2019target/" class="pre-post btn btn-default" title="TARGET-2019">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">TARGET-2019</span>
+        </a>
+    
+    
+        <a href="/2019/02/02/arrayDR/" class="next-post btn btn-default" title="数组去重">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">数组去重</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-Hans'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#闭包、原型链"><span class="toc-text">闭包、原型链</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内存溢出、内存泄漏"><span class="toc-text">内存溢出、内存泄漏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本地存储-cookie、localStorage、sessionStorage"><span class="toc-text">本地存储 cookie、localStorage、sessionStorage</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#页面可见性（Page-Visibility-API）-可以有哪些用途？"><span class="toc-text">页面可见性（Page Visibility API） 可以有哪些用途？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#li与li之间有看不见的空白间隔是什么原因引起的？有什么解决办法？"><span class="toc-text">li与li之间有看不见的空白间隔是什么原因引起的？有什么解决办法？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么要初始化CSS样式？"><span class="toc-text">为什么要初始化CSS样式？</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

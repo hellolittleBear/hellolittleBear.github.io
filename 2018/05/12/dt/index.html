@@ -8,7 +8,7 @@
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <meta http-equiv="Cache-Control" content="no-transform">
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta name="apple-mobile-web-app-capable" content="梦在燃烧">
+    <meta name="apple-mobile-web-app-capable" content="隐隐约约">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no,email=no,adress=no">
     <meta name="browsermode" content="application">
@@ -35,10 +35,10 @@
     <!--Title-->
 
 
-<title>节流和防抖 | 梦在燃烧</title>
+<title>节流和防抖 | 隐隐约约</title>
 
 
-    <link rel="alternate" href="/atom.xml" title="梦在燃烧" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="隐隐约约" type="application/atom+xml">
 
 
     <link rel="icon" href="/favicon.ico">
@@ -83,7 +83,7 @@
 <body>
     <header class="main-header" style="background:#303133">
     <div class="main-header-box">
-        <a class="header-avatar" href="/" title="梦在燃烧">
+        <a class="header-avatar" href="/" title="隐隐约约">
             <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
         </a>
         <div class="branding">
@@ -102,7 +102,7 @@
                     <span class="sr-only"></span>
                         <i class="fa fa-bars"></i>
                     </span>
-                    <a class="navbar-brand" href="http://yoursite.com">梦在燃烧</a>
+                    <a class="navbar-brand" href="http://yoursite.com">隐隐约约</a>
                 </div>
                 <div class="collapse navbar-collapse" id="main-menu">
                     <ul class="menu">
@@ -178,7 +178,7 @@
             
             
             <p class="fa fa-exclamation-triangle warning">
-                本文于<strong>464</strong>天之前发表，文中内容可能已经过时。
+                本文于<strong>465</strong>天之前发表，文中内容可能已经过时。
             </p>
         
     </div>
@@ -188,12 +188,12 @@
 <a id="more"></a>
 <h2 id="节流"><a href="#节流" class="headerlink" title="节流"></a>节流</h2><ul>
 <li>释：单位时间内只能执行一次，必须执行，先执行</li>
-<li>场合：页面无限制高度刷新请求页面ajax请求、用户输入信息进行搜索的时候、<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">coding... 梦在燃烧</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> *  @arguemnts func:执行回调事件function    delay：延迟时间 Number</span><br><span class="line"> *  @return funtion</span><br><span class="line"> */</span><br><span class="line">let throttle = (func, delay) =&gt; &#123;</span><br><span class="line">  let timer = null,</span><br><span class="line">      startTime = Date.now();</span><br><span class="line"></span><br><span class="line">  return function()&#123;</span><br><span class="line">    let curTime = Date.now(),</span><br><span class="line">        remaining = delay - (curTime - startTime);</span><br><span class="line"></span><br><span class="line">    const context = this;</span><br><span class="line">    const args = arguments;</span><br><span class="line"></span><br><span class="line">    clearTimeout(timer);</span><br><span class="line"></span><br><span class="line">    if(remaining &lt;= 0)&#123;</span><br><span class="line">      func.apply(context,args);</span><br><span class="line">      startTime = Date.now();</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">      timer = setTimeout(func, remaining);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>场合：页面无限制高度刷新请求页面ajax请求、用户输入信息进行搜索的时候、<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">coding... 隐隐约约</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> *  @arguemnts func:执行回调事件function    delay：延迟时间 Number</span><br><span class="line"> *  @return funtion</span><br><span class="line"> */</span><br><span class="line">let throttle = (func, delay) =&gt; &#123;</span><br><span class="line">  let timer = null,</span><br><span class="line">      startTime = Date.now();</span><br><span class="line"></span><br><span class="line">  return function()&#123;</span><br><span class="line">    let curTime = Date.now(),</span><br><span class="line">        remaining = delay - (curTime - startTime);</span><br><span class="line"></span><br><span class="line">    const context = this;</span><br><span class="line">    const args = arguments;</span><br><span class="line"></span><br><span class="line">    clearTimeout(timer);</span><br><span class="line"></span><br><span class="line">    if(remaining &lt;= 0)&#123;</span><br><span class="line">      func.apply(context,args);</span><br><span class="line">      startTime = Date.now();</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">      timer = setTimeout(func, remaining);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h2><ul>
 <li>释：单位时间内只执行一次，但是不一定执行，后执行。</li>
-<li>场合：用户输入信息给出搜索提示、页面放大缩小、鼠标移动和移除<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">coding... 梦在燃烧</span><br><span class="line">function debounce(fn, delay) &#123;</span><br><span class="line">  // 维护一个 timer，用来记录当前执行函数状态</span><br><span class="line">  let timer = null;</span><br><span class="line"></span><br><span class="line">  return function() &#123;</span><br><span class="line">    // 通过 ‘this’ 和 ‘arguments’ 获取函数的作用域和变量</span><br><span class="line">    let context = this;</span><br><span class="line">    let args = arguments;</span><br><span class="line">    // 清理掉正在执行的函数，并重新执行</span><br><span class="line">    clearTimeout(timer);</span><br><span class="line">    timer = setTimeout(function() &#123;</span><br><span class="line">      fn.apply(context, args);</span><br><span class="line">    &#125;, delay);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">let flag = 0; // 记录当前函数调用次数</span><br><span class="line">// 当用户滚动时被调用的函数</span><br><span class="line">function foo() &#123;</span><br><span class="line">  flag++;</span><br><span class="line">  console.log(&apos;Number of calls: %d&apos;, flag);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 在 debounce 中包装我们的函数，过 2 秒触发一次</span><br><span class="line">document.body.addEventListener(&apos;scroll&apos;, debounce(foo, 2000));</span><br></pre></td></tr></table></figure>
+<li>场合：用户输入信息给出搜索提示、页面放大缩小、鼠标移动和移除<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">coding... 隐隐约约</span><br><span class="line">function debounce(fn, delay) &#123;</span><br><span class="line">  // 维护一个 timer，用来记录当前执行函数状态</span><br><span class="line">  let timer = null;</span><br><span class="line"></span><br><span class="line">  return function() &#123;</span><br><span class="line">    // 通过 ‘this’ 和 ‘arguments’ 获取函数的作用域和变量</span><br><span class="line">    let context = this;</span><br><span class="line">    let args = arguments;</span><br><span class="line">    // 清理掉正在执行的函数，并重新执行</span><br><span class="line">    clearTimeout(timer);</span><br><span class="line">    timer = setTimeout(function() &#123;</span><br><span class="line">      fn.apply(context, args);</span><br><span class="line">    &#125;, delay);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">let flag = 0; // 记录当前函数调用次数</span><br><span class="line">// 当用户滚动时被调用的函数</span><br><span class="line">function foo() &#123;</span><br><span class="line">  flag++;</span><br><span class="line">  console.log(&apos;Number of calls: %d&apos;, flag);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 在 debounce 中包装我们的函数，过 2 秒触发一次</span><br><span class="line">document.body.addEventListener(&apos;scroll&apos;, debounce(foo, 2000));</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
