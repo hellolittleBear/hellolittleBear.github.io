@@ -16,10 +16,11 @@
     <link rel="dns-prefetch" href="http://yoursite.com">
     <!--SEO-->
 
-    <meta name="keywords" content="community">
+    <meta name="keywords" content="项目">
 
 
     <meta name="description" content="
+
 
 
 列表
@@ -41,7 +42,8 @@
 
 
 
-题记目前再做一个社区网站，以segmentfault思否平台为基础，逐渐完善其功能。本篇文章主...">
+
+题记目前再做一个社区网站，以segmentfault思否平台为基础，逐渐完善其功能。本篇文...">
 
 
 
@@ -53,7 +55,7 @@
     <!--Title-->
 
 
-<title>community-建表设计 | 隐隐约约</title>
+<title>社区-建表设计 | 隐隐约约</title>
 
 
     <link rel="alternate" href="/atom.xml" title="隐隐约约" type="application/atom+xml">
@@ -146,7 +148,7 @@
                             </li>
                         
                             <li role="presentation" class="text-center">
-                                <a href="/categories/chat/"><i class="fa "></i>闲聊</a>
+                                <a href="/categories/project/"><i class="fa "></i>项目</a>
                             </li>
                         
                     </ul>
@@ -162,16 +164,16 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="community-建表设计">
+        <h1 id="社区-建表设计">
             
-	            community-建表设计
+	            社区-建表设计
             
         </h1>
         <div class="post-meta">
     
         <span class="categories-meta fa-wrap">
             <i class="fa fa-folder-open-o"></i>
-            <a class="category-link" href="/categories/项目/">项目</a>
+            <a class="category-link" href="/categories/project/">project</a>
         </span>
     
 
@@ -180,7 +182,7 @@
             <i class="fa fa-tags"></i>
             <span class="tags-meta">
                 
-                    <a class="tag-link" href="/tags/community/">community</a>
+                    <a class="tag-link" href="/tags/项目/">项目</a>
                 
             </span>
         </span>
@@ -200,7 +202,8 @@
     </div>
     
     <div class="post-body post-content">
-        <table>
+        <div class="table-container">
+<table>
 <thead>
 <tr>
 <th>列表</th>
@@ -222,15 +225,16 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="题记"><a href="#题记" class="headerlink" title="题记"></a><font color="#42b983">题记</font></h2><p>目前再做一个社区网站，以<a href="https://segmentfault.com/" target="_blank" rel="noopener">segmentfault思否</a>平台为基础，逐渐完善其功能。本篇文章主要简述该项目的数据库设计。<a href="https://github.com/hellolittleBear/community" target="_blank" rel="noopener">点击获取项目源码</a></p>
-<a id="more"></a>
+<p><img src="/2019/04/05/community-mysql-design/logo.jpg" style="width: 100%"></p>
 <hr>
 <h2 id="基本规则"><a href="#基本规则" class="headerlink" title="基本规则"></a><font color="#42b983">基本规则</font></h2><ul>
-<li style="list-style: none"><input type="checkbox" checked> ID默认256字符</li>
-<li style="list-style: none"><input type="checkbox" checked> 存在默认值或者范围需先定义，减少前后端验证代码量</li>
-<li style="list-style: none"><input type="checkbox" checked> 采用小写英文字符和下划线组合形式定义表名和字段名。</li>
-<li style="list-style: none"><input type="checkbox" checked> 重要数据需要增加一个字段is_delete判断用户是否已经删除，如果删除则预先保留一周时间，一周后自动删除。一周内可以找回数据。（回收站功能）</li>
-<li style="list-style: none"><input type="checkbox" checked> 主要字段名：<code>user_id</code> 作者ID、<code>id</code> 表ID、<code>is_delete</code> 是否删除、</li>
+<li>[x] ID默认256字符</li>
+<li>[x] 存在默认值或者范围需先定义，减少前后端验证代码量</li>
+<li>[x] 采用小写英文字符和下划线组合形式定义表名和字段名。</li>
+<li>[x] 重要数据需要增加一个字段is_delete判断用户是否已经删除，如果删除则预先保留一周时间，一周后自动删除。一周内可以找回数据。（回收站功能）</li>
+<li>[x] 主要字段名：<code>user_id</code> 作者ID、<code>id</code> 表ID、<code>is_delete</code> 是否删除、</li>
 </ul>
 <hr>
 <h2 id="评论表"><a href="#评论表" class="headerlink" title="评论表"></a><font color="#42b983">评论表</font></h2><p><code>reply_top_ID</code> 顶级ID，用于前端展示层级关系(也可以删除该评论，需要特定权限)。第一层级为文章ID，第二层级为第一层级的用户ID<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">create table if not exists `comments` (</span><br><span class="line">  `id` int unsigned auto_increment default 1,  /*每一条评论唯一ID*/</span><br><span class="line">  `user_ID` varchar(256) not null, /*评论用户ID*/</span><br><span class="line">  `username` varchar(128) not null, /*评论用户名*/</span><br><span class="line">  `reply_id` varchar(256) not null,  /*回复者的ID*/</span><br><span class="line">  `reply_name` varchar(256) not null,  /*回复者的用户名*/</span><br><span class="line">  `user_logo`varchar(128) , /*评论用户logo地址*/</span><br><span class="line">  `content` varchar(256) not null,  /*评论内容*/</span><br><span class="line">  `publish` date,  /*评论时间*/</span><br><span class="line">  `praise` int default 0, /*评论点赞数量*/</span><br><span class="line">  `reply_top_ID` varchar(256) not null, /*顶级ID*/</span><br><span class="line">  `is_delete` varchar(2) default &apos;0&apos; check(is_delete in(&apos;1&apos;, &apos;0&apos;)), /*该评论是否删除*/</span><br><span class="line">  primary key (`id`)</span><br><span class="line">) default charset=utf8;</span><br></pre></td></tr></table></figure></p>
@@ -260,9 +264,9 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2019/05/15/probability/" class="pre-post btn btn-default" title="抛硬币概率期望使之最高效讨论">
+        <a href="/2019/04/07/community-needs-design/" class="pre-post btn btn-default" title="社区-需求设计">
             <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">抛硬币概率期望使之最高效讨论</span>
+            <span class="hidden-xs">社区-需求设计</span>
         </a>
     
     
@@ -365,5 +369,20 @@
 
 <script src="/js/app.js?rev=@@hash"></script>
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

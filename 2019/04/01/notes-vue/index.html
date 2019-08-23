@@ -127,7 +127,7 @@ props校验与required同时存在123456789101...">
                             </li>
                         
                             <li role="presentation" class="text-center">
-                                <a href="/categories/chat/"><i class="fa "></i>闲聊</a>
+                                <a href="/categories/project/"><i class="fa "></i>项目</a>
                             </li>
                         
                     </ul>
@@ -218,15 +218,15 @@ props校验与required同时存在123456789101...">
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2019/04/01/README/" class="pre-post btn btn-default" title="README">
+        <a href="/2019/04/02/this/" class="pre-post btn btn-default" title="this指向问题">
             <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">README</span>
+            <span class="hidden-xs">this指向问题</span>
         </a>
     
     
-        <a href="/2019/03/20/nodejs/" class="next-post btn btn-default" title="Node.js笔记">
+        <a href="/2019/04/01/README/" class="next-post btn btn-default" title="README">
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">Node.js笔记</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">README</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -323,5 +323,20 @@ props校验与required同时存在123456789101...">
 
 <script src="/js/app.js?rev=@@hash"></script>
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>

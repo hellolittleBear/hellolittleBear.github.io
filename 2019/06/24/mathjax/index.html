@@ -1,0 +1,968 @@
+<!DOCTYPE HTML>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="隐隐约约">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+    <meta name="keywords" content>
+
+
+    <meta name="description" content="mathjax插件是markdown语法中新增了输入数学公式。
+
+
+
+
+
+
+列表
+数据
+
+
+
+
+最近更新
+2019/07/05
+
+
+更新次数
+2
+
+
+
+
+
+插入公式LaTeX的数学公式有两种：
+...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>mathjax编辑语法 | 隐隐约约</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="隐隐约约" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background:#303133">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="隐隐约约">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/awatar.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">隐隐约约</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间线</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/fore-end/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/back-end/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/tool/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/project/"><i class="fa "></i>项目</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="mathjax编辑语法">
+            
+	            mathjax编辑语法
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/tool/">tool</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/06/24</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p>mathjax插件是markdown语法中新增了输入数学公式。</p>
+<a id="more"></a>
+<hr>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>列表</th>
+<th style="text-align:right">数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>最近更新</td>
+<td style="text-align:right">2019/07/05</td>
+</tr>
+<tr>
+<td>更新次数</td>
+<td style="text-align:right">2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><img src="/2019/06/24/mathjax/logo.png" style="width: 100%"></p>
+<h2 id="插入公式"><a href="#插入公式" class="headerlink" title="插入公式"></a><font color="#42b983">插入公式</font></h2><p>LaTeX的数学公式有两种：</p>
+<p>行中公式和独立公式。行中公式放在文中与其它文字混编，独立公式单独成行。</p>
+<p>行中公式可以用如下两种方法表示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">＼(数学公式＼)　或　\$数学公式\$</span><br></pre></td></tr></table></figure></p>
+<p>独立公式可以用如下两种方法表示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">＼[数学公式＼]　或　\$\$数学公式\$\$</span><br></pre></td></tr></table></figure></p>
+<p>举例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$[J_\alpha(x) = \sum_&#123;m=0&#125;^\infty \frac&#123;(-1)^m&#125;&#123;m! \Gamma (m + \alpha + 1)&#125; &#123;\left(&#123; \frac&#123;x&#125;&#123;2&#125; &#125;\right)&#125;</span><br></pre></td></tr></table></figure></p>
+<script type="math/tex; mode=display">[J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac{x}{2} }\right)}^{2m + \alpha}]</script><hr>
+<h2 id="公式大括号"><a href="#公式大括号" class="headerlink" title="公式大括号"></a><font color="#42b983">公式大括号</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$$ f(x)=\left\&#123;</span><br><span class="line">\begin&#123;aligned&#125;</span><br><span class="line">x &amp; = &amp; \cos(t) \\</span><br><span class="line">y &amp; = &amp; \sin(t) \\</span><br><span class="line">z &amp; = &amp; \frac xy</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">\right.</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<script type="math/tex; mode=display">f(x)=\left\{
+\begin{aligned}
+x & = & \cos(t) \\
+y & = & \sin(t) \\
+z & = & \frac xy
+\end{aligned}
+\right.</script><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$$ F^&#123;HLLC&#125;=\left\&#123;</span><br><span class="line">\begin&#123;array&#125;&#123;rcl&#125;</span><br><span class="line">F_L       &amp;      &amp; &#123;0      &lt;      S_L&#125;\\</span><br><span class="line">F^*_L     &amp;      &amp; &#123;S_L \leq 0 &lt; S_M&#125;\\</span><br><span class="line">F^*_R     &amp;      &amp; &#123;S_M \leq 0 &lt; S_R&#125;\\</span><br><span class="line">F_R       &amp;      &amp; &#123;S_R \leq 0&#125;</span><br><span class="line">\end&#123;array&#125; \right. $$</span><br></pre></td></tr></table></figure>
+<script type="math/tex; mode=display">F^{HLLC}=\left\{
+\begin{array}{rcl}
+F_L       &      & {0      <      S_L}\\
+F^*_L     &      & {S_L \leq 0 < S_M}\\
+F^*_R     &      & {S_M \leq 0 < S_R}\\
+F_R       &      & {S_R \leq 0}
+\end{array} \right.</script><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$$f(x)=</span><br><span class="line">\begin&#123;cases&#125;</span><br><span class="line">0&amp; \text&#123;x=0&#125;\\</span><br><span class="line">1&amp; \text&#123;x!=0&#125;</span><br><span class="line">\end&#123;cases&#125;$$</span><br></pre></td></tr></table></figure>
+<script type="math/tex; mode=display">f(x)=
+\begin{cases}
+0& \text{x=0}\\
+1& \text{x!=0}
+\end{cases}</script><h2 id="上下标"><a href="#上下标" class="headerlink" title="上下标"></a><font color="#42b983">上下标</font></h2><p>^表示上标, _表示下标。如果上下标的内容多于一个字符，要用{}把这些内容括起来当成一个整体。上下标是可以嵌套的，也可以同时使用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$x^&#123;y^z&#125;=(1+&#123;\rm e&#125;^x)^&#123;-2xy^w&#125;$$</span><br></pre></td></tr></table></figure></p>
+<script type="math/tex; mode=display">x^{y^z}=(1+{\rm e}^x)^{-2xy^w}</script><p>另外，如果要在左右两边都有上下标，可以用<code>\sideset</code>命令。<br>举例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\sideset&#123;^1_2&#125;&#123;^3_4&#125;\bigotimes$$</span><br></pre></td></tr></table></figure></p>
+<script type="math/tex; mode=display">\sideset{^1_2}{^3_4}\bigotimes</script><p>举例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\max_&#123;k&#125;$$</span><br></pre></td></tr></table></figure></p>
+<script type="math/tex; mode=display">\max_{k}</script><p>举例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\mathop&#123;argmax&#125;_&#123;K&#125;$$</span><br></pre></td></tr></table></figure></p>
+<script type="math/tex; mode=display">\mathop{argmax}_{K}</script><hr>
+<h2 id="括号和分隔符"><a href="#括号和分隔符" class="headerlink" title="括号和分隔符"></a><font color="#42b983">括号和分隔符</font></h2><p>()、[]和|表示自己，{}表示{}。当要显示大号的括号或分隔符时，要用\left和\right命令。<br>举例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$f(x,y,z) = 3y^2z \left( 3+\frac&#123;7x+5&#125;&#123;1+y^2&#125; \right)$4</span><br></pre></td></tr></table></figure></p>
+<script type="math/tex; mode=display">f(x,y,z) = 3y^2z \left( 3+\frac{7x+5}{1+y^2} \right)</script><h2 id="分数"><a href="#分数" class="headerlink" title="分数"></a><font color="#42b983">分数</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$$\frac&#123;1&#125;&#123;3&#125;$$  或者</span><br><span class="line">$$1 \over 3$$</span><br></pre></td></tr></table></figure>
+<script type="math/tex; mode=display">\frac{1}{3}</script><script type="math/tex; mode=display">1 \over 3</script><h2 id="开方"><a href="#开方" class="headerlink" title="开方"></a><font color="#42b983">开方</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\sqrt&#123;2&#125;$$  $$\sqrt[n]&#123;3&#125;$$</span><br></pre></td></tr></table></figure>
+<script type="math/tex; mode=display">\sqrt{2}</script><script type="math/tex; mode=display">\sqrt[n]{3}</script><h2 id="省略号"><a href="#省略号" class="headerlink" title="省略号"></a><font color="#42b983">省略号</font></h2><p>数学公式中常见的省略号有两种，\ldots表示与文本底线对齐的省略号，\cdots表示与文本中线对齐的省略号。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$f(x_1,x_2,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2$$</span><br></pre></td></tr></table></figure></p>
+<script type="math/tex; mode=display">f(x_1,x_2,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2</script><h2 id="矢量"><a href="#矢量" class="headerlink" title="矢量"></a><font color="#42b983">矢量</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\vec&#123;a&#125; \cdot \vec&#123;b&#125;=0$$</span><br></pre></td></tr></table></figure>
+<script type="math/tex; mode=display">\vec{a} \cdot \vec{b}=0</script><h2 id="积分"><a href="#积分" class="headerlink" title="积分"></a><font color="#42b983">积分</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\int_0^1 x^2 &#123;\rm d&#125;x$$</span><br></pre></td></tr></table></figure>
+<script type="math/tex; mode=display">\int_0^1 x^2 {\rm d}x</script><h2 id="极限运算"><a href="#极限运算" class="headerlink" title="极限运算"></a><font color="#42b983">极限运算</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$\lim\limits_&#123;n \rightarrow +\infty&#125; \frac&#123;1&#125;&#123;n(n+1)&#125;$  或者</span><br><span class="line">$$\lim_&#123;n \rightarrow +\infty&#125; \frac&#123;1&#125;&#123;n(n+1)&#125;$$</span><br></pre></td></tr></table></figure>
+<script type="math/tex; mode=display">\lim\limits_{n \rightarrow +\infty} \frac{1}{n(n+1)}</script><script type="math/tex; mode=display">\lim_{n \rightarrow +\infty} \frac{1}{n(n+1)}</script><blockquote>
+<p>注:在<code>latex</code>中输入极限，主要的一种形式是使用<code>\lim</code>，输出的就是极限的原样。如果在<code>$*****$</code>环境中，使用上下标起不到作用，在<code>$$******$$</code>中使用下标，会使下标部分出现在limit之下。</p>
+<p>在文章中间，使用这种形式的极限，可以选择使用这种形式<code>\lim\limits_{t \to \infty }{x(t)}</code>。上下极限的输入<code>textfriend</code>里面直接就有。另外一点需要注意的是，极限的下标如果有多行的话，使用断行，有几种方法：可以使用<code>array</code>或者<code>substack</code>命令，也可以使用<code>\stackrel{top}{bot}</code>或者<code>mathop</code>命令.</p>
+</blockquote>
+<h2 id="累加、累乘运算"><a href="#累加、累乘运算" class="headerlink" title="累加、累乘运算"></a><font color="#42b983">累加、累乘运算</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$\sum_&#123;i=0&#125;^n \frac&#123;1&#125;&#123;i^2&#125;$ 或者</span><br><span class="line">$\prod_&#123;i=0&#125;^n \frac&#123;1&#125;&#123;i^2&#125;$</span><br></pre></td></tr></table></figure>
+<script type="math/tex; mode=display">\sum_{i=0}^n \frac{1}{i^2}</script><script type="math/tex; mode=display">\prod_{i=0}^n \frac{1}{i^2}</script><h2 id="公式应用"><a href="#公式应用" class="headerlink" title="公式应用"></a><font color="#42b983">公式应用</font></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$r = r_F+ \beta(r_M – r_F) + \epsilon$$</span><br></pre></td></tr></table></figure>
+<script type="math/tex; mode=display">r = r_F+ \beta(r_M – r_F) + \epsilon</script><h2 id="希腊字母"><a href="#希腊字母" class="headerlink" title="希腊字母"></a><font color="#42b983">希腊字母</font></h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>希腊字母小写、大写</th>
+<th>LaTeX形式</th>
+<th>希腊字母小写、大写</th>
+<th style="text-align:right">LaTeX形式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>α A</td>
+<td>\alpha A</td>
+<td>μ N</td>
+<td style="text-align:right">\mu N</td>
+</tr>
+<tr>
+<td>αα A</td>
+<td>\alpha A</td>
+<td>μμ N</td>
+<td style="text-align:right">\mu N</td>
+</tr>
+<tr>
+<td>ββ B</td>
+<td>\beta B</td>
+<td>ξξ ΞΞ</td>
+<td style="text-align:right">\xi \Xi</td>
+</tr>
+<tr>
+<td>γγ ΓΓ</td>
+<td>\gamma \Gamma</td>
+<td>o O</td>
+<td style="text-align:right">o O</td>
+</tr>
+<tr>
+<td>δδ ΔΔ</td>
+<td>\delta  Delta</td>
+<td>ππ ΠΠ</td>
+<td style="text-align:right">\pi \Pi</td>
+</tr>
+<tr>
+<td>ϵϵ εε E</td>
+<td>\epsilon \varepsilon E</td>
+<td>ρρ ϱϱ P</td>
+<td style="text-align:right">\rho \varrho P</td>
+</tr>
+<tr>
+<td>ζζ Z</td>
+<td>\zeta Z</td>
+<td>σσ ΣΣ</td>
+<td style="text-align:right">\sigma \Sigma</td>
+</tr>
+<tr>
+<td>ηη H</td>
+<td>\eta H</td>
+<td>ττ T</td>
+<td style="text-align:right">\tau T</td>
+</tr>
+<tr>
+<td>θθ ϑϑ ΘΘ</td>
+<td>\theta \vartheta \Theta</td>
+<td>υυ ΥΥ</td>
+<td style="text-align:right">\upsilon \Upsilon</td>
+</tr>
+<tr>
+<td>ιι I</td>
+<td>\iota I</td>
+<td>ϕϕ φφ ΦΦ</td>
+<td style="text-align:right">\phi \varphi \Phi</td>
+</tr>
+<tr>
+<td>κκ K</td>
+<td>\kappa K</td>
+<td>χχ X</td>
+<td style="text-align:right">\chi X</td>
+</tr>
+<tr>
+<td>λλ ΛΛ</td>
+<td>\lambda \Lambda</td>
+<td>ψψ ΨΨ</td>
+<td style="text-align:right">\psi \Psi</td>
+</tr>
+<tr>
+<td>μμ M</td>
+<td>\mu M</td>
+<td>ωω ΩΩ</td>
+<td style="text-align:right">\omega \Omega</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a><font color="#42b983">特殊字符</font></h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>关系运算符</th>
+<th style="text-align:right">LaTeX形式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>±</td>
+<td style="text-align:right">\pm</td>
+</tr>
+<tr>
+<td>×</td>
+<td style="text-align:right">\times</td>
+</tr>
+<tr>
+<td>÷</td>
+<td style="text-align:right">\div</td>
+</tr>
+<tr>
+<td>∣</td>
+<td style="text-align:right">\mid</td>
+</tr>
+<tr>
+<td>∤</td>
+<td style="text-align:right">\nmid</td>
+</tr>
+<tr>
+<td>⋅</td>
+<td style="text-align:right">\cdot</td>
+</tr>
+<tr>
+<td>∘</td>
+<td style="text-align:right">\circ</td>
+</tr>
+<tr>
+<td>∗</td>
+<td style="text-align:right">\ast</td>
+</tr>
+<tr>
+<td>⨀</td>
+<td style="text-align:right">\bigodot</td>
+</tr>
+<tr>
+<td>⨂</td>
+<td style="text-align:right">\bigotimes</td>
+</tr>
+<tr>
+<td>⨁</td>
+<td style="text-align:right">\bigoplus</td>
+</tr>
+<tr>
+<td>≤</td>
+<td style="text-align:right">\leq</td>
+</tr>
+<tr>
+<td>≥</td>
+<td style="text-align:right">\geq</td>
+</tr>
+<tr>
+<td>≠</td>
+<td style="text-align:right">\neq</td>
+</tr>
+<tr>
+<td>≈</td>
+<td style="text-align:right">\approx</td>
+</tr>
+<tr>
+<td>≡</td>
+<td style="text-align:right">\equiv</td>
+</tr>
+<tr>
+<td>∑</td>
+<td style="text-align:right">\sum</td>
+</tr>
+<tr>
+<td>∏</td>
+<td style="text-align:right">\prod</td>
+</tr>
+<tr>
+<td>∐</td>
+<td style="text-align:right">\coprod</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>集合运算符</th>
+<th style="text-align:right">LaTeX形式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>∅</td>
+<td style="text-align:right">\emptyset</td>
+</tr>
+<tr>
+<td>∈</td>
+<td style="text-align:right">\in</td>
+</tr>
+<tr>
+<td>∉</td>
+<td style="text-align:right">\notin</td>
+</tr>
+<tr>
+<td>⊂</td>
+<td style="text-align:right">\subset</td>
+</tr>
+<tr>
+<td>⊃</td>
+<td style="text-align:right">\supset</td>
+</tr>
+<tr>
+<td>⊆</td>
+<td style="text-align:right">\subseteq</td>
+</tr>
+<tr>
+<td>⊇</td>
+<td style="text-align:right">\supseteq</td>
+</tr>
+<tr>
+<td>⋂</td>
+<td style="text-align:right">\bigcap</td>
+</tr>
+<tr>
+<td>⋃</td>
+<td style="text-align:right">\bigcup</td>
+</tr>
+<tr>
+<td>⋁</td>
+<td style="text-align:right">\bigvee</td>
+</tr>
+<tr>
+<td>⋀</td>
+<td style="text-align:right">\bigwedge</td>
+</tr>
+<tr>
+<td>⨄</td>
+<td style="text-align:right">\biguplus</td>
+</tr>
+<tr>
+<td>⨆</td>
+<td style="text-align:right">\bigsqcup</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>对数运算符</th>
+<th style="text-align:right">LaTeX形式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>log</td>
+<td style="text-align:right">\log</td>
+</tr>
+<tr>
+<td>lg</td>
+<td style="text-align:right">\lg</td>
+</tr>
+<tr>
+<td>ln</td>
+<td style="text-align:right">\ln</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>三角运算符</th>
+<th style="text-align:right">LaTeX形式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>⊥</td>
+<td style="text-align:right">\bot</td>
+</tr>
+<tr>
+<td>∠</td>
+<td style="text-align:right">\angle</td>
+</tr>
+<tr>
+<td>30∘</td>
+<td style="text-align:right">30^\circ</td>
+</tr>
+<tr>
+<td>sin</td>
+<td style="text-align:right">\sin</td>
+</tr>
+<tr>
+<td>cos</td>
+<td style="text-align:right">\cos</td>
+</tr>
+<tr>
+<td>tan</td>
+<td style="text-align:right">\tan</td>
+</tr>
+<tr>
+<td>cot</td>
+<td style="text-align:right">\cot</td>
+</tr>
+<tr>
+<td>sec</td>
+<td style="text-align:right">\sec</td>
+</tr>
+<tr>
+<td>csc</td>
+<td style="text-align:right">\csc</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>微积分运算符</th>
+<th style="text-align:right">LaTeX形式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>′</td>
+<td style="text-align:right">\prime</td>
+</tr>
+<tr>
+<td>∫</td>
+<td style="text-align:right">\int</td>
+</tr>
+<tr>
+<td>∬</td>
+<td style="text-align:right">\iint</td>
+</tr>
+<tr>
+<td>∭</td>
+<td style="text-align:right">\iiint</td>
+</tr>
+<tr>
+<td>⨌</td>
+<td style="text-align:right">\iiiint</td>
+</tr>
+<tr>
+<td>∮</td>
+<td style="text-align:right">\oint</td>
+</tr>
+<tr>
+<td>lim</td>
+<td style="text-align:right">\lim</td>
+</tr>
+<tr>
+<td>∞</td>
+<td style="text-align:right">\infty</td>
+</tr>
+<tr>
+<td>∇</td>
+<td style="text-align:right">\nabla</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>逻辑运算符</th>
+<th style="text-align:right">LaTeX形式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>∵</td>
+<td style="text-align:right">\because</td>
+</tr>
+<tr>
+<td>∴</td>
+<td style="text-align:right">\therefore</td>
+</tr>
+<tr>
+<td>∀</td>
+<td style="text-align:right">\forall</td>
+</tr>
+<tr>
+<td>∃</td>
+<td style="text-align:right">\exists</td>
+</tr>
+<tr>
+<td>≠</td>
+<td style="text-align:right">\not=</td>
+</tr>
+<tr>
+<td>≯</td>
+<td style="text-align:right">\not&gt;</td>
+</tr>
+<tr>
+<td>⊄</td>
+<td style="text-align:right">\not\subset</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>戴帽符号</th>
+<th style="text-align:right">LaTeX形式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\hat{y}</td>
+<td style="text-align:right">\hat{y}</td>
+</tr>
+<tr>
+<td>\check{y}</td>
+<td style="text-align:right">\check{y}</td>
+</tr>
+<tr>
+<td>\breve{y}</td>
+<td style="text-align:right">\breve{y}</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>连线符号</th>
+<th style="text-align:right">LaTeX形式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\overline{a+b+c+d}</td>
+<td style="text-align:right">\overline{a+b+c+d}</td>
+</tr>
+<tr>
+<td>\underline{a+b+c+d}</td>
+<td style="text-align:right">\underline{a+b+c+d}</td>
+</tr>
+<tr>
+<td>\overbrace{a+\underbrace{b+c}_{1.0}+d}^{2.0}</td>
+<td style="text-align:right">\overbrace{a+\underbrace{b+c}_{1.0}+d}^{2.0}</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>箭头符号</th>
+<th style="text-align:right">LaTeX形式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>↑</td>
+<td style="text-align:right">\uparrow</td>
+</tr>
+<tr>
+<td>↓</td>
+<td style="text-align:right">\downarrow</td>
+</tr>
+<tr>
+<td>⇑</td>
+<td style="text-align:right">\Uparrow</td>
+</tr>
+<tr>
+<td>⇓</td>
+<td style="text-align:right">\Downarrow</td>
+</tr>
+<tr>
+<td>→</td>
+<td style="text-align:right">\rightarrow</td>
+</tr>
+<tr>
+<td>←</td>
+<td style="text-align:right">\leftarrow</td>
+</tr>
+<tr>
+<td>⇒</td>
+<td style="text-align:right">\Rightarrow</td>
+</tr>
+<tr>
+<td>⇐</td>
+<td style="text-align:right">\Leftarrow</td>
+</tr>
+<tr>
+<td>⟶</td>
+<td style="text-align:right">\longrightarrow</td>
+</tr>
+<tr>
+<td>⟵</td>
+<td style="text-align:right">\longleftarrow</td>
+</tr>
+<tr>
+<td>⟹</td>
+<td style="text-align:right">\Longrightarrow</td>
+</tr>
+<tr>
+<td>⟸</td>
+<td style="text-align:right">\Longleftarrow</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>字体转换</th>
+<th style="text-align:right">LaTeX形式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\rm</td>
+<td style="text-align:right">罗马体</td>
+<td>　</td>
+</tr>
+<tr>
+<td>\it</td>
+<td style="text-align:right">意大利体</td>
+</tr>
+<tr>
+<td>\bf</td>
+<td style="text-align:right">黑体</td>
+<td>　　　</td>
+</tr>
+<tr>
+<td>\cal</td>
+<td style="text-align:right">花体</td>
+</tr>
+<tr>
+<td>\sl</td>
+<td style="text-align:right">倾斜体</td>
+<td>　　　</td>
+</tr>
+<tr>
+<td>\sf</td>
+<td style="text-align:right">等线体</td>
+</tr>
+<tr>
+<td>\mit</td>
+<td style="text-align:right">数学斜体</td>
+<td>　　</td>
+</tr>
+<tr>
+<td>\tt</td>
+<td style="text-align:right">打字机字体</td>
+</tr>
+<tr>
+<td>\sc</td>
+<td style="text-align:right">小体大写字母</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：请注明出处 © <a href="https://github.com/hellolittleBear" target="_blank">helloLittleBear</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2019/05/15/probability/" class="next-post btn btn-default" title="抛硬币概率期望使之最高效讨论">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">抛硬币概率期望使之最高效讨论</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-Hans'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#插入公式"><span class="toc-text">插入公式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#公式大括号"><span class="toc-text">公式大括号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#上下标"><span class="toc-text">上下标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#括号和分隔符"><span class="toc-text">括号和分隔符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分数"><span class="toc-text">分数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开方"><span class="toc-text">开方</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#省略号"><span class="toc-text">省略号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#矢量"><span class="toc-text">矢量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#积分"><span class="toc-text">积分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#极限运算"><span class="toc-text">极限运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#累加、累乘运算"><span class="toc-text">累加、累乘运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#公式应用"><span class="toc-text">公式应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#希腊字母"><span class="toc-text">希腊字母</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特殊字符"><span class="toc-text">特殊字符</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>

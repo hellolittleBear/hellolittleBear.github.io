@@ -21,9 +21,10 @@
 
     <meta name="description" content="this 是javascript的一大特色，也是一大深坑。根本原因是因为内存存储的数据结构有关系。
 
+
 简介在es6之前是不存在class的，开发者需要自定义函数来构造类。
 
-es6 箭头函数，强...">
+es6 箭头函数，...">
 
 
 
@@ -128,7 +129,7 @@ es6 箭头函数，强...">
                             </li>
                         
                             <li role="presentation" class="text-center">
-                                <a href="/categories/chat/"><i class="fa "></i>闲聊</a>
+                                <a href="/categories/project/"><i class="fa "></i>项目</a>
                             </li>
                         
                     </ul>
@@ -181,6 +182,7 @@ es6 箭头函数，强...">
     
     <div class="post-body post-content">
         <p><code>this</code> 是<code>javascript</code>的一大特色，也是一大深坑。根本原因是因为内存存储的数据结构有关系。</p>
+<p><img src="/2019/04/02/this/logo.png" style="width: 100%"></p>
 <a id="more"></a>
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a><font color="#67C23A">简介</font></h2><p>在es6之前是不存在class的，开发者需要自定义函数来构造类。</p>
 <ul>
@@ -221,9 +223,9 @@ es6 箭头函数，强...">
         </a>
     
     
-        <a href="/2019/04/01/README/" class="next-post btn btn-default" title="README">
+        <a href="/2019/04/01/notes-vue/" class="next-post btn btn-default" title="Vue.js笔记">
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">README</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">Vue.js笔记</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -320,5 +322,20 @@ es6 箭头函数，强...">
 
 <script src="/js/app.js?rev=@@hash"></script>
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>
