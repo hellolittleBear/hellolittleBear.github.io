@@ -107,27 +107,31 @@ disabled指当 input 元素加载时禁用此元素。input内容不会随着表
                     <ul class="menu">
                         
                             <li role="presentation" class="text-center">
-                                <a href="/"><i class="fa "></i>首页</a>
+                                <a href="/"><i class="fa fa fa-home fa-fw"></i>首页</a>
                             </li>
                         
                             <li role="presentation" class="text-center">
-                                <a href="/archives/"><i class="fa "></i>时间线</a>
+                                <a href="/archives/"><i class="fa fa-camera-retro fa-fw"></i>归纳</a>
                             </li>
                         
                             <li role="presentation" class="text-center">
-                                <a href="/categories/fore-end/"><i class="fa "></i>前端</a>
+                                <a href="/categories/fore-end/"><i class="fa fa-book fa-fw"></i>前端</a>
                             </li>
                         
                             <li role="presentation" class="text-center">
-                                <a href="/categories/back-end/"><i class="fa "></i>后端</a>
+                                <a href="/categories/back-end/"><i class="fa fa-pencil fa-fw"></i>后端</a>
                             </li>
                         
                             <li role="presentation" class="text-center">
-                                <a href="/categories/tool/"><i class="fa "></i>工具</a>
+                                <a href="/categories/tool/"><i class="fa fa-cog fa-fw"></i>工具</a>
                             </li>
                         
                             <li role="presentation" class="text-center">
-                                <a href="/categories/project/"><i class="fa "></i>项目</a>
+                                <a href="/categories/project/"><i class="fa fa-product-hunt fa-fw"></i>项目</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/fun/"><i class="fa fa-h-square fa-fw"></i>兴趣</a>
                             </li>
                         
                     </ul>
@@ -177,7 +181,7 @@ disabled指当 input 元素加载时禁用此元素。input内容不会随着表
             
             
             <p class="fa fa-exclamation-triangle warning">
-                本文于<strong>363</strong>天之前发表，文中内容可能已经过时。
+                本文于<strong>372</strong>天之前发表，文中内容可能已经过时。
             </p>
         
     </div>
@@ -272,7 +276,7 @@ disabled指当 input 元素加载时禁用此元素。input内容不会随着表
 <hr>
 <p>三、左边定宽，右边自适应<br>    方案一：左边设置浮动，右边宽度设置100%  .left{float:left}  .right:{width:100%}<br>    方案二：左设置浮动，右用cacl去补宽度计算 .left{float:left} .right:{width:cacl(100vw-200px}<br>    方案三：父容器设置display：flex  right部分是设置flex：1<br>    方案四：右边div套个包裹、并前置、左及包裹 双浮动</p>
 <p>四、水平居中<br>    行内元素居中（父元素text-align:center）<br>    块状元素居中（块状元素没发用text-align）<br>        1.宽度一定：margin:auto<br>        2.宽度不定：块级变行内，然后在父上text-aligin<br>                float</p>
-<p>四、BFC <a href="https://juejin.im/post/5909db2fda2f60005d2093db" target="_blank" rel="noopener">https://juejin.im/post/5909db2fda2f60005d2093db</a><br>    理解：BFC是css布局的一个概念，是一块独立的渲染区域，一个环境，里面的元素不会影响到外部的元素<br>    如何生成BFC：（脱离文档流）<br>             【1】根元素，即HTML元素（最大的一个BFC）<br>             【2】float的值不为none<br>             【3】position的值为absolute或fixed<br>             【4】overflow的值不为visible（默认值。内容不会被修剪，会呈现在元素框之外）<br>             【5】display的值为inline-block、table-cell、table-caption<br>    BFC布局规则：1.内部的Box会在垂直方向，一个接一个地放置。<br>             2.属于同一个BFC的两个相邻的Box的margin会发生重叠<br>             3.BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此, 文字环绕效果，设置float<br>             4.BFC的区域不会与float box重叠。<br>             5.计算BFC的高度，浮动元素也参与计算<br>    BFC作用：1.自适应两栏布局<br>         2.可以阻止元素被浮动元素覆盖<br>         3.可以包含浮动元素—清除内部浮动 原理:：触发父div的BFC属性，使下面的子div都处在父div的同一个BFC区域之内<br>         4.分属于不同的BFC时，可以阻止margin重叠</p>
+<p>四、BFC <a href="https://juejin.im/post/5909db2fda2f60005d2093db" target="_blank" rel="noopener">https://juejin.im/post/5909db2fda2f60005d2093db</a><br>    理解：BFC是css布局的一个概念，是一块独立的渲染区域，一个环境，里面的元素不会影响到外部的元素<br>    如何生成BFC：（脱离文档流）<br>             【1】根元素，即HTML元素（最大的一个BFC）<br>             【2】float的值不为none<br>             【3】position的值为absolute或fixed<br>             【4】overflow的值不为visible（默认值。内容不会被修剪，会呈现在元素框之外）<br>             【5】display的值为inline-block、table-cell、table-caption<br>    BFC布局规则：1.内部的Box会在垂直方向，一个接一个地放置。<br>             2.属于同一个BFC的两个相邻的Box的margin会发生重叠<br>             3.BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此, 文字环绕效果，设置float<br>             4.BFC的区域不会与float box重叠。<br>             5.计算BFC的高度，浮动元素也参与计算<br>    BFC作用：1.自适应两栏布局<br>         2.可以阻止元素被浮动元素覆盖<br>         3.可以包含浮动元素—-清除内部浮动 原理:：触发父div的BFC属性，使下面的子div都处在父div的同一个BFC区域之内<br>         4.分属于不同的BFC时，可以阻止margin重叠</p>
 <p>三、类的创建和继承<br>    （es5）new 一个function，在这个function的prototype里增加属性和方法, 类里面有方法和属性<br>     (es6)中class, extends<br>    继承：<br>         原型链继承： function Cat(){ } Cat.prototype = new Animal(); Cat.prototype.name = ‘cat’; 无法实现多继承<br>        构造继承：   使用父类的构造函数来增强子类实例。function Cat(name){Animal.call(this);this.name = name || ‘Tom’;} 无法继承父类原型链上的属性跟方法  installof去检验<br>        实例继承：  为父类实例添加新特性，作为子类实例的返回<br>        拷贝继承： 拷贝父类元素上的属性跟方法<br>        组合继承：构造继承 + 原型继承的组合体<br>        寄生组合继承：通过寄生方式，在构造继承上加一个Super函数(没有实例和方法) 让他的原型链指向父类的原型链<br>                  砍掉父类的实例属性，这样，在调用两次父类的构造的时候，就不会初始化两次实例方法/属性<br>    如何判断是那种类型</p>
 <p>四、异步回调（如何解决回调地狱）<br>    promise、generator、async/await</p>
 <pre><code>promise： 1.是一个对象，用来传递异步操作的信息。代表着某个未来才会知道结果的时间，并未这个事件提供统一的api，供进异步处理
@@ -283,9 +287,9 @@ disabled指当 input 元素加载时禁用此元素。input内容不会随着表
         promise.race() 里面只有一个状态变为rejected或者fulfilled即输出
         promis.finally()不管指定不管Promise对象最后状态如何，都会执行的操作（本质上还是then方法的特例）
 </code></pre><p>五、前端事件流<br>    事件流描述的是从页面中接受事件的顺序，事件 捕获阶段 处于目标阶段 事件冒泡阶段 addeventListener 最后这个布尔值参数如果是true，表示在捕获阶段调用事件处理程序；如果是false，表示在冒泡阶段调用事件处理程序。<br>      1、事件捕获阶段：实际目标div在捕获阶段不会接受事件，也就是在捕获阶段，事件从document到<html>再到<body>就停止了。<br>          2、处于目标阶段：事件在div发生并处理，但是事件处理会被看成是冒泡阶段的一部分。<br>          3、冒泡阶段：事件又传播回文档<br>       阻止冒泡事件event.stopPropagation()<br>           function stopBubble(e) {<br>                if (e &amp;&amp; e.stopPropagation) { // 如果提供了事件对象event 这说明不是IE浏览器<br>                  e.stopPropagation()<br>                } else {<br>                  window.event.cancelBubble = true //IE方式阻止冒泡<br>                  }<br>                 }<br>       阻止默认行为event.preventDefault()<br>     function stopDefault(e) {<br>        if (e &amp;&amp; e.preventDefault) {<br>          e.preventDefault()<br>        } else {<br>          // IE浏览器阻止函数器默认动作的行为</body></html></p>
-<pre><code>    window.event.returnValue = false
+<pre><code>      window.event.returnValue = false
+    }
   }
-}
 </code></pre><p>事件如何先捕获后冒泡？<br>  在DOM标准事件模型中，是先捕获后冒泡。但是如果要实现先冒泡后捕获的效果，<br>    对于同一个事件，监听捕获和冒泡，分别对应相应的处理函数，监听到捕获事件，先暂缓执行，直到冒泡事件被捕获后再执行捕获事件。</p>
 <p>哪些事件不支持冒泡事件：鼠标事件：mouserleave  mouseenter<br>            焦点事件：blur focus<br>            UI事件：scroll resize</p>
 <p>六、事件委托（提高性能）<br>    简介：事件委托指的是，不在事件的（直接dom）上设置监听函数，而是在其父元素上设置监听函数。通过事件冒泡，父元素可以监听到子元素上事件的触发<br>          通过判断事件发生元素DOM的类型，来做出不同的响应。<br>    举例子： 最经典的就是ui和li标签的事件监听，比如我们在添加事件的时候，采用事件委托机制，不会在li标签上直接添加，而是在ul父元素上添加<br>    好处：可以比较合适动态元素的绑定，新添加的子元素也会监听函数，也可以有事件触发机制</p>
@@ -309,7 +313,7 @@ iframe元素创建包含另外一个文档的内联框架（行内框架）(setT
   解释：浏览器中的浏览器！用于设置文本或者图形的浮动图文框或容器
   它和跨域
     1、document.domain 实现主域名相同，子域名不同的网页通信
-      都设置为超域：document.domain = &apos;demo.com&apos;
+      都设置为超域：document.domain = &#39;demo.com&#39;
     2、window.postMessageht(data, url)，h5的API，启动跨域通信
 </code></pre><p>十一、图片的懒加载和预加载<br>    预加载：提前加载图片，当用户需要查看是可以直接从本地缓存中渲染<br>      为什么要使用预加载：在网页加载之前，对一些主要内容进行加载，以提供用户更好的体验，减少等待时间。<br>                  否则，如果一个页面的内容过于庞大，会出现留白。<br>        解决页面留白的方案：1.预加载  2.使用svg站位图片，将一些结构快速搭建起来，等待请求的数据来了之后，替换当前的占位符<br>    实现预加载的方法：<br>             1.使用html标签<br>            2.使用Image对象<br>            3.使用XMLHTTPRequest对像，但会精细控制预加载过程</p>
 <pre><code>懒加载（lazyload）：客户端优化，减少请求数和延迟请求数
@@ -329,9 +333,9 @@ isProperty()方法测试一个对象是否存在另一个对象的原型链上�
 </code></pre><p>十六、setTimeout 和 setInterval的机制<br>    因为js是单线程的。浏览器遇到etTimeout 和 setInterval会先执行完当前的代码块，在此之前会把定时器推入浏览器的<br>    待执行时间队列里面，等到浏览器执行完当前代码之后会看下事件队列里有没有任务，有的话才执行定时器里的代码</p>
 <p>十七、var let const<br>    const：定义的变量不可修改，必须初始化 ，<br>    var：定义的变量可以修改，如果不初始化输出undefined，不会报错<br>    let：块级作用域，函数内部使用let定义后，会函数外部无影响<br>    let const 不会造成变量的提升</p>
 <p>十八、js垃圾回收机制<br>    1.JS具有自动垃圾收集的机制<br>    2.JS的内存生命周期（变量的生命）<br>        1.分配你所需要的空间 var a = 20<br>        2.使用分配带的内存（读写） alert（a + 10）<br>        3.不适用的时候，释放内存空间 a = null<br>    3.JS的垃圾收集器每隔固定的时间就执行一次释放操作，通用的是通过标记清除的算法<br>    4.在局部作用域中，垃圾回收器很容易做出判断并回收，全局比较难，因此应避免全局变量</p>
-<pre><code>标记清除算法：js最常见的垃圾回收方式，当变量进入执行环境的时候，比如函数中声明一个变量，垃圾回收器将他标记为&apos;进入环境&apos;，
-      当变量离开（函数执行完后），就其标记为&apos;离开环境&apos;。垃圾回收器会在运行的时候给存储在内存中的所有变量加上标记，
-      然后去掉环境中的变量以及被环境中该变量所引用的变量（闭包）。在这些完成之后仍存在标记的就是要删除的变量了
+<pre><code>   标记清除算法：js最常见的垃圾回收方式，当变量进入执行环境的时候，比如函数中声明一个变量，垃圾回收器将他标记为&#39;进入环境&#39;，
+         当变量离开（函数执行完后），就其标记为&#39;离开环境&#39;。垃圾回收器会在运行的时候给存储在内存中的所有变量加上标记，
+         然后去掉环境中的变量以及被环境中该变量所引用的变量（闭包）。在这些完成之后仍存在标记的就是要删除的变量了
 </code></pre><p>十九、渐进增强和优雅降级<br>    1.渐进增强就是针对低版本浏览器进行构建页面，保证最基本的功能，然后对高级浏览器进行效果、交互等改进和最佳功能达到更好的用户体验<br>    2.优雅降级：一开始构建完整的功能，然后对低版本的进行兼容</p>
 <p>二十、undefined 和 null<br>    1.undefined类型只要一个，即undefined，当声明变量还未被初始化时就是undefined<br>    2.null类型也只有一个值，即null。null用来表示尚未存在的对象，常用来表示函数企图返回一个不存在的对象<br>    3.NaN 与任何值都是相比较的结果都是false</p>
 <p>二十一、valueof和tostring<br>    valueof：所有对象都有valueof，如果存在任意原始值，他就默认将对象转化为表示它的原始值。<br>                      如果对象是复合值，而却大部分对象无法真正表示一个原始值，因此默认的valueof()方法简单的返回对象本身，而不是返回原始值。<br>                      数组、函数和正则表达式简单的继承了这个more方法，返回对象本身</p>
@@ -342,7 +346,7 @@ isProperty()方法测试一个对象是否存在另一个对象的原型链上�
 <p>二十六、TypeScript的优点：<br>      1、编译时的强类型，变成了强类型语言，还是编译成js 编译的时候就可以检验<br>      2、更好的模块化<br>      3、更好的是实现面向对象的编程，类、接口、模块</p>
 <p>二十七、js的阻塞特性：所有浏览器在下载JS的时候，会阻止一切其他活动，比如其他资源的下载，内容的呈现等等。<br>              直到JS下载、解析、执行完毕后才开始继续并行下载其他资源并呈现内容。<br>              为了提高用户体验，新一代浏览器都支持并行下载JS，但是JS下载仍然会阻塞其它资源的下载（例如.图片，css文件等）。<br>    css阻塞：因为浏览器会维持html中css和js的顺序，样式表必须在嵌入的JS执行前先加载、解析完。<br>         而嵌入的JS会阻塞后面的资源加载，所以就会出现上面CSS阻塞下载的情况。</p>
 <p>二十八、meta元素可提供有关页面的元信息，比如针对搜索引擎和更新频度的描述和关键词</p>
-<pre><code>node面试
+<pre><code>                            node面试
 </code></pre><p>一、koa中间件执行机制<br>    1.添加中间件的方式是使用Koa实例的use方法，并传入一个generator函数，这个generator函数接受一个next参数<br>    2.use的原理：function Application () {this.middleware = [] // 这个数组就是用来装一个个中间间的}<br>    3.每次执行use方法，就把外面传进来的generator函数push到middleware数组中<br>        app.use = function (fn) {this.middleware.push(fn)}<br>    4.koa中是预先通过use方法，将请求可能会经过的中间间装在一个数组中。<br>    5.callback函数就是请求到来的时候执行的回调。把装着中间件middleware的数组作为参数传递为compose这个方法。<br>    6.componse把毫无关系的一个个中间件给收尾串起来了，就好比我们平常的烤面筋<br>    7.componse将中间件从最后一个开始处理，并一直往前知道第一个中间件。其实最关键的就是将最后一个中间件得到generator<br>       作为参数传递给前一个中间件。当最后一个中间件的参数next是空的generator函数生成对象</p>
 <pre><code>中间件是怎么跑起来的：https://juejin.im/post/591c8b4544d904006c90a2cb
 
@@ -358,7 +362,7 @@ isProperty()方法测试一个对象是否存在另一个对象的原型链上�
 <p>四、Vue的双向数据绑定实现原理<br>    1.核心就是数据劫持 + 发布/订阅者模式：vue使用的是Object.defineProperty()通过监听他的get/set事件，监听对数据的操作，从而触发数据同步</p>
 <p> Object.defineProperty缺陷的：<br>    1.只能对属性进行数据劫持，并且需要深度遍历整个对象<br>    2.对于数组不能监听数据的变化<br>    而proxy原生支持监听数组的变化，并且可以直接对整个对象进行拦截，所有Vue在下个版本中用proxy替换object.defineProperty</p>
 <p>五、nextTick原理</p>
-<p>六、生命周期函数  <a href="https://juejin.im/post/5b41bdef6fb9a04fe63765f1" target="_blank" rel="noopener">https://juejin.im/post/5b41bdef6fb9a04fe63765f1</a><br>        new Vue（创建一个Vue对象）–&gt; beforeCreate –&gt; observer Data(开始监控data对象数据变化） –&gt; init event(vue内部初始化事件）</p>
+<p>六、生命周期函数  <a href="https://juejin.im/post/5b41bdef6fb9a04fe63765f1" target="_blank" rel="noopener">https://juejin.im/post/5b41bdef6fb9a04fe63765f1</a><br>        new Vue（创建一个Vue对象）—&gt; beforeCreate —&gt; observer Data(开始监控data对象数据变化） —&gt; init event(vue内部初始化事件）</p>
 <pre><code>     --&gt; created()  --&gt; compile(编译模板,把data里面的数据和模板生成html)  --&gt;  beforeMount(还没有生成HTML到元素上)  --&gt;
 
      mounted(挂载完成，也就是模板中的html渲染到了html页面中）  --&gt;  beforeUpdate (Vritual Dom)  --&gt; updated  --&gt; beforeDestroy --&gt; destroyed
@@ -383,7 +387,7 @@ isProperty()方法测试一个对象是否存在另一个对象的原型链上�
 解决的问题：1.命名冲突 2.文件依赖 3.模块的复用 4.统一规范和开发方式
 </code></pre><p>十、谈谈Vue和React组件化的思想<br>    1.我们在各个页面开发的时候，会产生很多重复的功能，比如element中的xxxx。像这种纯粹非页面的UI，便成为我们常用的UI组件，最初的前端组件也就仅仅指的是UI组件<br>    2.随着业务逻辑变得越来多是，我们就想要我们的组件可以处理很多事，这就是我们常说的组件化，这个组件就不是UI组件了，而是包具体业务的业务组件<br>    3.这种开发思想就是分而治之。最大程度的降低开发难度和维护成本的效果。并且可以多人协作，每个人写不同的组件，最后像撘积木一样的把它构成一个页面</p>
 <p>十一、vue的依赖收集和watch原理</p>
-<pre><code>React
+<pre><code>                        React
 </code></pre><p>一、react和vue的区别<br>       =&gt;  相同点：<br>        1.数据驱动页面，提供响应式的试图组件<br>        2.都有virtual DOM,组件化的开发，通过props参数进行父子之间组件传递数据，都实现了webComponents规范<br>        3.数据流动单向，都支持服务器的渲染SSR<br>        4.都有支持native的方法，react有React native， vue有wexx<br>    =&gt;  不同点：<br>        1.数据绑定：Vue实现了双向的数据绑定，react数据流动是单向的<br>        2.数据渲染：大规模的数据渲染，react更快<br>        3.使用场景：React配合Redux架构适合大规模多人协作复杂项目，Vue适合小快的项目<br>        4.开发风格：react推荐做法jsx + inline style把html和css都写在js了<br>                vue是采用webpack + vue-loader单文件组件格式，html, js, css同一个文件</p>
 <p>二、redux中的reducer（纯函数）<br>    Redux数据流里，reduces其实是根据之前的状态（previous state）和现有的action（current action）更新state(这个state可以理解为上下累加器的结果）<br>    每次redux reducer被执行时，state和action被传入，这个state根据action进行累加或者是’自身消减’(reduce),进而返回最新的state,这也就是典型reduce函数的用法：state -&gt;  action -&gt;  state</p>
 <p>三、react的refs<br>    refs就想一个逃生窗，允许我们之间访问dom元素或者组件实例，可以向组件添加一个ref属性的值是一个回调函数，<br>    它将接受地城dom元素或组件的已挂在实例，作为第一个参数</p>
@@ -406,17 +410,17 @@ isProperty()方法测试一个对象是否存在另一个对象的原型链上�
 
 例子：componentDidMount() {
 
-    fetch(&apos;https://test.com&apos;)
+    fetch(&#39;https://test.com&#39;)
 
     .then((res) =&gt; res.json())
 
     .then(
 </code></pre><p>(data) =&gt; {<br>this.setState({ data:data });</p>
-<pre><code>    StatusBar.setNetworkActivityIndicatorVisible(false);
-}
+<pre><code>            StatusBar.setNetworkActivityIndicatorVisible(false);
+        }
 
 
-            性能优化
+                    性能优化
 </code></pre><p>一、webpack打包文件体积过大？（最终打包为一个js文件）<br>    1.异步加载模块<br>    2.提取第三库<br>    3.代码压缩<br>    4.去除不必要的插件</p>
 <p>如何优化webpack构建的性能<br>    一、减少代码体积 1.使用CommonsChunksPlugin 提取多个chunk之间的通用模块，减少总体代码体积<br>             2.把部分依赖转移到CDN上，避免每次编译过程都由Webpack处理<br>             3.对一些组件库采用按需加载，避免无用的代码<br>    二、减少目录检索范围<br>             ·在使用loader的时候，通过制定exclude和include选项，减少loader遍历的目录范围，从而加快webpack编译速度</p>
 <pre><code>三、减少检索路经：resolve.alias可以配置webpack模块解析的别名，对于比较深的解析路经，可以对其配置alias
@@ -425,7 +429,7 @@ isProperty()方法测试一个对象是否存在另一个对象的原型链上�
 <p>四、Vue的SPA 如何优化加载速度<br>    1.减少入口文件体积<br>    2.静态资源本地缓存<br>    3.开启Gzip压缩<br>    4.使用SSR,nuxt.js</p>
 <p>五、移动端300ms延迟<br>    由来：300毫米延迟解决的是双击缩放。双击缩放，手指在屏幕快速点击两次。safari浏览器就会将网页缩放值原始比例。<br>         由于用户可以双击缩放或者是滚动的操作，当用户点击屏幕一次之后，浏览器并不会判断用户确实要打开至这个链接，还是想要进行双击操作<br>        因次，safair浏览器就会等待300ms，用来判断用户是否在次点击了屏幕<br>    解决方案：1.禁用缩放，设置meta标签 user-scalable=no<br>          2.fastclick.js<br>            原理：FastClick的实现原理是在检查到touchend事件的时候，会通过dom自定义事件立即<br>                  发出click事件，并把浏览器在300ms之后真正的click事件阻止掉<br>    fastclick.js还可以解决穿透问题</p>
 <p>六、页面的重构；在不改变外部行为的前提下，简化结构、添加可读性</p>
-<pre><code>服务器端
+<pre><code>                        服务器端
 </code></pre><p>一、状态码：</p>
 <ul>
 <li>2XX（成功处理了请求状态）<ul>
@@ -531,17 +535,17 @@ isProperty()方法测试一个对象是否存在另一个对象的原型链上�
 2.堆排序：利用对这种数据结构所涉及的一种排序算法，堆积是一个近乎完全二叉树的结构，并同时满足堆积的性质：即子节点的键值或索引总是小于（或大于）它的父节点。
   实现过程：1.
 </code></pre><p>五、数组去重 <a href="https://juejin.im/post/5aed6110518825671b026bed#heading-6" target="_blank" rel="noopener">https://juejin.im/post/5aed6110518825671b026bed#heading-6</a><br>    1.双重循环<br>    2.indexOf<br>    3.数组排序去重 最快你Olong</p>
-<p>六、字符串<br>    判断回文字符串：（递归的思想）<br>        1.字符串分隔，倒转，聚合[…obj].reverse().join(‘’)<br>        2.字符串头部和尾部，逐次向中间检测<br>            实现：function isPalindrome(line) {<br>                line += ‘’;<br>                for (var i=0,j=line.length-1;i&lt;j;i++,j–) {<br>                    if (line.chartAt(i) !== line.chartAt(j) {<br>                    return false<br>                }</p>
-<pre><code>3.递归
+<p>六、字符串<br>    判断回文字符串：（递归的思想）<br>        1.字符串分隔，倒转，聚合[…obj].reverse().join(‘’)<br>        2.字符串头部和尾部，逐次向中间检测<br>            实现：function isPalindrome(line) {<br>                line += ‘’;<br>                for (var i=0,j=line.length-1;i&lt;j;i++,j—) {<br>                    if (line.chartAt(i) !== line.chartAt(j) {<br>                    return false<br>                }</p>
+<pre><code>    3.递归
 </code></pre><p>七、二分查找（有序数组的查找）<br>     // 二分查找可以解决已排序数组的查找问题，即只要数组中包含T(要查找的值)，那么通过不断的缩小包含T的数据范围，就可以最终要找到的数<br>    //  (1) 一开始,数据范围覆盖整个数组。<br>    //  (2) 将数组的中间项与T进行比较，如果T比数组的中间项小，则到数组的前半部分继续查找，反之，则到数组的后半部分继续查找。<br>    //  (3) 就这样，每次查找都可以排除一半元素，相当于范围缩小一半。这样反复比较，反复缩小范围，最终会在数组中找到T<br>    代码实现：function binarySearch (data, dest, start, end){<br>            var end = end || data.length-1;<br>            var start = start || 0;<br>            var m = Math.floor((start+end)/2);<br>            if (dest&lt;data[m]){<br>                return binarySearch(data, dest,0, m-1)<br>            } else {<br>                return binarySearch(data, dest, m+1, end)<br>            }}<br>            return false</p>
-<pre><code>手写代码
+<pre><code>                        手写代码
 </code></pre><p>一、动手实现一个bind（原理通过apply，call）<br>    一句话概括：1.bind()返回一个新函数，并不会立即执行。<br>            2.bind的第一个参数将作为他运行时的this，之后的一系列参数将会在传递的实参前传入作为他的参数<br>            3.bind返回函数作为构造函数，就是可以new的，bind时指定的this值就会消失，但传入的参数依然生效<br>Function.prototype.bind = function (obj, arg) {<br>   var arg = Array.prototype.slice.call(arguments, 1);<br>   var context = this;<br>   var bound = function (newArg) {<br>   arg = arg.concat(Array.prototype.slice.call(newArg);<br>   return context.apply(obj, arg)<br>}<br>  var F =  function () {}  // 在new一个bind会生成新函数，必须的条件就是要继承原函数的原型，因此用到寄生继承来完成我们的过程<br>  F.prototype = context.prototype;00…………………..<br>  bound.prototype =  new F();<br>  return bound;<br>}</p>
 <p>二、 AJAX （异步的javascript和xml）<br>    ajax的原理：相当于在用户和服务器之间加一个中间层（ajax引擎),使用户操作与服务器响应异步化。<br>    优点：在不刷新整个页面的前提下与服务器通信维护数据。不会导致页面的重载<br>          可以把前端服务器的任务转嫁到客服端来处理，减轻服务器负担，节省宽带<br>    劣势：不支持back。对搜索引擎的支持比较弱；不容易调试<br>    怎么解决呢？通过location.hash值来解决Ajax过程中导致的浏览器前进后退按键失效，<br>    解决以前被人常遇到的重复加载的问题。主要比较前后的hash值，看其是否相等，在判断是否触发ajax<br>function getData(url) {<br>    var xhr = new XMLHttpRequest();  // 创建一个对象，创建一个异步调用的对象<br>    xhr.open(‘get’, url, true)  // 设置一个http请求，设置请求的方式，url以及验证身份<br>    xhr.send() //发送一个http请求<br>    xhr.onreadystatechange = function () {  //设置一个http请求状态的函数<br>      if (xhr.readyState == 4 &amp;&amp; xhr.status ==200) {<br>        console.log(xhr.responseText)  // 获取异步调用返回的数据<br>      }<br>    }<br>  }<br>  Promise(getData(url)).resolve(data =&gt; data)</p>
-<pre><code>AJAX状态码：0 - （未初始化）还没有调用send()方法
-        1 - （载入）已调用send方法，正在发送请求
-        2 - （载入完成呢）send()方法执行完成
-        3 - （交互）正在解析相应内容
-        4 - （完成）响应内容解析完成，可以在客户端调用了
+<pre><code> AJAX状态码：0 - （未初始化）还没有调用send()方法
+         1 - （载入）已调用send方法，正在发送请求
+         2 - （载入完成呢）send()方法执行完成
+         3 - （交互）正在解析相应内容
+         4 - （完成）响应内容解析完成，可以在客户端调用了
 </code></pre><p>三、函数节流（throttle）<br> function throttle (func, wait) {<br>        var timeout;<br>        var previous = 0;<br>        return function () {<br>            context = this;<br>            args = arguments;<br>            if (!timeout) {<br>                timeout = setTimeout(() =&gt; {<br>                    timeout = null;<br>                    func.apply(context,args)<br>                }, wait);<br>            }<br>        }<br>    }</p>
 <p>}</p>
 <p>四、函数防抖（dobounce）<br> function debounce (func, wait) {<br>         var timeout;<br>         return function() {<br>             var context = this;<br>             var args = arguments;<br>             clearTimeout(timeout);<br>             timeout = setTimeout(() =&gt; {<br>                 func.apply(context,args)<br>             }, wait);<br>         }<br>     }</p>
@@ -549,14 +553,14 @@ isProperty()方法测试一个对象是否存在另一个对象的原型链上�
 <pre><code>Object.prototype.clone = function() {
   var newObject = this.constructor === Array ? [] : {}  //对象的深拷贝 获取对应的构造函数 [] 或者 {}
   for (let e in this) { //遍历对象的属性 in  this[e]
-    newObject[e] = typeof this[e] === &apos;object&apos; ? this[e].clone() : this[e]  //对象中的属性如果还是对象 那就继续递归 否则就返回基本的数据类型
+    newObject[e] = typeof this[e] === &#39;object&#39; ? this[e].clone() : this[e]  //对象中的属性如果还是对象 那就继续递归 否则就返回基本的数据类型
   }
   return newObject
 }
 </code></pre><p>六、实现一个简单的Promise <a href="https://juejin.im/post/5b2f02cd5188252b937548ab" target="_blank" rel="noopener">https://juejin.im/post/5b2f02cd5188252b937548ab</a><br>class Promise {<br>  constructor (executor) {   // executor里面有两个参数，一个叫resolve（成功），一个叫reject（失败）。<br>    this.status = ‘pending’,<br>    this.value = undefined;<br>    this.reason = undefined;<br>    // 成功存放的数组<br>    this.onResolvedCallbacks = [];<br>     // 失败存放法数组<br>     this.onRejectedCallbacks = [];<br>    let resolve = (value) =&gt; {<br>      if (this.status == ‘pending’) {<br>        this.status = ‘resolve’;<br>        this.value = value;<br>        this.onResolvedCallbacks.forEach(fn =&gt; fn())<br>      }<br>    }</p>
 <pre><code>let reject = (reason) =&gt; {
-  if (this.status == &apos;pending&apos;) {
-    this.status = &apos;reject&apos;;
+  if (this.status == &#39;pending&#39;) {
+    this.status = &#39;reject&#39;;
     this.reason = reason;
     this.onRejectedCallbacks.forEach(fn =&gt; fn())
   }

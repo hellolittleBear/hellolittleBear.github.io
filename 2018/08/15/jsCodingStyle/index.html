@@ -107,27 +107,31 @@
                     <ul class="menu">
                         
                             <li role="presentation" class="text-center">
-                                <a href="/"><i class="fa "></i>首页</a>
+                                <a href="/"><i class="fa fa fa-home fa-fw"></i>首页</a>
                             </li>
                         
                             <li role="presentation" class="text-center">
-                                <a href="/archives/"><i class="fa "></i>时间线</a>
+                                <a href="/archives/"><i class="fa fa-camera-retro fa-fw"></i>归纳</a>
                             </li>
                         
                             <li role="presentation" class="text-center">
-                                <a href="/categories/fore-end/"><i class="fa "></i>前端</a>
+                                <a href="/categories/fore-end/"><i class="fa fa-book fa-fw"></i>前端</a>
                             </li>
                         
                             <li role="presentation" class="text-center">
-                                <a href="/categories/back-end/"><i class="fa "></i>后端</a>
+                                <a href="/categories/back-end/"><i class="fa fa-pencil fa-fw"></i>后端</a>
                             </li>
                         
                             <li role="presentation" class="text-center">
-                                <a href="/categories/tool/"><i class="fa "></i>工具</a>
+                                <a href="/categories/tool/"><i class="fa fa-cog fa-fw"></i>工具</a>
                             </li>
                         
                             <li role="presentation" class="text-center">
-                                <a href="/categories/project/"><i class="fa "></i>项目</a>
+                                <a href="/categories/project/"><i class="fa fa-product-hunt fa-fw"></i>项目</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/fun/"><i class="fa fa-h-square fa-fw"></i>兴趣</a>
                             </li>
                         
                     </ul>
@@ -179,7 +183,7 @@
             
             
             <p class="fa fa-exclamation-triangle warning">
-                本文于<strong>373</strong>天之前发表，文中内容可能已经过时。
+                本文于<strong>382</strong>天之前发表，文中内容可能已经过时。
             </p>
         
     </div>
@@ -235,7 +239,7 @@
 </ul>
 <h3 id="命名"><a href="#命名" class="headerlink" title="命名"></a><font color="#42b983">命名</font></h3><p>变量和函数在命名时应当小心。命名应紧限于数字字母字符，某些情况下可以使用下划线(_)。最好不要在任何命名中使用美元符号($)或者反斜杠()。<br>变量命名应当采用驼峰命名格式，首字母小写，每个单词首字母大写。变量名的第一个单词应当是一个名词(而非动词)以避免同函数混淆。不要在变量名中使用下划线。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 好的写法</span><br><span class="line">var accountNumber = &quot;test001&quot;;</span><br><span class="line"></span><br><span class="line">// 不好的写法：大写字母开头</span><br><span class="line">var AccountNumber = &quot;test001&quot;;</span><br><span class="line"></span><br><span class="line">// 不好的写法：动词开头</span><br><span class="line">var getAccountNumber = &quot;test001&quot;;</span><br><span class="line"></span><br><span class="line">// 不好的写法：使用下划线</span><br><span class="line">var account_number = &quot;test001&quot;;</span><br></pre></td></tr></table></figure></p>
 <p>函数名也应当采用驼峰命名格式。函数名的第一个单词应当是动词（而非名词）来避免同变量混淆。函数名中最好不要使用下划线。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// 好的写法</span><br><span class="line">function doSomething() &#123;</span><br><span class="line">    // code</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 不好的写法：大写字母开头</span><br><span class="line">function DoSomething() &#123;</span><br><span class="line">    // code</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 不好的写法：名词开头</span><br><span class="line">function something() &#123;</span><br><span class="line">    // code</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 不好的写法：使用下划线</span><br><span class="line">function do_something() &#123;</span><br><span class="line">    // code</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>构造函数–通过new运算符创建新对象的函数–也应当以驼峰格式命名并且首字符大写。构造函数名称应当以非动词开头，因为new代表着创建一个对象实例的操作。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// 好的写法</span><br><span class="line">function MyObject() &#123;</span><br><span class="line">    // code</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 不好的写法：小写字母开头</span><br><span class="line">function myObject() &#123;</span><br><span class="line">    // code</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 不好的写法：使用下划线</span><br><span class="line">function my_object() &#123;</span><br><span class="line">    // code</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 不好的写法：动词开头</span><br><span class="line">function getMyObject() &#123;</span><br><span class="line">    // code</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>构造函数—通过new运算符创建新对象的函数—也应当以驼峰格式命名并且首字符大写。构造函数名称应当以非动词开头，因为new代表着创建一个对象实例的操作。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// 好的写法</span><br><span class="line">function MyObject() &#123;</span><br><span class="line">    // code</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 不好的写法：小写字母开头</span><br><span class="line">function myObject() &#123;</span><br><span class="line">    // code</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 不好的写法：使用下划线</span><br><span class="line">function my_object() &#123;</span><br><span class="line">    // code</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 不好的写法：动词开头</span><br><span class="line">function getMyObject() &#123;</span><br><span class="line">    // code</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>常量（值不会被改变的变量）的命名应当是所有大写字母，不同单词之间单个下划线隔开。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 好的写法</span><br><span class="line">var TOTAL_COUNT = 10;</span><br><span class="line"></span><br><span class="line">// 不好的写法：驼峰形式</span><br><span class="line">var totalCount = 10;</span><br><span class="line"></span><br><span class="line">// 不好的写法：混合形式</span><br><span class="line">var total_COUNT = 10;</span><br></pre></td></tr></table></figure></p>
 <p>对象的属性同变量的命名规则相同。对象的方法同函数的命名规则相同。如果属性或者方法是<strong>私有</strong>的，应当在之前加上一个下划线。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 好的写法</span><br><span class="line">var object = &#123;</span><br><span class="line">    _count: 10,4</span><br><span class="line">    _getCount: function() &#123;</span><br><span class="line">        return this._count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a><font color="#42b983">变量声明</font></h3><p>所有的变量在使用前都应当事先定义。变量定义应当放在函数开头，使用一个var表达式每行一个变量。除了首行，所有行都应当多一层缩进以使变量名能够垂直方向对齐。变量定义时应当初始化，并且赋值操作符应当保持一致的缩进。初始化的变量应当在未初始化变量之前。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 好的写法</span><br><span class="line"> var count = 10,</span><br><span class="line">     name = &quot;jeri&quot;,</span><br><span class="line">     found = false,</span><br><span class="line">     empty;</span><br></pre></td></tr></table></figure></p>
