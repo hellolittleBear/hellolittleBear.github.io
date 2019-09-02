@@ -1,236 +1,82 @@
 <!DOCTYPE HTML>
-<html lang="zh-Hans">
+<html>
 <head><meta name="generator" content="Hexo 3.8.0">
-    <!--Setting-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta http-equiv="Cache-Control" content="no-siteapp">
-    <meta http-equiv="Cache-Control" content="no-transform">
-    <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta name="apple-mobile-web-app-capable" content="隐隐约约">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="format-detection" content="telephone=no,email=no,adress=no">
-    <meta name="browsermode" content="application">
-    <meta name="screen-orientation" content="portrait">
-    <link rel="dns-prefetch" href="http://yoursite.com">
-    <!--SEO-->
+  <meta charset="utf-8">
+  
+  <title>社区-需求设计 | 徐曉熊</title>
+  <meta name="author" content="隐隐约约">
 
-    <meta name="keywords" content="项目">
+  
+  <meta name="description" content="愿效江水去不换~">
+  
 
+  
 
-    <meta name="description" content="
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+  <meta property="og:title" content="社区-需求设计">
+  <meta property="og:site_name" content="徐曉熊">
 
+  
+  
 
-列表
-数据
+  
+    <meta property="og:image" content>
+  
 
+  
+  <link href="/css/images/favicon.ico" rel="icon">
+  
 
-
-
-更新次数
-2
-
-
-最近更新
-2019/8/23
+  <link rel="alternate" href="/atom.xml" title="徐曉熊" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
 
 
-文章类型
-原创
-
-
-
-
-题记目前再做一个社区网站，以segmentfault思否平台为基础，逐渐完善其功能。本篇文...">
-
-
-
-<meta name="robots" content="all">
-<meta name="google" content="all">
-<meta name="googlebot" content="all">
-<meta name="verify" content="all">
-
-    <!--Title-->
-
-
-<title>社区-需求设计 | 隐隐约约</title>
-
-
-    <link rel="alternate" href="/atom.xml" title="隐隐约约" type="application/atom+xml">
-
-
-    <link rel="icon" href="/favicon.ico">
-
-    
-
-
-
-<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
-<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
-<link rel="stylesheet" href="/css/style.css?rev=@@hash">
-
-
-
-
-    
-	<div class="hide">
-		<script type="text/javascript">
-			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
-		</script>
-	</div>
-
-
-
-
-
-
-    
+  <!-- baidu webmaster push -->
+  <script src="//push.zhanzhang.baidu.com/push.js"></script>
 
 </head>
-
 </html>
-<!--[if lte IE 8]>
-<style>
-    html{ font-size: 1em }
-</style>
-<![endif]-->
-<!--[if lte IE 9]>
-<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
-<![endif]-->
 
 <body>
-    <header class="main-header" style="background:#303133">
-    <div class="main-header-box">
-        <a class="header-avatar" href="/" title="隐隐约约">
-            <img src="/img/avatar_hexo.jpg" alt="logo头像" class="img-responsive center-block">
-        </a>
-        <div class="branding">
-        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
-            
-                 <img src="/img/awatar.png" alt="Snippet 博客主题" class="img-responsive center-block">
-            
-    	</div>
-    </div>
-</header>
-    <nav class="main-navigation">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
-                    <span class="sr-only"></span>
-                        <i class="fa fa-bars"></i>
-                    </span>
-                    <a class="navbar-brand" href="http://yoursite.com">隐隐约约</a>
-                </div>
-                <div class="collapse navbar-collapse" id="main-menu">
-                    <ul class="menu">
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/"><i class="fa fa fa-home fa-fw"></i>首页</a>
-                            </li>
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/archives/"><i class="fa fa-camera-retro fa-fw"></i>归纳</a>
-                            </li>
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/categories/fore-end/"><i class="fa fa-book fa-fw"></i>前端</a>
-                            </li>
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/categories/back-end/"><i class="fa fa-pencil fa-fw"></i>后端</a>
-                            </li>
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/categories/tool/"><i class="fa fa-cog fa-fw"></i>工具</a>
-                            </li>
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/categories/project/"><i class="fa fa-product-hunt fa-fw"></i>项目</a>
-                            </li>
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/categories/fun/"><i class="fa fa-h-square fa-fw"></i>兴趣</a>
-                            </li>
-                        
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">徐曉熊</a></h1>
+  <h2><a href="/">勤而学，共勉之 ~</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="https://github.com/hellolittleBear">fork me on github</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
 </nav>
-    <section class="content-wrap">
-        <div class="container">
-            <div class="row">
-                <main class="col-md-8 main-content m-post">
-                    <p id="process"></p>
-<article class="post">
-    <div class="post-head">
-        <h1 id="社区-需求设计">
-            
-	            社区-需求设计
-            
-        </h1>
-        <div class="post-meta">
-    
-        <span class="categories-meta fa-wrap">
-            <i class="fa fa-folder-open-o"></i>
-            <a class="category-link" href="/categories/project/">project</a>
-        </span>
-    
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2019-04-06T16:00:00.000Z"><a href="/2019/04/07/community-needs-design/">2019/04/07</a></time>
+      
+      
+  
+    <h1 class="title">社区-需求设计</h1>
+  
 
-    
-        <span class="fa-wrap">
-            <i class="fa fa-tags"></i>
-            <span class="tags-meta">
-                
-                    <a class="tag-link" href="/tags/项目/">项目</a>
-                
-            </span>
-        </span>
-    
-
-    
-        
-        <span class="fa-wrap">
-            <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2019/04/07</span>
-        </span>
-        
-    
-</div>
-            
-            
-    </div>
-    
-    <div class="post-body post-content">
-        <div class="table-container">
-<table>
-<thead>
-<tr>
-<th>列表</th>
-<th style="text-align:right">数据</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>更新次数</td>
-<td style="text-align:right">2</td>
-</tr>
-<tr>
-<td>最近更新</td>
-<td style="text-align:right">2019/8/23</td>
-</tr>
-<tr>
-<td>文章类型</td>
-<td style="text-align:right">原创</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="题记"><a href="#题记" class="headerlink" title="题记"></a><font color="#42b983">题记</font></h2><p>目前再做一个社区网站，以<a href="https://segmentfault.com/u/hellolitterbear" target="_blank" rel="noopener">segmentfault思否</a>平台为基础，逐渐完善其功能。本篇文章主要简述该项目的需求设计。<a href="https://github.com/hellolittleBear/community" target="_blank" rel="noopener">点击获取项目源码</a><br>由于个人单独开发项目，时间久了也就没有了当初的激情和中二想法，目前处于一个慢热期，进度缓慢。为了防止未来某一天突然放弃该项目，特此，增加需求列表，给自己一种上班的鞭策感….</p>
+    </header>
+    <div class="entry">
+      
+        <p>目前再做一个社区网站，以<a href="https://segmentfault.com/u/hellolitterbear" target="_blank" rel="noopener">segmentfault思否</a>平台为基础，逐渐完善其功能。本篇文章主要简述该项目的需求设计。<a href="https://github.com/hellolittleBear/community" target="_blank" rel="noopener">点击获取项目源码</a><br>由于个人单独开发项目，时间久了也就没有了当初的激情和中二想法，目前处于一个慢热期，进度缓慢。为了防止未来某一天突然放弃该项目，特此，增加需求列表，给自己一种上班的鞭策感….</p>
+<a id="more"></a>
 <p><img src="/2019/04/07/community-needs-design/logo.jpg" style="width: 100%"></p>
 <p>由于刚开始写项目的时候一直是模仿segmentfault的平台进行设计，直至开发了三个月后，之前写的功能太多了，每个功能之间的关系纽带现在突然好混乱，现在都不清楚我到底需要哪些功能，哪些功能是没有用处的，开发各个功能的权重现在都非常模糊。为此，这篇文章主要记录并分析功能模块权重问题。</p>
 <h2 id="核心功能"><a href="#核心功能" class="headerlink" title="核心功能"></a><font color="#42b983">核心功能</font></h2><p><strong>文章</strong>、<strong>问答</strong>、<strong>个人主页</strong>三大模块</p>
@@ -271,127 +117,122 @@
 </ul>
 <h2 id="用户等级制度的详解"><a href="#用户等级制度的详解" class="headerlink" title="用户等级制度的详解"></a><font color="#42b983">用户等级制度的详解</font></h2><p>1、初始用户登录注册时等级最低为0，该用户无法评论、无法回复信息。在文章和提问次数达到一定的数量后，并且通过个人擅长技术考试后才可进行评论。<br>2、根据用户每日登陆活跃度、笔记记录、文章提问评论的点赞、收藏、举报等等对用户进行等级制度的动态改变。用户等级无法手动修改.</p>
 
+      
     </div>
     
-    <div class="post-footer">
-        <div>
-            
-                转载声明：请注明出处 © <a href="https://github.com/hellolittleBear" target="_blank">helloLittleBear</a>
-            
+    <footer>
+        <div class="alignright">
+          
+          <a href="javascript:void(0)" class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
         </div>
-        <div>
-            
-        </div>
-    </div>
+        
+  
+  <div class="categories">
+    <a href="/categories/项目/">项目</a>
+  </div>
+
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
 </article>
 
-<div class="article-nav prev-next-wrap clearfix">
-    
-        <a href="/2019/04/10/vscode/" class="pre-post btn btn-default" title="vscode使用教程">
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">vscode使用教程</span>
-        </a>
-    
-    
-        <a href="/2019/04/05/community-mysql-design/" class="next-post btn btn-default" title="社区-建表设计">
-            <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">社区-建表设计</span><i class="fa fa-angle-right fa-fw"></i>
-        </a>
-    
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">Categories</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/兴趣/">兴趣</a><small>3</small></li>
+  
+    <li><a href="/categories/前端/">前端</a><small>9</small></li>
+  
+    <li><a href="/categories/前端基础/">前端基础</a><small>1</small></li>
+  
+    <li><a href="/categories/后端/">后端</a><small>1</small></li>
+  
+    <li><a href="/categories/工具/">工具</a><small>2</small></li>
+  
+    <li><a href="/categories/算法/">算法</a><small>1</small></li>
+  
+    <li><a href="/categories/项目/">项目</a><small>2</small></li>
+  
+  </ul>
 </div>
 
 
-    <div id="comments">
-        
-	
-    <div id="vcomments" class="valine"></div>
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="/assets/valine.min.js"></script>
-
-    <script>
-        new Valine({
-            av: AV,
-            el: '#vcomments',
-            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
-            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
-            placeholder: '说点什么吧',
-            notify: false,
-            verify: false,
-            avatar: 'mm',
-            meta: 'nick,mail'.split(','),
-            pageSize: '10',
-            path: window.location.pathname,
-            lang: 'zh-Hans'.toLowerCase()
-        })
-    </script>
-
-
-    </div>
-
-
-
+  
+<div class="widget tag">
+  <h3 class="title">Recent Posts</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2019/08/05/jiangxi/">江西发展为什么这么落后于周边省份？？</a>
+      </li>
+    
+      <li>
+        <a href="/2019/08/01/carreer-plan/">IT行业个人感悟</a>
+      </li>
+    
+      <li>
+        <a href="/2019/07/15/webpack-source/">webpack理解</a>
+      </li>
+    
+      <li>
+        <a href="/2019/06/24/mathjax/">mathjax编辑语法</a>
+      </li>
+    
+      <li>
+        <a href="/2019/05/15/probability/">抛硬币概率期望使之最高效讨论</a>
+      </li>
+    
+  </ul>
+</div>
 
 
-                </main>
-                
-                    <aside id="article-toc" role="navigation" class="col-md-4">
-    <div class="widget">
-        <h3 class="title">Table of Contents</h3>
-        
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题记"><span class="toc-text">题记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#核心功能"><span class="toc-text">核心功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用户等级制度的详解"><span class="toc-text">用户等级制度的详解</span></a></li></ol>
-        
-    </div>
+  
+
+  
+
+  
 </aside>
-
-                
-            </div>
-        </div>
-    </section>
-    <footer class="main-footer">
-    <div class="container">
-        <div class="row">
-        </div>
-    </div>
-</footer>
-
-<a id="back-to-top" class="icon-btn hide">
-	<i class="fa fa-chevron-up"></i>
-</a>
-
-
-
-
-    <div class="copyright">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="busuanzi">
-    
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  <p>
+  
+  &copy; 2019  <a href="https://github.com/hellolittleBear" target="_blank">hellolitterBear</a></p>
+  
+  All rights reserved. Powered by <a href="https://hellolittlebear.github.io" target="_blank">blog</a><p></p>
 </div>
+<div class="clearfix"></div>
 
-            </div>
-            <div class="col-sm-12">
-                <span>Copyright &copy; 2017
-                </span> |
-                <span>
-                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
-                </span> |
-                <span>
-                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
-                </span>
-            </div>
-        </div>
-    </div>
-</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
 
 
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
 
 
-
-
-
-<script src="/js/app.js?rev=@@hash"></script>
-
+<div id="bg"></div>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
