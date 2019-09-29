@@ -3,21 +3,23 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>抛硬币概率期望使之最高效讨论 | 徐曉熊</title>
-  <meta name="author" content="隐隐约约">
+  <title>抛硬币概率期望使之最高效讨论 | UXO~徐晓熊</title>
+  <meta name="author" content="徐晓熊">
 
   
-  <meta name="description" content="愿效江水去不换~">
+  <meta name="description" content="一个喜欢瞎说的博客主瞎写的网站">
   
 
+  
+  <meta name="keywords" content="hellolitterBear UXO xuxiaoxiong  徐晓熊">
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <meta property="og:title" content="抛硬币概率期望使之最高效讨论">
-  <meta property="og:site_name" content="徐曉熊">
+  <meta property="og:site_name" content="UXO~徐晓熊">
 
-  
+  <meta name="google-site-verification" content="NCXVSqxqB-os803-VFMtIEd1SUNJVOIjctCfNYUwD0w">
   
 
   
@@ -28,7 +30,7 @@
   <link href="/css/images/favicon.jpg" rel="icon">
   
 
-  <link rel="alternate" href="/atom.xml" title="徐曉熊" type="application/atom+xml">
+  <link rel="alternate" href="/aotm.xml" title="UXO~徐晓熊" type="application/atom+xml">
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
@@ -42,15 +44,23 @@
 
 <body>
   <header id="header" class="inner"><div class="alignleft">
-  <h1><a href="/">徐曉熊</a></h1>
-  <h2><a href="/">勤而学，共勉之 ~</a></h2>
+  <h1><a href="/">UXO~徐晓熊</a></h1>
+  <h2><a href="/">勤而学，共勉之~</a></h2>
 </div>
 <nav id="main-nav" class="alignright">
   <ul>
     
-      <li><a href="/">首页</a></li>
+      <li><a href="/open_source">开源项目</a></li>
     
-      <li><a href="/archives">归档</a></li>
+      <li><a href="/open_class">公开课</a></li>
+    
+      <li><a href="/developer">开发者</a></li>
+    
+      <li><a href="/work_fun">职业兴趣</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+      <li><a href="/atom.xml">RSS</a></li>
     
       <li><a href="https://github.com/hellolittleBear">fork me on github</a></li>
     
@@ -65,7 +75,7 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2019-05-14T16:00:00.000Z"><a href="/2019/05/15/probability/">2019/05/15</a></time>
+        <time datetime="2019-05-14T16:00:00.000Z"><a href="/2019/05/15/probability/">2019-05-15</a></time>
       
       
   
@@ -78,7 +88,7 @@
         <p>很久以前在知乎看到一个有趣的问题，突然想起来，打算详细的写下来。<a href="http://www.zhihu.com/question/304075115?utm_source=qq&amp;utm_medium=social&amp;utm_oi=1031473270935212032" target="_blank" rel="noopener">详情问题</a></p>
 <a id="more"></a>
 <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a><font color="#42b983">问题</font></h2><p>投掷一枚不均匀的硬币，正面概率为<code>70%</code>，反面概率为<code>30%</code>，如何最高效地获得一个概率为<code>50%</code>的事件？？</p>
-<p><img src="/2019/05/15/probability/coin.gif"></p>
+<p><img src="/u/hellolitterbear/2019/05/15/probability/coin.gif"></p>
 <p>首先，我们需要理解<code>高效</code>这个词，以我们习惯性的理解，<code>高效</code>代表的效率，代表着我们能够快速获得一个<code>50%</code>的事件。当然了，最简单的办法就是靠猜。无论怎样抛，猜正反就能获得一个概率为<code>50%</code>的事件。</p>
 <p>其实这样肯定是不对的，不严谨，而且很滑稽。回归正题，如何才能高效获得一个<code>50%</code>的事件？？</p>
 <p>思考：</p>
@@ -89,7 +99,7 @@
 <li>由于抛硬币的方式正方概率不同，我们可以暂时抛弃正方概率，从更加高处进行思考，于是我们可以这样：</li>
 </ul>
 <h2 id="基础思路"><a href="#基础思路" class="headerlink" title="基础思路"></a><font color="#42b983">基础思路</font></h2><p> 丢两次，连续出现正反和反正的概率都是 0.3 <em> 0.7 = 0.21；如果出现正正或者反反则抛弃（反过来也可以），这样的两个事件也是<code>50%</code>。但是效率不是很高。因为有（1- 0.21 </em> 2）58%的概率（或者42%）的概率的结果需要被抛弃。肯定不是高效的。</p>
-<h2 id="加强版"><a href="#加强版" class="headerlink" title="加强版"></a><font color="#42b983">加强版</font></h2><p>1、丢两次，正反取<code>false</code>，反正取<code>true</code><br>2、若1出现正正或反反，则再掷两次。正反取<code>false</code>，反正取<code>true</code><br>3、若1和2中分别为正正、反反，取<code>false</code>，若为反反、正正，取<code>true</code><br>4、若1、2中两次均为正正或反反，则在掷两次，正反取<code>false</code>，反正取<code>true</code><br>5、若4为正正或者反反，则再掷俩次，正反取<code>false</code>，反正取<code>true</code><br>6、若4为正正，5为反反则取<code>false</code>，反之取<code>true</code><br>7、若4、5俩次均为反反，而1、2两次均为正正，则取<code>false</code>，反之取<code>true</code><br>8、依次类推。<br><img src="/2019/05/15/probability/probability.jpg" style="width: 100%"></p>
+<h2 id="加强版"><a href="#加强版" class="headerlink" title="加强版"></a><font color="#42b983">加强版</font></h2><p>1、丢两次，正反取<code>false</code>，反正取<code>true</code><br>2、若1出现正正或反反，则再掷两次。正反取<code>false</code>，反正取<code>true</code><br>3、若1和2中分别为正正、反反，取<code>false</code>，若为反反、正正，取<code>true</code><br>4、若1、2中两次均为正正或反反，则在掷两次，正反取<code>false</code>，反正取<code>true</code><br>5、若4为正正或者反反，则再掷俩次，正反取<code>false</code>，反正取<code>true</code><br>6、若4为正正，5为反反则取<code>false</code>，反之取<code>true</code><br>7、若4、5俩次均为反反，而1、2两次均为正正，则取<code>false</code>，反之取<code>true</code><br>8、依次类推。<br><img src="/u/hellolitterbear/2019/05/15/probability/probability.jpg" style="width: 100%"></p>
 <p>总结：把每次正正和反反当做特例进行掷硬币，并把它们合并起来，从而不浪费每次投掷。</p>
 <p>解释上述可以简说为投掷四次，其中前两次的相同结果影响到后两次的结果，每次结果相同则特别处理。</p>
 <p>优点： 不需要知道硬币正和反的概率，都可以使用。类似元编程思想。</p>
@@ -99,6 +109,8 @@
     
     <footer>
         <div class="alignright">
+          
+          <a href="/2019/05/15/probability/#comment" class="comment-link">评论</a>
           
           <a href="javascript:void(0)" class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
         </div>
@@ -116,14 +128,46 @@
 </article>
 
 
+<section id="comment">
+  <h1 class="title">Comments</h1>
+
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="post-probability" data-title="抛硬币概率期望使之最高效讨论" data-url="https://segmentfault.com/u/hellolitterbear/2019/05/15/probability/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+  var duoshuoQuery = {short_name:'fl-it-ebooks'};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+       || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
+
+</section>
+
 
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="Search">
-    <input type="hidden" name="q" value="site:yoursite.com">
+    <input type="hidden" name="q" value="site:segmentfault.com/u/hellolitterbear">
   </form>
+</div>
+
+  <div class="widget tag">
+	<h3 class="title">LOGO</h3>
+	<!-- <div class="entry" style="padding-left:10px;padding-right:10px;height: 277px">
+		<img src="./img/logo.jpg" alt="" style='height: 100%;margin: auto;display: block;border-radius: 10px'>
+	</div> -->
+	<div class="entry" style="padding-left:10px;padding-right:10px;">
+		<img src="./img/logo.jpg" alt style="height: 100%;width:100%">
+	</div>
 </div>
 
   
@@ -135,9 +179,15 @@
   
     <li><a href="/categories/前端/">前端</a><small>10</small></li>
   
+    <li><a href="/categories/后端/">后端</a><small>0</small></li>
+  
+    <li><a href="/categories/哔哩哔哩视频/">哔哩哔哩视频</a><small>0</small></li>
+  
     <li><a href="/categories/工具/">工具</a><small>2</small></li>
   
     <li><a href="/categories/算法/">算法</a><small>1</small></li>
+  
+    <li><a href="/categories/哔哩哔哩视频/耶鲁大学公开课/">耶鲁大学公开课</a><small>0</small></li>
   
     <li><a href="/categories/项目/">项目</a><small>2</small></li>
   
@@ -145,40 +195,27 @@
 </div>
 
 
-  
-<div class="widget tag">
-  <h3 class="title">Recent Posts</h3>
-  <ul class="entry">
-    
-      <li>
-        <a href="/2019/09/01/talk-with-father/">和老爸的一次聊天</a>
-      </li>
-    
-      <li>
-        <a href="/2019/08/05/jiangxi/">江西发展为什么这么落后于周边省份？？</a>
-      </li>
-    
-      <li>
-        <a href="/2019/08/01/carreer-plan/">自我介绍</a>
-      </li>
-    
-      <li>
-        <a href="/2019/07/15/webpack-source/">webpack理解</a>
-      </li>
-    
-      <li>
-        <a href="/2019/06/24/mathjax/">mathjax编辑语法</a>
-      </li>
-    
-  </ul>
+  <div class="widget tag">
+  <h3 class="title">关于</h3>
+  <div class="entry">
+    <p><a href="https://segmentfault.com/u/hellolitterbear">SF</a></p>
+    <p><a href="https://juejin.im/user/5ae120906fb9a07abd0d578a">掘金</a></p>
+    <p><a href="https://github.com/hellolittleBear">github</a></p>
+  </div>
 </div>
 
-
-  
-
-  
-
-  
+  <div class="widget tag">
+  <h3 class="title">友情链接</h3>
+  <div class="entry">
+    <ul>
+<!-- link start -->
+<li><a href="https://www.w3cplus.com/">W3Cplus</a></li>
+<li><a href="http://bestcbooks.com/">计算机书籍控</a></li>
+<li><a href="http://www.uncletoo.com/">PHP中文网</a></li>
+<!-- link  end -->
+    </ul>
+  </div>
+</div>
 </aside>
     <div class="clearfix"></div>
   </div>

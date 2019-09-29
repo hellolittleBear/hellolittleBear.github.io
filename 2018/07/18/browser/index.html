@@ -3,21 +3,23 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>浏览器渲染及其优化讨论 | 徐曉熊</title>
-  <meta name="author" content="隐隐约约">
+  <title>浏览器渲染及其优化讨论 | UXO~徐晓熊</title>
+  <meta name="author" content="徐晓熊">
 
   
-  <meta name="description" content="愿效江水去不换~">
+  <meta name="description" content="一个喜欢瞎说的博客主瞎写的网站">
   
 
+  
+  <meta name="keywords" content="hellolitterBear UXO xuxiaoxiong  徐晓熊">
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <meta property="og:title" content="浏览器渲染及其优化讨论">
-  <meta property="og:site_name" content="徐曉熊">
+  <meta property="og:site_name" content="UXO~徐晓熊">
 
-  
+  <meta name="google-site-verification" content="NCXVSqxqB-os803-VFMtIEd1SUNJVOIjctCfNYUwD0w">
   
 
   
@@ -28,7 +30,7 @@
   <link href="/css/images/favicon.jpg" rel="icon">
   
 
-  <link rel="alternate" href="/atom.xml" title="徐曉熊" type="application/atom+xml">
+  <link rel="alternate" href="/aotm.xml" title="UXO~徐晓熊" type="application/atom+xml">
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
@@ -42,15 +44,23 @@
 
 <body>
   <header id="header" class="inner"><div class="alignleft">
-  <h1><a href="/">徐曉熊</a></h1>
-  <h2><a href="/">勤而学，共勉之 ~</a></h2>
+  <h1><a href="/">UXO~徐晓熊</a></h1>
+  <h2><a href="/">勤而学，共勉之~</a></h2>
 </div>
 <nav id="main-nav" class="alignright">
   <ul>
     
-      <li><a href="/">首页</a></li>
+      <li><a href="/open_source">开源项目</a></li>
     
-      <li><a href="/archives">归档</a></li>
+      <li><a href="/open_class">公开课</a></li>
+    
+      <li><a href="/developer">开发者</a></li>
+    
+      <li><a href="/work_fun">职业兴趣</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+      <li><a href="/atom.xml">RSS</a></li>
     
       <li><a href="https://github.com/hellolittleBear">fork me on github</a></li>
     
@@ -65,7 +75,7 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2018-07-18T06:54:01.000Z"><a href="/2018/07/18/browser/">2018/07/18</a></time>
+        <time datetime="2018-07-18T06:54:01.000Z"><a href="/2018/07/18/browser/">2018-07-18</a></time>
       
       
   
@@ -112,11 +122,11 @@
 <li>网络接口。独立于其他模块，用于网络请求。</li>
 <li>UI后端。用于绘制组合框和窗口等一些基本的工具，主要用于设计完成用户接口。</li>
 <li>js解释器。用于解析并执行js代码。</li>
-<li>数据存储。浏览器保存在硬盘数据。是浏览器内置的一个完整的 <strong>小型数据库</strong>。<br><img src="/2018/07/18/browser/layers.png" style="height:300px"></li>
+<li>数据存储。浏览器保存在硬盘数据。是浏览器内置的一个完整的 <strong>小型数据库</strong>。<br><img src="/u/hellolitterbear/2018/07/18/browser/layers.png" style="height:300px"></li>
 </ul>
 <h1 id="DOM树的构建是文档加载完成开始的？"><a href="#DOM树的构建是文档加载完成开始的？" class="headerlink" title="DOM树的构建是文档加载完成开始的？"></a>DOM树的构建是文档加载完成开始的？</h1><p>并不是，DOM树的构建是从接收文档就开始了，因为为了达到更好的用户体验，浏览器会尽快的展示页面，浏览器会同时执行构建DOM树和接收html文件。</p>
-<h1 id="渲染引擎的工作流程？"><a href="#渲染引擎的工作流程？" class="headerlink" title="渲染引擎的工作流程？"></a>渲染引擎的工作流程？</h1><p>由于不同浏览器具有不同的渲染过程，这里简要概述webkit内核（chrome、safari）和Gecko内核（firefox）的渲染过程。<br><img src="/2018/07/18/browser/flow.png"><br>如图，渲染引擎开始解析HTML文档并将标记转换为’内容树‘的树中的DOM节点，然后他将解析外部CSS文件和样式元素中的样式数据。样式信息与之前解析的DOM节点一起创建另一个树，渲染树。<br>渲染树包含具有可视属性（即可以直观表现的属性，比如长宽高颜色等），然后按照一定的‘布局’过程，遍历渲染树，从而绘制出页面。<br>重点：这是一个 <strong><em>渐进</em></strong> 的过程，为了获得更好的用户体验，渲染引擎不会等到解析所有的HTML,而是一边解析一边渲染同时进行。但是这也有一个缺点，如果网络中断，之前解析的数据将全部丢弃，不过一般也不会出现这种问题。<br><strong><em>主要流程</em></strong></p>
-<p>webkit:<br><img src="/2018/07/18/browser/webkitflow.png"><br>mozilla:<br><img src="/2018/07/18/browser/mozillaflow.jpg"></p>
+<h1 id="渲染引擎的工作流程？"><a href="#渲染引擎的工作流程？" class="headerlink" title="渲染引擎的工作流程？"></a>渲染引擎的工作流程？</h1><p>由于不同浏览器具有不同的渲染过程，这里简要概述webkit内核（chrome、safari）和Gecko内核（firefox）的渲染过程。<br><img src="/u/hellolitterbear/2018/07/18/browser/flow.png"><br>如图，渲染引擎开始解析HTML文档并将标记转换为’内容树‘的树中的DOM节点，然后他将解析外部CSS文件和样式元素中的样式数据。样式信息与之前解析的DOM节点一起创建另一个树，渲染树。<br>渲染树包含具有可视属性（即可以直观表现的属性，比如长宽高颜色等），然后按照一定的‘布局’过程，遍历渲染树，从而绘制出页面。<br>重点：这是一个 <strong><em>渐进</em></strong> 的过程，为了获得更好的用户体验，渲染引擎不会等到解析所有的HTML,而是一边解析一边渲染同时进行。但是这也有一个缺点，如果网络中断，之前解析的数据将全部丢弃，不过一般也不会出现这种问题。<br><strong><em>主要流程</em></strong></p>
+<p>webkit:<br><img src="/u/hellolitterbear/2018/07/18/browser/webkitflow.png"><br>mozilla:<br><img src="/u/hellolitterbear/2018/07/18/browser/mozillaflow.jpg"></p>
 <ul>
 <li>DOM Tree: 浏览器将HTML解析成树形的数据结构</li>
 <li>CSS Rule Tree: 浏览器将CSS解析成树形的数据结构</li>
@@ -126,7 +136,7 @@
 </ul>
 <p>图中可以直观的看到，尽管俩者使用的术语略有差异，但基本流程相同。</p>
 <h2 id="解析器：lexer解析器"><a href="#解析器：lexer解析器" class="headerlink" title="解析器：lexer解析器"></a>解析器：lexer解析器</h2><p>解析源文档意味着将其转换为有意义有规则的结构，一般解析的结果就是一个表示文档结构的节点树（通常是解析HTML流），也就是语法树。</p>
-<p>解析的过程可以分为俩部分：词法分析、语法分析<br><img src="/2018/07/18/browser/lexer.png"></p>
+<p>解析的过程可以分为俩部分：词法分析、语法分析<br><img src="/u/hellolitterbear/2018/07/18/browser/lexer.png"></p>
 <ul>
 <li>lexical analysis: 词法分析</li>
 <li>syntax analysis: 语法分析</li>
@@ -136,7 +146,7 @@
 <p><strong>官方解释</strong>：解析过程是<code>迭代</code>的。解析器通常会向词法分析器询问新令牌并尝试将令牌与其中一个语法规则匹配。如果匹配规则，则将与该令牌对应的节点添加到解析树，并且解析器将请求另一个令牌。<br>如果没有规则匹配，解析器将在内部存储令牌，并继续询问令牌，直到找到匹配所有内部存储的令牌的规则。如果没有找到规则，则解析器将引发异常。这意味着该文档无效并包含语法错误。</p>
 <p>个人总结： 解析器就是把源文档转换为另一种格式，该格式是一种机器代码文档，能够被机器所理解的文档。</p>
 <hr>
-<h2 id="翻译"><a href="#翻译" class="headerlink" title="翻译"></a>翻译</h2><p>上面提到，解析器最终的结果是一种机器代码文档，该文档并不能真正应用于人理解的代码，需要进一步加工，这就是翻译。<br><img src="/2018/07/18/browser/translate.png"></p>
+<h2 id="翻译"><a href="#翻译" class="headerlink" title="翻译"></a>翻译</h2><p>上面提到，解析器最终的结果是一种机器代码文档，该文档并不能真正应用于人理解的代码，需要进一步加工，这就是翻译。<br><img src="/u/hellolitterbear/2018/07/18/browser/translate.png"></p>
 <h1 id="回流、重绘"><a href="#回流、重绘" class="headerlink" title="回流、重绘"></a>回流、重绘</h1><ul>
 <li><p>reflow（回流）：当浏览器发现某个部分发生了点变化影响了布局，需要倒回去重新渲染，内行称这个回退的过程叫 reflow。reflow 会从 <html> 这个 root frame 开始递归往下，依次计算所有的结点几何尺寸和位置。reflow 几乎是无法避免的。现在界面上流行的一些效果，比如树状目录的折叠、展开（实质上是元素的显 示与隐藏）等，都将引起浏览器的 reflow。鼠标滑过、点击……只要这些行为引起了页面上某些元素的占位面积、定位方式、边距等属性的变化，都会引起它内部、周围甚至整个页面的重新渲 染。通常我们都无法预估浏览器到底会 reflow 哪一部分的代码，它们都彼此相互影响着。</html></p>
 </li>
@@ -164,6 +174,8 @@
     <footer>
         <div class="alignright">
           
+          <a href="/2018/07/18/browser/#comment" class="comment-link">评论</a>
+          
           <a href="javascript:void(0)" class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
         </div>
         
@@ -180,14 +192,46 @@
 </article>
 
 
+<section id="comment">
+  <h1 class="title">Comments</h1>
+
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="post-browser" data-title="浏览器渲染及其优化讨论" data-url="https://segmentfault.com/u/hellolitterbear/2018/07/18/browser/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+  var duoshuoQuery = {short_name:'fl-it-ebooks'};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+       || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
+
+</section>
+
 
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="Search">
-    <input type="hidden" name="q" value="site:yoursite.com">
+    <input type="hidden" name="q" value="site:segmentfault.com/u/hellolitterbear">
   </form>
+</div>
+
+  <div class="widget tag">
+	<h3 class="title">LOGO</h3>
+	<!-- <div class="entry" style="padding-left:10px;padding-right:10px;height: 277px">
+		<img src="./img/logo.jpg" alt="" style='height: 100%;margin: auto;display: block;border-radius: 10px'>
+	</div> -->
+	<div class="entry" style="padding-left:10px;padding-right:10px;">
+		<img src="./img/logo.jpg" alt style="height: 100%;width:100%">
+	</div>
 </div>
 
   
@@ -199,9 +243,15 @@
   
     <li><a href="/categories/前端/">前端</a><small>10</small></li>
   
+    <li><a href="/categories/后端/">后端</a><small>0</small></li>
+  
+    <li><a href="/categories/哔哩哔哩视频/">哔哩哔哩视频</a><small>0</small></li>
+  
     <li><a href="/categories/工具/">工具</a><small>2</small></li>
   
     <li><a href="/categories/算法/">算法</a><small>1</small></li>
+  
+    <li><a href="/categories/哔哩哔哩视频/耶鲁大学公开课/">耶鲁大学公开课</a><small>0</small></li>
   
     <li><a href="/categories/项目/">项目</a><small>2</small></li>
   
@@ -209,40 +259,27 @@
 </div>
 
 
-  
-<div class="widget tag">
-  <h3 class="title">Recent Posts</h3>
-  <ul class="entry">
-    
-      <li>
-        <a href="/2019/09/01/talk-with-father/">和老爸的一次聊天</a>
-      </li>
-    
-      <li>
-        <a href="/2019/08/05/jiangxi/">江西发展为什么这么落后于周边省份？？</a>
-      </li>
-    
-      <li>
-        <a href="/2019/08/01/carreer-plan/">自我介绍</a>
-      </li>
-    
-      <li>
-        <a href="/2019/07/15/webpack-source/">webpack理解</a>
-      </li>
-    
-      <li>
-        <a href="/2019/06/24/mathjax/">mathjax编辑语法</a>
-      </li>
-    
-  </ul>
+  <div class="widget tag">
+  <h3 class="title">关于</h3>
+  <div class="entry">
+    <p><a href="https://segmentfault.com/u/hellolitterbear">SF</a></p>
+    <p><a href="https://juejin.im/user/5ae120906fb9a07abd0d578a">掘金</a></p>
+    <p><a href="https://github.com/hellolittleBear">github</a></p>
+  </div>
 </div>
 
-
-  
-
-  
-
-  
+  <div class="widget tag">
+  <h3 class="title">友情链接</h3>
+  <div class="entry">
+    <ul>
+<!-- link start -->
+<li><a href="https://www.w3cplus.com/">W3Cplus</a></li>
+<li><a href="http://bestcbooks.com/">计算机书籍控</a></li>
+<li><a href="http://www.uncletoo.com/">PHP中文网</a></li>
+<!-- link  end -->
+    </ul>
+  </div>
+</div>
 </aside>
     <div class="clearfix"></div>
   </div>
